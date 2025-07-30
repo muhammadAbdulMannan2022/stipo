@@ -1,0 +1,11 @@
+{
+    "navbar": {
+        "brand": "GrantFinder AI",
+        "home": "Home",
+        "contact_us": "Contact Us",
+        "privacy": "Privacy",
+        "portal": "Portal",
+        "open_menu": "Open menu",
+        "close_menu": "Close menu"
+    }
+}
