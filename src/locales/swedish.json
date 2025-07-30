@@ -7,5 +7,50 @@
         "portal": "Portal",
         "open_menu": "Öppna meny",
         "close_menu": "Stäng meny"
+    },
+    "home": {
+        "tagline": "Lär dig",
+        "heading": "Låt inte pengar stoppa <0>din utbildning</0>",
+        "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh veniam, quis nostrud exerci tation euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim",
+        "cta": "Hitta stipendier nu",
+        "img_alt": "Studentmössa på böcker med ett diplom"
+    },
+    "howItWorks": {
+        "title": "Hur Grantfinder fungerar",
+        "subtitle": "Klassrummet har ett dynamiskt uppsättning undervisningsverktyg",
+        "step1_label": "Steg 1",
+        "step1_title": "Förbered vad <0>du letar efter</0>",
+        "step1_description": "Klassrummet har ett dynamiskt uppsättning undervisningsverktyg som kan användas under lektionen. Lärare kan dela ut uppgifter i realtid som eleverna kan slutföra och lämna in.",
+        "image_alt": "Illustration av böcker, ett äpple och skrivmaterial",
+        "step2_label": "Steg 2",
+        "step2_title": "Svara på alla <0>Grantfinder-quiz</0>",
+        "step2_description": "Starta enkelt live-uppgifter, quiz och prov. Elevresultat registreras automatiskt i betygssystemet online.",
+        "step2_alt": "Illustration av quiz eller digitalt betygssystem",
+        "step3_label": "Steg 3",
+        "step3_title": "Förbered <0>en personlig stipendielista</0>",
+        "step3_description": "Klassrummet erbjuder verktyg för att hantera klassen såsom klasslista, närvaro och mer. Med betygsboken kan lärare granska och betygsätta prov och quiz i realtid.",
+        "step3_alt": "Illustration av personlig stipendieplanering",
+        "step4_label": "Steg 4",
+        "step4_title": "Hämta uppdaterad <0>stipendielista som PDF</0>",
+        "step4_description": "Lärare och assistenter kan prata med elever privat utan att lämna Zoom-miljön.",
+        "step4_alt": "Illustration av nedladdning av stipendie-PDF"
+    },
+    "scholarshipFeatures": {
+        "sectionTitle": "Alla stipendier på ett ställe",
+        "sectionSubtitle": "TOTC är en kraftfull onlineprogramsvit som kombinerar alla verktyg som behövs för att driva en framgångsrik skola eller kontor.",
+        "features": [
+            {
+                "title": "Svara på alla quiz",
+                "description": "Enkel och säker kontroll av din organisations ekonomiska och juridiska transaktioner. Skicka anpassade fakturor och kontrakt."
+            },
+            {
+                "title": "Betala och förbered stipendielistan",
+                "description": "Schemalägg och reservera klassrum på ett eller flera campus. Håll detaljerade register över studentnärvaro."
+            },
+            {
+                "title": "Hämta din personliga stipendielista som PDF",
+                "description": "Automatisera och spåra e-post till individer eller grupper. Skilllines inbyggda system hjälper till att organisera din organisation."
+            }
+        ]
     }
 }

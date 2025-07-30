@@ -7,5 +7,50 @@
         "portal": "Portal",
         "open_menu": "Open menu",
         "close_menu": "Close menu"
+    },
+    "home": {
+        "tagline": "Learn",
+        "heading": "Don't Let Money Stop <0>Your Education</0>",
+        "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh veniam, quis nostrud exerci tation euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim",
+        "cta": "Find Scholarships Now",
+        "img_alt": "Graduation cap on books with a diploma"
+    },
+    "howItWorks": {
+        "title": "How Grantfinder Works",
+        "subtitle": "Class has a dynamic set of teaching tools built to",
+        "step1_label": "Step 1",
+        "step1_title": "Prepare what <0>you are looking for</0>",
+        "step1_description": "Class has a dynamic set of teaching tools built to be deployed and used during class. Teachers can handout assignments in real-time for students to complete and submit.",
+        "image_alt": "Illustration of books, apple, and stationery",
+        "step2_label": "Step 2",
+        "step2_title": "Answer all <0>Grantfinder Quizzes</0>",
+        "step2_description": "Easily launch live assignments, quizzes, and tests. Student results are automatically entered in the online gradebook.",
+        "step2_alt": "Illustration of quiz or online gradebook",
+        "step3_label": "Step 3",
+        "step3_title": "Prepare <0>Personalized scholarship list</0>",
+        "step3_description": "Class provides tools to help run and manage the class such as Class Roster, Attendance, and more. With the Gradebook, teachers can review and grade tests and quizzes in real-time.",
+        "step3_alt": "Illustration of personalized scholarship planning",
+        "step4_label": "Step 4",
+        "step4_title": "Get Updated <0>Scholarship list PDF</0>",
+        "step4_description": "Teachers and teacher assistants can talk with students privately without leaving the Zoom environment.",
+        "step4_alt": "Illustration of downloading a scholarship PDF"
+    },
+    "scholarshipFeatures": {
+        "sectionTitle": "All Scholarships in One Place",
+        "sectionSubtitle": "TOTC is one powerful online software suite that combines all the tools needed to run a successful school or office.",
+        "features": [
+            {
+                "title": "Answer all the Quizzes",
+                "description": "Simple and secure control of your organization's financial and legal transactions. Send customized invoices and contracts."
+            },
+            {
+                "title": "Pay and Prepare Scholarship list",
+                "description": "Schedule and reserve classrooms at one campus or multiple campuses. Keep detailed records of student attendance."
+            },
+            {
+                "title": "Get Your Personalized scholarship list in pdf",
+                "description": "Automate and track emails to individuals or groups. Skillline's built-in system helps organize your organization."
+            }
+        ]
     }
 }

@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
     }, [isOpen])
 
     return (
-        <nav className="bg-white shadow-md p-4 sticky top-0 z-50">
+        <nav className="bg-white shadow-md p-4 sticky top-0 z-50 h-[8vh]">
             <div className="max-w-7xl mx-auto flex justify-between items-center">
                 <Link to="/" className="text-primary-text font-bold text-xl tracking-wide">
                     {t("navbar.brand")}
