@@ -52,5 +52,63 @@
                 "description": "Automate and track emails to individuals or groups. Skillline's built-in system helps organize your organization."
             }
         ]
+    },
+    "testimonial": {
+        "question": "What our Users are <1/><0>saying us?</0>",
+        "happyPeople": "Happy People",
+        "overallRating": "Overall rating"
+    },
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Still have questions? Contact our team via",
+        "email": "Demopdf@grantfinder.com",
+        "items": [
+            {
+                "question": "Can I enroll in multiple courses at once?",
+                "answer": "You can enroll in multiple courses simultaneously and access them at your convenience.",
+                "nestedContent": "Enrollment Process for Different Courses"
+            },
+            {
+                "question": "What kind of support can I expect from instructors?",
+                "answer": "Our instructors are dedicated to your success. You can expect timely responses to your questions, detailed feedback on assignments, and regular office hours for one-on-one support."
+            },
+            {
+                "question": "Are the courses self-paced or do they have specific start and end dates?",
+                "answer": "Most of our courses are self-paced, allowing you to learn at your own speed. However, some specialized programs may have fixed start and end dates to facilitate group projects and live sessions."
+            },
+            {
+                "question": "Are there any prerequisites for the courses?",
+                "answer": "Prerequisites vary by course. Each course description clearly outlines any prior knowledge or skills required. We also offer foundational courses to help you meet these prerequisites if needed."
+            },
+            {
+                "question": "Can I download the course materials for offline access?",
+                "answer": "Yes, most course materials, including lectures, readings, and assignments, are available for download so you can access them offline at your convenience."
+            }
+        ]
+    },
+    "cta": {
+        "title": "Fast, simple, and ready for apply scholarships.",
+        "description": "No paperwork, no long processes. Just 5 minutes and you're ready to go.",
+        "button": "Get Started Now"
+    },
+    "footer": {
+        "brand": "Grantfinder.Ai",
+        "address": {
+            "line1": "Villa No. 45, Street 12, Khalifa City,",
+            "line2": "Abu Dhabi, United Arab Emirates"
+        },
+        "quickLinks": {
+            "title": "Quick Links",
+            "contact": "Contact Us",
+            "getStarted": "Get started"
+        },
+        "info": {
+            "title": "Information",
+            "privacy": "Privacy Policy",
+            "reviews": "Reviews"
+        },
+        "followUs": "Follow us on",
+        "email": "Demostipol@grantfinder.com",
+        "copyright": "© 2025 Grantfinder. All rights reserved"
     }
 }

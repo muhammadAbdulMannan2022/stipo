@@ -52,5 +52,63 @@
                 "description": "Automatisera och spåra e-post till individer eller grupper. Skilllines inbyggda system hjälper till att organisera din organisation."
             }
         ]
+    },
+    "testimonial": {
+        "question": "Vad säger våra användare <1/><0>om oss?</0>",
+        "happyPeople": "Glada personer",
+        "overallRating": "Genomsnittligt betyg"
+    },
+    "faq": {
+        "title": "Vanliga frågor",
+        "subtitle": "Har du fortfarande frågor? Kontakta vårt team via",
+        "email": "Demopdf@grantfinder.com",
+        "items": [
+            {
+                "question": "Kan jag gå flera kurser samtidigt?",
+                "answer": "Du kan anmäla dig till flera kurser samtidigt och komma åt dem när det passar dig.",
+                "nestedContent": "Anmälningsprocessen för olika kurser"
+            },
+            {
+                "question": "Vilket stöd kan jag förvänta mig från instruktörerna?",
+                "answer": "Våra instruktörer är engagerade i din framgång. Du kan förvänta dig snabba svar, detaljerad feedback och regelbundna öppettider för individuell support."
+            },
+            {
+                "question": "Är kurserna självstyrda eller har de fasta start- och slutdatum?",
+                "answer": "De flesta av våra kurser är självstyrda, så att du kan lära dig i din egen takt. Vissa specialprogram har dock fasta datum för grupparbeten och live-sessioner."
+            },
+            {
+                "question": "Finns det några förkunskapskrav för kurserna?",
+                "answer": "Förkunskapskraven varierar. Varje kursbeskrivning visar tydligt vilka kunskaper som krävs. Vi erbjuder även grundläggande kurser vid behov."
+            },
+            {
+                "question": "Kan jag ladda ner kursmaterial för att använda offline?",
+                "answer": "Ja, de flesta kursmaterialen, inklusive föreläsningar, läsningar och uppgifter, är tillgängliga för nedladdning."
+            }
+        ]
+    },
+    "cta": {
+        "title": "Snabbt, enkelt och redo att ansöka om stipendier.",
+        "description": "Inga pappersarbeten, inga långa processer. Bara 5 minuter och du är redo att börja.",
+        "button": "Kom igång nu"
+    },
+    "footer": {
+        "brand": "Grantfinder.Ai",
+        "address": {
+            "line1": "Villa Nr. 45, Gata 12, Khalifa City,",
+            "line2": "Abu Dhabi, Förenade Arabemiraten"
+        },
+        "quickLinks": {
+            "title": "Snabblänkar",
+            "contact": "Kontakta oss",
+            "getStarted": "Kom igång"
+        },
+        "info": {
+            "title": "Information",
+            "privacy": "Integritetspolicy",
+            "reviews": "Recensioner"
+        },
+        "followUs": "Följ oss på",
+        "email": "Demostipol@grantfinder.com",
+        "copyright": "© 2025 Grantfinder. Alla rättigheter förbehållna"
     }
 }
