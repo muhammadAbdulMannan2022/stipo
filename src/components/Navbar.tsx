@@ -15,7 +15,6 @@ const navLinks: NavLink[] = [
     { key: "home", to: "/" },
     { key: "contact_us", to: "/contact" },
     { key: "privacy", to: "/privacy" },
-    { key: "portal", to: "/portal" }
 ]
 
 const Navbar: React.FC = () => {

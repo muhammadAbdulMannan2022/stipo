@@ -1,5 +1,6 @@
 import type React from "react"
 import { useTranslation } from "react-i18next"
+import { Link } from "react-router"
 
 const CallToActionSection: React.FC = () => {
     const { t } = useTranslation()
@@ -13,9 +14,9 @@ const CallToActionSection: React.FC = () => {
                 <p className="text-lg sm:text-xl text-2ndcolor-text mb-10 max-w-2xl mx-auto">
                     {t("cta.description")}
                 </p>
-                <button className="bg-primary-text hover:bg-primary-text text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:cursor-pointer transition-transform transform hover:scale-105 ">
+                <Link to="/start" className="bg-primary-text hover:bg-primary-text text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:cursor-pointer transition-transform transform hover:scale-105 ">
                     {t("cta.button")}
-                </button>
+                </Link>
             </div>
         </section>
     )

@@ -1,6 +1,7 @@
 "use client"
 
 import { useTranslation, Trans } from "react-i18next"
+import { Link } from "react-router"
 
 export default function HomePage() {
     const { t } = useTranslation()
@@ -49,9 +50,9 @@ export default function HomePage() {
                         <p className="text-base sm:text-lg text-2ndcolor-text mb-8 max-w-xl mx-auto md:mx-0">
                             {t("home.description")}
                         </p>
-                        <button className="bg-primary-text hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:cursor-pointer">
+                        <Link to="/start" className="bg-primary-text hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:cursor-pointer">
                             {t("home.cta")}
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Right Image Section */}
