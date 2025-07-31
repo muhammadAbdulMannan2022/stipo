@@ -110,5 +110,85 @@
         "followUs": "Följ oss på",
         "email": "Demostipol@grantfinder.com",
         "copyright": "© 2025 Grantfinder. Alla rättigheter förbehållna"
+    },
+    "privacy": {
+        "title": "Integritetspolicy",
+        "effectiveDate": "Giltigt från och med:</1> {{date}}",
+        "intro": "Tack för att du besöker [Din webbplatsnamn] (”vi”, ”vår”, ”oss”). Din integritet är viktig för oss. Denna integritetspolicy förklarar hur vi samlar in, använder och skyddar dina personuppgifter när du besöker eller interagerar med vår webbplats [www.dinwebbplats.com] (”webbplatsen”).",
+        "sections": {
+            "1": {
+                "title": "1. Information vi samlar in",
+                "intro": "Vi kan samla in följande typer av information:",
+                "items": [
+                    "Personlig information: som ditt namn, e-postadress, telefonnummer etc. (endast när du frivilligt lämnar det, t.ex. via kontaktformulär eller kontoregistrering).",
+                    "Användningsdata: inklusive din IP-adress, webbläsartyp, enhetstyp, besökta sidor, tid som spenderats på webbplatsen och annan analytisk data.",
+                    "Cookies och spårningstekniker: vi kan använda cookies för att förbättra din upplevelse, analysera webbplatstrafik och förbättra våra tjänster."
+                ]
+            },
+            "2": {
+                "title": "2. Hur vi använder din information",
+                "intro": "Vi kan använda din information för följande ändamål:",
+                "items": [
+                    "För att tillhandahålla och underhålla vår webbplats.",
+                    "För att svara på dina frågor eller ge kundsupport.",
+                    "För att skicka uppdateringar, nyhetsbrev eller marknadsföringskommunikation (du kan avanmäla dig).",
+                    "För att analysera och förbättra prestanda och innehåll på vår webbplats.",
+                    "För att upptäcka och förhindra bedräglig eller olaglig aktivitet."
+                ]
+            },
+            "3": {
+                "title": "3. Delning av din information",
+                "intro": "Vi säljer inte din personliga data. Vi kan dela din information med:",
+                "items": [
+                    "Tjänsteleverantörer: som hjälper till att driva vår webbplats eller serva dig.",
+                    "Myndigheter: om det krävs enligt lag eller för att skydda våra rättigheter."
+                ]
+            },
+            "4": {
+                "title": "4. Dina rättigheter och val",
+                "intro": "Du kan ha rätt att:",
+                "items": [
+                    "Få tillgång till den personliga data vi har om dig.",
+                    "Begära rättelse eller radering av dina data.",
+                    "Avsluta prenumeration på marknadsföringskommunikation."
+                ],
+                "contact": "För att utöva någon av dessa rättigheter, kontakta oss på: youremail@grantfinder.com"
+            },
+            "5": {
+                "title": "5. Säkerhet",
+                "text": "Vi vidtar rimliga försiktighetsåtgärder för att skydda din personliga information. Men ingen överföringsmetod via Internet är 100% säker."
+            },
+            "6": {
+                "title": "6. Tredjepartslänkar",
+                "text": "Vår webbplats kan innehålla länkar till andra webbplatser. Vi ansvarar inte för deras integritetspraxis eller innehåll."
+            },
+            "7": {
+                "title": "7. Barns integritet",
+                "text": "Våra tjänster riktar sig inte till barn under 13 år. Vi samlar inte medvetet in personlig information från barn."
+            },
+            "8": {
+                "title": "8. Ändringar i denna integritetspolicy",
+                "text": "Vi kan uppdatera denna integritetspolicy från tid till annan. Ändringar kommer att publiceras på denna sida med ett uppdaterat \"Giltigt från och med\" datum."
+            },
+            "9": {
+                "title": "9. Kontakta oss",
+                "text": "Om du har några frågor eller funderingar om denna integritetspolicy, kontakta oss på: youremail@grantfinder.com | Din adress, stad, land"
+            }
+        }
+    },
+    "contact": {
+        "title": "Kontakta oss",
+        "subtitle": "Har du en fråga? Kontakta oss!",
+        "form": {
+            "firstName": "Förnamn",
+            "lastName": "Efternamn",
+            "email": "E-post",
+            "phoneNumber": "Telefonnummer",
+            "town": "Stad",
+            "location": "Plats",
+            "howCanWeHelp": "Hur kan vi hjälpa dig?",
+            "submit": "Skicka",
+            "placeholder": "Ange här"
+        }
     }
 }
