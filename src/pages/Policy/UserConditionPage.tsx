@@ -1,6 +1,6 @@
 "use client"
 
-import { useTranslation, Trans } from "react-i18next"
+import { useTranslation } from "react-i18next"
 
 export default function TermsAndConditionsPage() {
     const { t } = useTranslation()
