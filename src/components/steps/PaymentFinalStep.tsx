@@ -1,35 +1,23 @@
 "use client"
 
-import type React from "react"
+import React from "react"
 import { CheckCircle } from "lucide-react"
+import { Trans, useTranslation } from "react-i18next"
+import { useNavigate } from "react-router"
 
-interface PaymentConfirmedCardProps {
-    title?: string
-    confirmationTitle?: string
-    message?: string
-    timeHighlight?: string
-    buttonText?: string
-    onButtonClick?: () => void
-}
-
-const PaymentConfirmedCard: React.FC<PaymentConfirmedCardProps> = ({
-    title = "List of Scholarships",
-    confirmationTitle = "Payment confirmed!!",
-    message = "Your eligible scholarships list will be sent to your Email within [time] Thanks for using our service",
-    timeHighlight = "2hours",
-    buttonText = "Back to home page",
-    onButtonClick,
-}) => {
-    const parts = message.split(`[time]`)
+const PaymentConfirmedCard: React.FC = () => {
+    const { t } = useTranslation()
+    const timeHighlight = "2 hours"
+    const navigate = useNavigate()
 
     return (
         <div className="bg-white rounded-lg shadow-lg max-w-md mx-auto overflow-hidden">
-            {/* Header Section */}
+            {/* Header */}
             <div className="bg-gray-50 p-6 border-b border-gray-200">
-                <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
+                <h2 className="text-2xl font-bold text-2ndcolor-text">{t("payment.title")}</h2>
             </div>
 
-            {/* Content Section */}
+            {/* Content */}
             <div className="p-6 text-center">
                 <div className="flex justify-center mb-6">
                     <div className="bg-indigo-600 rounded-full p-3 flex items-center justify-center">
@@ -37,23 +25,36 @@ const PaymentConfirmedCard: React.FC<PaymentConfirmedCardProps> = ({
                     </div>
                 </div>
 
-                <h3 className="text-3xl font-bold text-indigo-600 mb-4">{confirmationTitle}</h3>
-                <p className="text-xl text-gray-800 mb-8">
-                    {parts[0]}
-                    <span className="font-extrabold text-green-600">{timeHighlight}</span>
-                    {parts[1]}
+                <h3 className="text-3xl font-bold text-primary-text mb-4">{t("payment.confirmationTitle")}</h3>
+
+                <p className="text-xl text-2ndcolor-text mb-8">
+                    <Trans
+                        i18nKey="payment.message"
+                        values={{ time: timeHighlight }}
+                        components={[<span className="font-extrabold text-green-600" />]}
+                    />
+
                 </p>
 
                 {/* Button */}
-                <div className="text-center">
+                <div className="text-center flex flex-col gap-2">
                     <button
-                        onClick={onButtonClick}
+                        onClick={() => navigate("/")}
                         className="w-full py-3 px-6 rounded-lg font-semibold text-white
-                       bg-gradient-to-r from-purple-600 to-indigo-600
-                       hover:from-purple-700 hover:to-indigo-700
-                       transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              bg-gradient-to-r from-purple-600 to-indigo-600
+              hover:from-purple-700 hover:to-indigo-700
+              transition-all hover:cursor-pointer duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >
-                        {buttonText}
+                        {t("payment.button")}
+                    </button>
+                    <button
+                        onClick={() => navigate("/start/review")}
+                        className="w-full py-3 px-6 rounded-lg font-semibold text-gray-900
+    bg-gradient-to-r from-gray-300 to-gray-400
+    hover:from-gray-400 hover:to-gray-500
+    transition-all hover:cursor-pointer duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+                    >
+                        {t("payment.review")}
                     </button>
                 </div>
             </div>

@@ -14,8 +14,10 @@ interface NavLink {
 const navLinks: NavLink[] = [
     { key: "home", to: "/" },
     { key: "contact_us", to: "/contact" },
-    { key: "privacy", to: "/privacy" },
-]
+    // { key: "privacy", to: "/privacy" },
+    { key: "faq", to: "/#faq" },
+];
+
 
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false)

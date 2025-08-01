@@ -1,3 +1,5 @@
+"use client"
+
 import type React from "react"
 import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react"
 import { Link } from "react-router"
@@ -10,7 +12,7 @@ const Footer: React.FC = () => {
         <footer className="bg-black text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 {/* Top Section */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-gray-700">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-8 pb-8 border-b border-gray-700">
                     {/* Brand/Address */}
                     <div className="flex flex-col items-center md:items-start text-center md:text-left">
                         <h3 className="text-xl font-bold text-white mb-4">{t("footer.brand")}</h3>
@@ -19,37 +21,67 @@ const Footer: React.FC = () => {
                             <br />
                             {t("footer.address.line2")}
                         </p>
+                        <p className="mt-4">
+                            <strong>{t("footer.contact.title")}</strong>
+                            <br />
+                            {t("footer.contact.email")}
+                            <br />
+                            {t("footer.contact.phone")}
+                            <br />
+                            {t("footer.contact.hours")}
+                        </p>
+                        <button
+                            type="button"
+                            className="mt-6 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded transition-colors duration-200"
+                        >
+                            {t("footer.findScholarships")}
+                        </button>
                     </div>
 
-                    {/* Quick Links */}
+                    {/* Terms/Condition */}
                     <div className="flex flex-col items-center md:items-start text-center md:text-left">
-                        <h4 className="text-lg font-semibold text-white mb-4">{t("footer.quickLinks.title")}</h4>
+                        <h4 className="text-lg font-semibold text-white mb-4">{t("footer.terms.title")}</h4>
                         <ul className="space-y-2">
                             <li>
-                                <Link to="/contact" className="hover:text-white transition-colors duration-200">
-                                    {t("footer.quickLinks.contact")}
+                                <Link to="/integrity-policy" className="hover:text-white transition-colors duration-200">
+                                    {t("footer.terms.integrityPolicy")}
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/get-started" className="hover:text-white transition-colors duration-200">
-                                    {t("footer.quickLinks.getStarted")}
+                                <Link to="/privacy-policy" className="hover:text-white transition-colors duration-200">
+                                    {t("footer.terms.privacyPolicy")}
+                                </Link>
+                            </li>
+                        </ul>
+                        <h4 className="text-lg font-semibold text-white mt-6 mb-4">{t("footer.terms.userConditionTitle")}</h4>
+                        <ul className="space-y-2">
+                            <li>
+                                <Link to="/user-conditions" className="hover:text-white transition-colors duration-200">
+                                    {t("footer.terms.userCondition")}
                                 </Link>
                             </li>
                         </ul>
                     </div>
 
-                    {/* Info Links */}
+                    {/* About Us */}
                     <div className="flex flex-col items-center md:items-start text-center md:text-left">
-                        <h4 className="text-lg font-semibold text-white mb-4">{t("footer.info.title")}</h4>
+                        <h4 className="text-lg font-semibold text-white mb-4">{t("footer.about.title")}</h4>
                         <ul className="space-y-2">
                             <li>
-                                <Link to="/privacy" className="hover:text-white transition-colors duration-200">
-                                    {t("footer.info.privacy")}
+                                <Link to="/about" className="hover:text-white transition-colors duration-200">
+                                    {t("footer.about.aboutUs")}
                                 </Link>
                             </li>
+                        </ul>
+                    </div>
+
+                    {/* FAQ */}
+                    <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                        <h4 className="text-lg font-semibold text-white mb-4">{t("footer.faq.title")}</h4>
+                        <ul className="space-y-2">
                             <li>
-                                <Link to="/reviews" className="hover:text-white transition-colors duration-200">
-                                    {t("footer.info.reviews")}
+                                <Link to="/#faq" className="hover:text-white transition-colors duration-200">
+                                    {t("footer.faq.faq")}
                                 </Link>
                             </li>
                         </ul>

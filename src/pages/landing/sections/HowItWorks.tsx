@@ -32,19 +32,26 @@ const data = [
         image: "/step4.png",
         imageAltKey: "howItWorks.step4_alt",
         reverse: true
+    },
+    {
+        labelKey: "howItWorks.step5_label",
+        titleKey: "howItWorks.step5_title",
+        descriptionKey: "howItWorks.step5_description",
+        image: "/step5.png",
+        imageAltKey: "howItWorks.step5_alt",
     }
 ]
 
 function HowItWorks() {
     return (
         <div className='pb-10 md:pb-12'>
-            <div className="max-w-7xl mx-auto text-center my-10 md:mt-20 px-5">
-                <h2 className="text-4xl sm:text-5xl font-extrabold text-primary-text mb-4">
+            <div className="max-w-7xl flex text-center my-10 md:mt-20 px-5  items-center justify-center">
+                <h2 className="text-4xl sm:text-5xl font-extrabold text-primary-text mb-4 max-w-2xl ">
                     {t("howItWorks.title")}
                 </h2>
-                <p className="text-lg text-2ndcolor-text max-w-[300px] md:max-w-xl mx-auto">
+                {/* <p className="text-lg text-2ndcolor-text max-w-[300px] md:max-w-xl mx-auto">
                     {t("howItWorks.subtitle")}
-                </p>
+                </p> */}
             </div>
             {data.map((stp, i) => <Steps key={i} {...stp} />)}
         </div>

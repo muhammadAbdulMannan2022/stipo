@@ -1,39 +1,44 @@
 {
     "navbar": {
-        "brand": "GrantFinder AI",
+        "brand": "StipendiePortalen",
         "home": "Hem",
         "contact_us": "Kontakta oss",
         "privacy": "Integritetspolicy",
         "portal": "Portal",
         "open_menu": "Öppna meny",
-        "close_menu": "Stäng meny"
+        "close_menu": "Stäng meny",
+        "faq": "Faq"
     },
     "home": {
         "tagline": "Lär dig",
-        "heading": "Låt inte pengar stoppa <0>din utbildning</0>",
-        "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh veniam, quis nostrud exerci tation euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim",
+        "heading": "Få en ekonomisk boost för dina <0>studier eller aktiviteter</0>",
+        "description": "För dig som både student och organisation. Att hitta finansiering kan vara en djungel – vi gör det enkelt. Utvalda svenska stipendier i databasen, uppdateras kontinuerligt. Svar inom 2 timmar. AI-matchning skräddarsydd efter dina preferenser.",
         "cta": "Hitta stipendier nu",
         "img_alt": "Studentmössa på böcker med ett diplom"
     },
     "howItWorks": {
-        "title": "Hur Grantfinder fungerar",
+        "title": "Hur StipendiePortalen fungerar",
         "subtitle": "Klassrummet har ett dynamiskt uppsättning undervisningsverktyg",
         "step1_label": "Steg 1",
-        "step1_title": "Förbered vad <0>du letar efter</0>",
-        "step1_description": "Klassrummet har ett dynamiskt uppsättning undervisningsverktyg som kan användas under lektionen. Lärare kan dela ut uppgifter i realtid som eleverna kan slutföra och lämna in.",
+        "step1_title": "den <0>personliga formen</0>",
+        "step1_description": "För att kunna hitta och välja de mest lämpliga stipendierna för dig behöver vi veta mer om dig.",
         "image_alt": "Illustration av böcker, ett äpple och skrivmaterial",
         "step2_label": "Steg 2",
-        "step2_title": "Svara på alla <0>Grantfinder-quiz</0>",
-        "step2_description": "Starta enkelt live-uppgifter, quiz och prov. Elevresultat registreras automatiskt i betygssystemet online.",
+        "step2_title": "Vänligen verifiera<0> din e-postadress</0>",
+        "step2_description": "För att säkerställa att din skräddarsydda stipendielista skickas till rätt e-postadress ber vi dig att verifiera den. Detta hjälper oss att garantera en smidig och säker shoppingupplevelse för dig.",
         "step2_alt": "Illustration av quiz eller digitalt betygssystem",
         "step3_label": "Steg 3",
-        "step3_title": "Förbered <0>en personlig stipendielista</0>",
-        "step3_description": "Klassrummet erbjuder verktyg för att hantera klassen såsom klasslista, närvaro och mer. Med betygsboken kan lärare granska och betygsätta prov och quiz i realtid.",
+        "step3_title": "Finns det <0>några stipendier för mig och hur många?</0>",
+        "step3_description": "Vi kommer att meddela dig om det finns några stipendier som är lämpliga för dina specifika behov (kostnadsfritt).",
         "step3_alt": "Illustration av personlig stipendieplanering",
         "step4_label": "Steg 4",
-        "step4_title": "Hämta uppdaterad <0>stipendielista som PDF</0>",
-        "step4_description": "Lärare och assistenter kan prata med elever privat utan att lämna Zoom-miljön.",
-        "step4_alt": "Illustration av nedladdning av stipendie-PDF"
+        "step4_title": "Betalning<0>.</0>",
+        "step4_description": "Du är bara ett steg ifrån att få tillgång till din personliga stipendielista, genererad med hjälp av AI och skräddarsydd för din unika bakgrund, dina mål och dina preferenser. Genom att slutföra din betalning låser du upp ditt anpassade urval av stipendier, noggrant matchade för att ge dig bästa möjliga möjligheter.",
+        "step4_alt": "Illustration av nedladdning av stipendie-PDF",
+        "step5_label": "Steg 5",
+        "step5_title": "Din anpassade <0>stipendielista är på väg!</0>",
+        "step5_description": "Vänligen ha tålamod medan vi använder AI för att skapa din personliga stipendielista, noggrant utvald för att matcha din profil, dina behov och dina preferenser. Den kommer snart till din inkorg!",
+        "step5_alt": "Illustration av nedladdning av ett stipendie-PDF"
     },
     "scholarshipFeatures": {
         "sectionTitle": "Alla stipendier på ett ställe",
@@ -61,55 +66,62 @@
     "faq": {
         "title": "Vanliga frågor",
         "subtitle": "Har du fortfarande frågor? Kontakta vårt team via",
-        "email": "Demopdf@grantfinder.com",
+        "email": "kontakt@stipendieportalen.se",
         "items": [
             {
-                "question": "Kan jag gå flera kurser samtidigt?",
-                "answer": "Du kan anmäla dig till flera kurser samtidigt och komma åt dem när det passar dig.",
-                "nestedContent": "Anmälningsprocessen för olika kurser"
+                "question": "Hur mycket finansiering kan jag få?",
+                "answer": "Beloppet du kan få beror på din individuella situation och projektets omfattning. De flesta stiftelser ger vanligtvis mellan 1 000 SEK och 100 000 SEK per år."
             },
             {
-                "question": "Vilket stöd kan jag förvänta mig från instruktörerna?",
-                "answer": "Våra instruktörer är engagerade i din framgång. Du kan förvänta dig snabba svar, detaljerad feedback och regelbundna öppettider för individuell support."
+                "question": "Är det möjligt att få stöd från flera stiftelser samtidigt?",
+                "answer": "Ja, du kan få stöd från flera stiftelser samtidigt. Om du däremot får mer pengar än vad som behövs för det angivna ändamålet förväntas du antingen använda överskottet till samma mål eller återbetala det. Kom ihåg att stipendier betraktas som gåvor och ska användas ansvarsfullt."
             },
             {
-                "question": "Är kurserna självstyrda eller har de fasta start- och slutdatum?",
-                "answer": "De flesta av våra kurser är självstyrda, så att du kan lära dig i din egen takt. Vissa specialprogram har dock fasta datum för grupparbeten och live-sessioner."
+                "question": "Är stipendiepengarna skattepliktiga?",
+                "answer": "Nej, stipendiepengar är skattefria."
             },
             {
-                "question": "Finns det några förkunskapskrav för kurserna?",
-                "answer": "Förkunskapskraven varierar. Varje kursbeskrivning visar tydligt vilka kunskaper som krävs. Vi erbjuder även grundläggande kurser vid behov."
-            },
-            {
-                "question": "Kan jag ladda ner kursmaterial för att använda offline?",
-                "answer": "Ja, de flesta kursmaterialen, inklusive föreläsningar, läsningar och uppgifter, är tillgängliga för nedladdning."
+                "question": "Vill du marknadsföra ett stipendium?",
+                "answer": "Du är välkommen att visa upp din stiftelse eller ditt stipendium på vår plattform. Det är helt gratis att lista ditt stipendium. Tveka inte att kontakta oss."
             }
         ]
     },
     "cta": {
-        "title": "Snabbt, enkelt och redo att ansöka om stipendier.",
-        "description": "Inga pappersarbeten, inga långa processer. Bara 5 minuter och du är redo att börja.",
+        "title": "Snabb, transparent och AI-driven",
+        "description": "Du kan sluta söka och börja ansöka på några minuter.",
         "button": "Kom igång nu"
     },
     "footer": {
-        "brand": "Grantfinder.Ai",
+        "brand": "Stipendieportalen",
         "address": {
-            "line1": "Villa Nr. 45, Gata 12, Khalifa City,",
-            "line2": "Abu Dhabi, Förenade Arabemiraten"
+            "line1": "Göran Elgfelts Gata 1 a,",
+            "line2": "183 39 Täby"
         },
-        "quickLinks": {
-            "title": "Snabblänkar",
-            "contact": "Kontakta oss",
-            "getStarted": "Kom igång"
+        "contact": {
+            "title": "Kontakt",
+            "email": "E-post: kontakt@stipendieportalen.se",
+            "phone": "Telefon: +46 721 77 33 34",
+            "hours": "Tillgänglig 8-16 vardagar."
         },
-        "info": {
-            "title": "Information",
-            "privacy": "Integritetspolicy",
-            "reviews": "Recensioner"
+        "findScholarships": "Hitta stipendier nu",
+        "terms": {
+            "title": "Villkor",
+            "integrityPolicy": "Integritetspolicy",
+            "privacyPolicy": "Sekretesspolicy",
+            "userConditionTitle": "Användarvillkor",
+            "userCondition": "Användarvillkor"
+        },
+        "about": {
+            "title": "Om oss",
+            "aboutUs": "Om oss"
+        },
+        "faq": {
+            "title": "FAQ",
+            "faq": "Vanliga frågor"
         },
         "followUs": "Följ oss på",
-        "email": "Demostipol@grantfinder.com",
-        "copyright": "© 2025 Grantfinder. Alla rättigheter förbehållna"
+        "email": "kontakt@stipendieportalen.se",
+        "copyright": "© 2025 Stipendieportalen. Alla rättigheter förbehållna"
     },
     "privacy": {
         "title": "Integritetspolicy",
@@ -190,5 +202,99 @@
             "submit": "Skicka",
             "placeholder": "Ange här"
         }
+    },
+    "emailCard": {
+        "title": "Ange e-postadress",
+        "subtitle": "Lorem Ipsum är exempeltext för tryck och typer",
+        "label": "E-post",
+        "placeholder": "Ange här",
+        "note": "Om du redan har fyllt i data, ange e-post eller starta en ny analys",
+        "startNew": "Starta ny analys",
+        "next": "Nästa"
+    },
+    "form": {
+        "title": "Grundläggande information",
+        "description": "Lorem Ipsum är bara en exempeltext för tryck och typografi",
+        "labels": {
+            "whoAreYou": "Vem är du?",
+            "eligible": "Är du berättigad?",
+            "name": "Namn",
+            "email": "E-post",
+            "gender": "Kön",
+            "age": "Ålder",
+            "educationLevel": "Utbildningsnivå du för närvarande bedriver",
+            "eliteAthlete": "Är du en elitidrottare?",
+            "insuranceMember": "Är du medlem i ett försäkringsbolag eller har giltig försäkring?",
+            "notRobot": "Jag är inte en robot"
+        },
+        "placeholders": {
+            "select": "Välj en",
+            "enter": "Skriv här"
+        },
+        "options": {
+            "whoAreYou": {
+                "student": "Student",
+                "parent": "Förälder",
+                "educator": "Lärare"
+            },
+            "yes": "Ja",
+            "no": "Nej",
+            "gender": {
+                "male": "Man",
+                "female": "Kvinna",
+                "other": "Annat"
+            },
+            "educationLevel": {
+                "high-school": "Gymnasie",
+                "undergraduate": "Kandidat",
+                "graduate": "Magister",
+                "post-graduate": "Forskarutbildning"
+            }
+        },
+        "next": "Nästa"
+    },
+    "verification": {
+        "title": "Ange verifieringskod",
+        "description": "Lorem Ipsum är helt enkelt dummytext inom tryck- och tryckbranschen",
+        "messageTitle": "Vi har skickat en aktiveringskod",
+        "messageDescription": "Ett e-postmeddelande har skickats till din adress med en kod för att återställa ditt lösenord.",
+        "enterCodeLabel": "Ange verifieringskod",
+        "resendPrompt": "Om du inte fick någon kod!",
+        "resendLink": "Klicka här",
+        "next": "Nästa",
+        "incompleteCode": "Vänligen ange hela verifieringskoden."
+    },
+    "success": {
+        "title": "Analysresultat",
+        "congrats": "Grattis!!",
+        "message": "Du är berättigad till {{count}} olika stipendier nu!",
+        "button": "Klicka för att få listan"
+    },
+    "payment": {
+        "title": "Stipendielista",
+        "confirmationTitle": "Betalningen bekräftad!!",
+        "message": "Din lista över berättigade stipendier skickas till din e-post inom <1>{{time}}</1>. Tack för att du använder vår tjänst.",
+        "button": "Tillbaka till startsidan",
+        "review": "Ge en recension"
+    },
+    "aboutUs": {
+        "title": "Om oss",
+        "description": "Vi är Alexander Winqvist och Alexander Svensson, två vänner som träffades under våra masterstudier vid Stockholms universitet. Under studierna blev vi förvånade över hur många stipendier som fanns i Sverige, men också frustrerade över hur svårt det var att hitta dem och förstå vad de faktiskt finansierade. Den utmaningen blev starten på vårt uppdrag: att göra Sveriges bidrags- och stiftelsevärld tillgänglig för alla. Vår plattform använder en kombination av AI och strukturerad data för att matcha din unika profil med de mest relevanta finansieringsmöjligheterna. Efter ett snabbt formulär och en engångsbetalning får du en skräddarsydd PDF-rapport med rekommendationer skickade direkt till din inkorg. Inga prenumerationer, inga återkommande avgifter – bara transparent och enkel tillgång till din nästa potentiella finansieringskälla. Vi har byggt detta för studenter, entreprenörer, forskare och förändringsskapare som inte har tid att söka igenom hundratals stiftelsesajter. Vi som grundare och vårt system lär oss ständigt för att leverera ännu smartare resultat över tid. Vi tror på att låsa upp möjligheter, inte gömma dem bakom byråkrati. Välkommen till ett smartare och enklare sätt att hitta svensk finansiering.",
+        "alexanderWinqvist": {
+            "name": "Alexander Winqvist",
+            "role": "Medskapare"
+        },
+        "alexanderSvensson": {
+            "name": "Alexander Svensson",
+            "role": "Medskapare"
+        }
+    },
+    "review": {
+        "title": "Lämna ditt omdöme",
+        "description": "Vi vill gärna höra din feedback!",
+        "ratingLabel": "Ditt betyg",
+        "reviewLabel": "Ditt omdöme",
+        "reviewPlaceholder": "Dela din upplevelse...",
+        "submitButton": "Skicka omdöme"
     }
 }

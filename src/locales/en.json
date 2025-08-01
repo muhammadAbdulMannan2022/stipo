@@ -1,39 +1,44 @@
 {
     "navbar": {
-        "brand": "GrantFinder AI",
+        "brand": "StipendiePortalen",
         "home": "Home",
         "contact_us": "Contact Us",
         "privacy": "Privacy",
         "portal": "Portal",
         "open_menu": "Open menu",
-        "close_menu": "Close menu"
+        "close_menu": "Close menu",
+        "faq": "Faq"
     },
     "home": {
         "tagline": "Learn",
-        "heading": "Don't Let Money Stop <0>Your Education</0>",
-        "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh veniam, quis nostrud exerci tation euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim",
+        "heading": "Get a financial boost for your <0>studies or activities</0>",
+        "description": "For you as both a student and an organization. Finding funding can be a jungle – we make it simple. Selected Swedish scholarships in the database, updated continuously. Response within 2 hours. AI matching tailored to your preferences.",
         "cta": "Find Scholarships Now",
         "img_alt": "Graduation cap on books with a diploma"
     },
     "howItWorks": {
-        "title": "How Grantfinder Works",
+        "title": "How StipendiePortalen works",
         "subtitle": "Class has a dynamic set of teaching tools built to",
         "step1_label": "Step 1",
-        "step1_title": "Prepare what <0>you are looking for</0>",
-        "step1_description": "Class has a dynamic set of teaching tools built to be deployed and used during class. Teachers can handout assignments in real-time for students to complete and submit.",
+        "step1_title": "Fill out <0>the personal form</0>",
+        "step1_description": "In order to find and select the most suitable scholarships for you we need to know more about you.",
         "image_alt": "Illustration of books, apple, and stationery",
         "step2_label": "Step 2",
-        "step2_title": "Answer all <0>Grantfinder Quizzes</0>",
-        "step2_description": "Easily launch live assignments, quizzes, and tests. Student results are automatically entered in the online gradebook.",
+        "step2_title": "Please verify <0>your email address</0>",
+        "step2_description": "To ensure that your tailored scholarship list is sent to the correct email, we kindly ask you to verify it. This helps us guarantee a smooth and secure shopping experience for you.",
         "step2_alt": "Illustration of quiz or online gradebook",
         "step3_label": "Step 3",
-        "step3_title": "Prepare <0>Personalized scholarship list</0>",
-        "step3_description": "Class provides tools to help run and manage the class such as Class Roster, Attendance, and more. With the Gradebook, teachers can review and grade tests and quizzes in real-time.",
+        "step3_title": "Are there any <0>scholarships for me and how many? </0>",
+        "step3_description": "We will let you know if there are any scholarships applicable for your specific need (free of charge). ",
         "step3_alt": "Illustration of personalized scholarship planning",
         "step4_label": "Step 4",
-        "step4_title": "Get Updated <0>Scholarship list PDF</0>",
-        "step4_description": "Teachers and teacher assistants can talk with students privately without leaving the Zoom environment.",
-        "step4_alt": "Illustration of downloading a scholarship PDF"
+        "step4_title": "payment<0>.</0>",
+        "step4_description": "You're just one step away from accessing your personalized scholarship list, generated with the help of AI and tailored to your unique background, goals and preferences.By completing your payment, you'll unlock your custom selection of scholarships, carefully matched to give you the best possible opportunities.",
+        "step4_alt": "Illustration of downloading a scholarship PDF",
+        "step5_label": "Step 5",
+        "step5_title": "Your tailored <0>scholarship list is on its way!</0>",
+        "step5_description": "Please sit tight while we use AI to generate your personalized scholarship list, carefully selected to match your profile, needs and preferences. It will land in your inbox shortly! ",
+        "step5_alt": "Illustration of downloading a scholarship PDF"
     },
     "scholarshipFeatures": {
         "sectionTitle": "All Scholarships in One Place",
@@ -61,55 +66,62 @@
     "faq": {
         "title": "Frequently Asked Questions",
         "subtitle": "Still have questions? Contact our team via",
-        "email": "Demopdf@grantfinder.com",
+        "email": "kontakt@stipendieportalen.se",
         "items": [
             {
-                "question": "Can I enroll in multiple courses at once?",
-                "answer": "You can enroll in multiple courses simultaneously and access them at your convenience.",
-                "nestedContent": "Enrollment Process for Different Courses"
+                "question": "How much funding can I receive?",
+                "answer": "The amount you may be awarded depends on your individual situation and the scope of your project. Most foundations typically provide funding ranging from 1000 SEK up to 100,000 SEK per year. "
             },
             {
-                "question": "What kind of support can I expect from instructors?",
-                "answer": "Our instructors are dedicated to your success. You can expect timely responses to your questions, detailed feedback on assignments, and regular office hours for one-on-one support."
+                "question": "Is it possible to receive funding from more than one foundation?",
+                "answer": "Yes, you can receive support from multiple foundations at once. However, if you are granted more funds than needed for your intended purpose, you are expected to either allocate the surplus to the same goal or return the excess. Keep in mind that grants are considered gifts and should be used responsibly."
             },
             {
-                "question": "Are the courses self-paced or do they have specific start and end dates?",
-                "answer": "Most of our courses are self-paced, allowing you to learn at your own speed. However, some specialized programs may have fixed start and end dates to facilitate group projects and live sessions."
+                "question": "Are the scholarship fundings taxable? ",
+                "answer": "No, scholarship money is tax-exempt."
             },
             {
-                "question": "Are there any prerequisites for the courses?",
-                "answer": "Prerequisites vary by course. Each course description clearly outlines any prior knowledge or skills required. We also offer foundational courses to help you meet these prerequisites if needed."
-            },
-            {
-                "question": "Can I download the course materials for offline access?",
-                "answer": "Yes, most course materials, including lectures, readings, and assignments, are available for download so you can access them offline at your convenience."
+                "question": "Do you want to promote a scholarship?",
+                "answer": "You’re welcome to showcase your foundation or scholarship on our platform. Listing your funding opportunity is completely free. Don’t hesitate to reach out."
             }
         ]
     },
     "cta": {
-        "title": "Fast, simple, and ready for apply scholarships.",
-        "description": "No paperwork, no long processes. Just 5 minutes and you're ready to go.",
+        "title": "Quick, transparent and AI-powered.",
+        "description": "You can stop searching and start applying in minutes",
         "button": "Get Started Now"
     },
     "footer": {
-        "brand": "Grantfinder.Ai",
+        "brand": "Stipendieportalen",
         "address": {
-            "line1": "Villa No. 45, Street 12, Khalifa City,",
-            "line2": "Abu Dhabi, United Arab Emirates"
+            "line1": "Göran Elgfelts Gata 1 a,",
+            "line2": "183 39 Täby"
         },
-        "quickLinks": {
-            "title": "Quick Links",
-            "contact": "Contact Us",
-            "getStarted": "Get started"
+        "contact": {
+            "title": "Contact",
+            "email": "Email: kontakt@stipendieportalen.se",
+            "phone": "Phone: +46 721 77 33 34",
+            "hours": "Available from 8-16 weekdays."
         },
-        "info": {
-            "title": "Information",
-            "privacy": "Privacy Policy",
-            "reviews": "Reviews"
+        "findScholarships": "Find scholarships now",
+        "terms": {
+            "title": "Terms and Conditions",
+            "integrityPolicy": "Integrity policy ",
+            "privacyPolicy": "Privacy policy",
+            "userConditionTitle": "User condition",
+            "userCondition": "User condition"
+        },
+        "about": {
+            "title": "About us",
+            "aboutUs": "About us"
+        },
+        "faq": {
+            "title": "FAQ",
+            "faq": "Frequently Asked Questions"
         },
         "followUs": "Follow us on",
-        "email": "Demostipol@grantfinder.com",
-        "copyright": "© 2025 Grantfinder. All rights reserved"
+        "email": "kontakt@stipendieportalen.se",
+        "copyright": "© 2025 Stipendieportalen. All rights reserved"
     },
     "privacy": {
         "title": "Privacy <0>Policy</0>",
@@ -190,5 +202,99 @@
             "submit": "Submit",
             "placeholder": "Enter here"
         }
+    },
+    "emailCard": {
+        "title": "Enter Email",
+        "subtitle": "Lorem Ipsum is simply dummy text of the printing and type",
+        "label": "Email",
+        "placeholder": "Enter here",
+        "note": "If you already filled up data, then enter email Or start new analysis",
+        "startNew": "Start New Analysis",
+        "next": "Next"
+    },
+    "form": {
+        "title": "Basic information",
+        "description": "Lorem Ipsum is simply dummy text of the printing and type",
+        "labels": {
+            "whoAreYou": "Who are you?",
+            "eligible": "Are you eligible?",
+            "name": "Name",
+            "email": "Email",
+            "gender": "Gender",
+            "age": "Age",
+            "educationLevel": "Level of education currently pursuing",
+            "eliteAthlete": "Are you an elite athlete?",
+            "insuranceMember": "Member of an insurance association or have a valid insurance?",
+            "notRobot": "I'm not a robot"
+        },
+        "placeholders": {
+            "select": "Select one",
+            "enter": "Enter here"
+        },
+        "options": {
+            "whoAreYou": {
+                "student": "Student",
+                "parent": "Parent",
+                "educator": "Educator"
+            },
+            "yes": "Yes",
+            "no": "No",
+            "gender": {
+                "male": "Male",
+                "female": "Female",
+                "other": "Other"
+            },
+            "educationLevel": {
+                "high-school": "High School",
+                "undergraduate": "Undergraduate",
+                "graduate": "Graduate",
+                "post-graduate": "Post-Graduate"
+            }
+        },
+        "next": "Next"
+    },
+    "verification": {
+        "title": "Enter Verification code",
+        "description": "Lorem Ipsum is simply dummy text of the printing and type",
+        "messageTitle": "We have sent you an activation code",
+        "messageDescription": "An email has been sent to your address containing a code to reset your password.",
+        "enterCodeLabel": "Enter verification code",
+        "resendPrompt": "If you didn’t receive a code!",
+        "resendLink": "Click here",
+        "next": "Next",
+        "incompleteCode": "Please enter the complete verification code."
+    },
+    "success": {
+        "title": "Analysis result",
+        "congrats": "Congratulations!!",
+        "message": "You are eligible for {{count}} different scholarships now!",
+        "button": "Click to get the list"
+    },
+    "payment": {
+        "title": "List of Scholarships",
+        "confirmationTitle": "Payment confirmed!!",
+        "message": "Your eligible scholarships list will be sent to your Email within <1>{{time}}</1>. Thanks for using our service.",
+        "button": "Back to home page",
+        "review": "Give a review"
+    },
+    "aboutUs": {
+        "title": "About Us",
+        "description": "We’re Alexander Winqvist and Alexander Svensson, two friends who met during our master’s studies at Stockholm University. While studying, we were amazed by the number of Swedish scholarships available, but equally frustrated by how difficult it was to find them and to figure out what they actually funded. That challenge sparked our mission: to make Sweden’s grant and foundation ecosystem accessible to everyone. Our platform uses a blend of AI and structured data to match your unique profile with the most relevant funding opportunities. After a quick form and a one-time payment, you’ll receive a custom PDF report with recommendations sent straight to your inbox. No subscription, no recurring fees, just transparent, one-click access to your next potential funding source. We’ve built this for students, entrepreneurs, researchers, and changemakers who don’t have time to sift through hundreds and hundreds of foundation websites. We as founders and our system continuously learn and improve to deliver even smarter results over time. We believe in unlocking opportunities, not hiding them behind bureaucracy. Welcome to the smarter and easy way to find Swedish funding.",
+        "alexanderWinqvist": {
+            "name": "Alexander Winqvist",
+            "role": "Co-founder"
+        },
+        "alexanderSvensson": {
+            "name": "Alexander Svensson",
+            "role": "Co-founder"
+        }
+    },
+    "review": {
+        "title": "Give Your Review",
+        "description": "We'd love to hear your feedback!",
+        "ratingLabel": "Your Rating",
+        "reviewLabel": "Your Review",
+        "reviewPlaceholder": "Share your experience...",
+        "submitButton": "Submit Review"
     }
 }

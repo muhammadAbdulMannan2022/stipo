@@ -21,7 +21,7 @@ const FAQSection: React.FC = () => {
     }
 
     return (
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <section id="faq" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
                 {/* Left Content Section */}
                 <div className="text-center lg:text-left lg:pr-12">

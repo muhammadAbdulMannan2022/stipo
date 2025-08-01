@@ -34,12 +34,10 @@ export default function HomePage() {
                     <span className="block leading-none">~ ~ ~ ~</span>
                 </div>
 
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center z-10">
+                <div className="max-w-7xl mx-auto flex justify-between flex-col-reverse md:flex-row gap-12 items-center z-10">
                     {/* Left Content Section */}
-                    <div className="text-center md:text-left px-4">
-                        <p className="text-lg font-semibold text-main-text mb-2">
-                            {t("home.tagline")}
-                        </p>
+                    <div className="text-center flex-1 md:text-left px-4">
+
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-main-text leading-tight mb-6">
                             <Trans
                                 i18nKey="home.heading"
@@ -56,12 +54,12 @@ export default function HomePage() {
                     </div>
 
                     {/* Right Image Section */}
-                    <div className="flex justify-center md:justify-end px-4">
+                    <div className="flex flex-1 justify-center md:justify-end px-4">
                         <img
-                            src="/heroIcon.png"
+                            src="/student1.png"
                             alt={t("home.img_alt")}
                             width={600}
-                            height={650}
+                            height={800}
                             className="max-w-full h-auto"
                         />
                     </div>

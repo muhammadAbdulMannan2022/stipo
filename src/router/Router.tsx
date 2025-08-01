@@ -10,6 +10,7 @@ import VerificationCodeInput from "../components/steps/OtpStep";
 import Success from "../components/steps/Success";
 import AnalysisResultFailureCard from "../components/steps/NotFoundStep";
 import PaymentConfirmedCard from "../components/steps/PaymentFinalStep";
+import GiveReviewForm from "../components/steps/GiveReview";
 
 
 const router = createBrowserRouter([
@@ -56,6 +57,9 @@ const router = createBrowserRouter([
                     {
                         path: "paymentSuccess",
                         element: <PaymentConfirmedCard />
+                    }, {
+                        path: "review",
+                        element: <GiveReviewForm />
                     }
                 ]
             }
