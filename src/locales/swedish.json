@@ -127,7 +127,7 @@
         "title": "Kontakta oss",
         "subtitle": "Har du en fråga? Kontakta oss!",
         "form": {
-            "firstName": "Förnamn",
+            "firstName": "Namn",
             "lastName": "Efternamn",
             "email": "E-post",
             "phoneNumber": "Telefonnummer",

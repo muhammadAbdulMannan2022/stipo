@@ -127,7 +127,7 @@
         "title": "Contact Us",
         "subtitle": "Have a question? Reach out to us!",
         "form": {
-            "firstName": "First name",
+            "firstName": "Name",
             "lastName": "Last name",
             "email": "Email",
             "phoneNumber": "Phone number",
