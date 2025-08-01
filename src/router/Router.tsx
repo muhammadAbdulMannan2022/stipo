@@ -11,6 +11,7 @@ import Success from "../components/steps/Success";
 import AnalysisResultFailureCard from "../components/steps/NotFoundStep";
 import PaymentConfirmedCard from "../components/steps/PaymentFinalStep";
 import GiveReviewForm from "../components/steps/GiveReview";
+import UserConditionsPage from "../pages/Policy/UserConditionPage";
 
 
 const router = createBrowserRouter([
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path: "/privacy",
                 element: <PrivacyPolicyPage />
+            },
+            {
+                path: "/user-conditions",
+                element: <UserConditionsPage />
             },
             {
                 path: "/contact",

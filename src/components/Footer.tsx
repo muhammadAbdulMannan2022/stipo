@@ -42,13 +42,13 @@ const Footer: React.FC = () => {
                     <div className="flex flex-col items-center md:items-start text-center md:text-left">
                         <h4 className="text-lg font-semibold text-white mb-4">{t("footer.terms.title")}</h4>
                         <ul className="space-y-2">
-                            <li>
+                            {/* <li>
                                 <Link to="/integrity-policy" className="hover:text-white transition-colors duration-200">
                                     {t("footer.terms.integrityPolicy")}
                                 </Link>
-                            </li>
+                            </li> */}
                             <li>
-                                <Link to="/privacy-policy" className="hover:text-white transition-colors duration-200">
+                                <Link to="/privacy" className="hover:text-white transition-colors duration-200">
                                     {t("footer.terms.privacyPolicy")}
                                 </Link>
                             </li>
