@@ -17,7 +17,7 @@
         "img_alt": "Studentmössa på böcker med ett diplom"
     },
     "howItWorks": {
-        "title": "Hur StipendiePortalen fungerar",
+        "titleSection": "Hur StipendiePortalen fungerar",
         "subtitle": "Klassrummet har ett dynamiskt uppsättning undervisningsverktyg",
         "step1_label": "Steg 1",
         "step1_title": "den <0>personliga formen</0>",
@@ -84,7 +84,9 @@
                 "question": "Vill du marknadsföra ett stipendium?",
                 "answer": "Du är välkommen att visa upp din stiftelse eller ditt stipendium på vår plattform. Det är helt gratis att lista ditt stipendium. Tveka inte att kontakta oss."
             }
-        ]
+        ],
+        "buttonTitle": "Har du fortfarande en fråga? Kontakta oss gärna.",
+        "button": "kontakta oss"
     },
     "cta": {
         "title": "Snabb, transparent och AI-driven",

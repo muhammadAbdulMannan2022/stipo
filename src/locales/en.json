@@ -17,7 +17,7 @@
         "img_alt": "Graduation cap on books with a diploma"
     },
     "howItWorks": {
-        "title": "How StipendiePortalen works",
+        "titleSection": "How StipendiePortalen works",
         "subtitle": "Class has a dynamic set of teaching tools built to",
         "step1_label": "Step 1",
         "step1_title": "Fill out <0>the personal form</0>",
@@ -84,7 +84,9 @@
                 "question": "Do you want to promote a scholarship?",
                 "answer": "You’re welcome to showcase your foundation or scholarship on our platform. Listing your funding opportunity is completely free. Don’t hesitate to reach out."
             }
-        ]
+        ],
+        "buttonTitle": "Still have a question? Feel free to contact us.",
+        "button": "Contact Us"
     },
     "cta": {
         "title": "Quick, transparent and AI-powered.",

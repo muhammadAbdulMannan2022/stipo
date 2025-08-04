@@ -48,7 +48,12 @@ const FAQSection: React.FC = () => {
                             onClick={() => handleItemClick(index)}
                         />
                     ))}
+                    <div className="flex flex-col items-start gap-4 mt-10">
+                        <p className="text-2ndcolor-text text-xl font-bold">{t("faq.buttonTitle")}</p>
+                        <Link to="/contact" className="bg-primary-text text-white px-3 py-2 rounded-md">{t("faq.button")}</Link>
+                    </div>
                 </div>
+
             </div>
         </section>
     )
