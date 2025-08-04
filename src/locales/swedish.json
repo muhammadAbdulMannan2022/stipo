@@ -7,7 +7,7 @@
         "portal": "Portal",
         "open_menu": "Öppna meny",
         "close_menu": "Stäng meny",
-        "faq": "Faq"
+        "faq": "FAQ"
     },
     "home": {
         "tagline": "Lär dig",
@@ -140,11 +140,11 @@
     },
     "emailCard": {
         "title": "Ange e-postadress",
-        "subtitle": "Lorem Ipsum är exempeltext för tryck och typer",
+        "subtitle": "Om du redan har använt vår tjänst tidigare, ange din e-postadress och klicka på 'nästa'. Om det här är din första gång, klicka på 'Ny användare'.",
         "label": "E-post",
         "placeholder": "Ange här",
         "note": "Om du redan har fyllt i data, ange e-post eller starta en ny analys",
-        "startNew": "Starta ny analys",
+        "startNew": "Ny användare",
         "next": "Nästa"
     },
     "verification": {
@@ -160,20 +160,20 @@
     },
     "success": {
         "title": "Analysresultat",
-        "congrats": "Grattis!!",
+        "congrats": "Grattis!",
         "message": "Du är berättigad till {{count}} olika stipendier nu!",
         "button": "Klicka för att få listan"
     },
     "payment": {
         "title": "Stipendielista",
-        "confirmationTitle": "Betalningen bekräftad!!",
+        "confirmationTitle": "Betalningen bekräftad!",
         "message": "Din lista över berättigade stipendier skickas till din e-post inom <1>{{time}}</1>. Tack för att du använder vår tjänst.",
         "button": "Tillbaka till startsidan",
         "review": "Ge en recension"
     },
     "aboutUs": {
         "title": "Om oss",
-        "description": "Vi är Alexander Winqvist och Alexander Svensson, två vänner som träffades under våra masterstudier vid Stockholms universitet. Under studierna blev vi förvånade över hur många stipendier som fanns i Sverige, men också frustrerade över hur svårt det var att hitta dem och förstå vad de faktiskt finansierade. Den utmaningen blev starten på vårt uppdrag: att göra Sveriges bidrags- och stiftelsevärld tillgänglig för alla. Vår plattform använder en kombination av AI och strukturerad data för att matcha din unika profil med de mest relevanta finansieringsmöjligheterna. Efter ett snabbt formulär och en engångsbetalning får du en skräddarsydd PDF-rapport med rekommendationer skickade direkt till din inkorg. Inga prenumerationer, inga återkommande avgifter – bara transparent och enkel tillgång till din nästa potentiella finansieringskälla. Vi har byggt detta för studenter, entreprenörer, forskare och förändringsskapare som inte har tid att söka igenom hundratals stiftelsesajter. Vi som grundare och vårt system lär oss ständigt för att leverera ännu smartare resultat över tid. Vi tror på att låsa upp möjligheter, inte gömma dem bakom byråkrati. Välkommen till ett smartare och enklare sätt att hitta svensk finansiering.",
+        "description": "Vi är Alexander Winqvist och Alexander Svensson, två vänner som träffades under våra masterstudier vid Stockholms universitet. Under studierna blev vi förvånade över hur många stipendier som fanns i Sverige, men också frustrerade över hur svårt det var att hitta dem och förstå vad de faktiskt finansierade. Den utmaningen blev starten på vårt uppdrag: att göra Sveriges bidrags- och stiftelsevärld tillgänglig för alla. Vår plattform använder en kombination av AI och strukturerad data för att matcha din unika profil med de mest relevanta finansieringsmöjligheterna. Efter ett snabbt formulär och en engångsbetalning får du en skräddarsydd PDF-rapport med rekommendationer skickade direkt till din inkorg. <0>Inga prenumerationer, inga återkommande avgifter – bara transparent och enkel tillgång till din nästa potentiella finansieringskälla. Vi har byggt detta för studenter, entreprenörer, forskare och förändringsskapare som inte har tid att söka igenom hundratals stiftelsesajter. Vi som grundare och vårt system lär oss ständigt för att leverera ännu smartare resultat över tid. Vi tror på att låsa upp möjligheter, inte gömma dem bakom byråkrati. Välkommen till ett smartare och enklare sätt att hitta svensk finansiering.</0>",
         "alexanderWinqvist": {
             "name": "Alexander Winqvist",
             "role": "Medskapare"

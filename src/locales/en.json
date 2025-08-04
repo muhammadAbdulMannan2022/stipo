@@ -7,7 +7,7 @@
         "portal": "Portal",
         "open_menu": "Open menu",
         "close_menu": "Close menu",
-        "faq": "Faq"
+        "faq": "FAQ"
     },
     "home": {
         "tagline": "Learn",
@@ -32,7 +32,7 @@
         "step3_description": "We will let you know if there are any scholarships applicable for your specific need (free of charge). ",
         "step3_alt": "Illustration of personalized scholarship planning",
         "step4_label": "Step 4",
-        "step4_title": "payment<0>.</0>",
+        "step4_title": "Payment<0></0>",
         "step4_description": "You're just one step away from accessing your personalized scholarship list, generated with the help of AI and tailored to your unique background, goals and preferences.By completing your payment, you'll unlock your custom selection of scholarships, carefully matched to give you the best possible opportunities.",
         "step4_alt": "Illustration of downloading a scholarship PDF",
         "step5_label": "Step 5",
@@ -140,11 +140,11 @@
     },
     "emailCard": {
         "title": "Enter Email",
-        "subtitle": "Lorem Ipsum is simply dummy text of the printing and type",
+        "subtitle": "If you've already used our service previously, enter your email and click 'next'. if this is your first time, click 'New user'",
         "label": "Email",
         "placeholder": "Enter here",
         "note": "If you already filled up data, then enter email Or start new analysis",
-        "startNew": "Start New Analysis",
+        "startNew": "New user",
         "next": "Next"
     },
     "verification": {
@@ -160,20 +160,20 @@
     },
     "success": {
         "title": "Analysis result",
-        "congrats": "Congratulations!!",
+        "congrats": "Congratulations!",
         "message": "You are eligible for {{count}} different scholarships now!",
         "button": "Click to get the list"
     },
     "payment": {
         "title": "List of Scholarships",
-        "confirmationTitle": "Payment confirmed!!",
+        "confirmationTitle": "Payment confirmed!",
         "message": "Your eligible scholarships list will be sent to your Email within <1>{{time}}</1>. Thanks for using our service.",
         "button": "Back to home page",
         "review": "Give a review"
     },
     "aboutUs": {
         "title": "About Us",
-        "description": "We’re Alexander Winqvist and Alexander Svensson, two friends who met during our master’s studies at Stockholm University. While studying, we were amazed by the number of Swedish scholarships available, but equally frustrated by how difficult it was to find them and to figure out what they actually funded. That challenge sparked our mission: to make Sweden’s grant and foundation ecosystem accessible to everyone. Our platform uses a blend of AI and structured data to match your unique profile with the most relevant funding opportunities. After a quick form and a one-time payment, you’ll receive a custom PDF report with recommendations sent straight to your inbox. No subscription, no recurring fees, just transparent, one-click access to your next potential funding source. We’ve built this for students, entrepreneurs, researchers, and changemakers who don’t have time to sift through hundreds and hundreds of foundation websites. We as founders and our system continuously learn and improve to deliver even smarter results over time. We believe in unlocking opportunities, not hiding them behind bureaucracy. Welcome to the smarter and easy way to find Swedish funding.",
+        "description": "We’re Alexander Winqvist and Alexander Svensson, two friends who met during our master’s studies at Stockholm University. While studying, we were amazed by the number of Swedish scholarships available, but equally frustrated by how difficult it was to find them and to figure out what they actually funded. That challenge sparked our mission: to make Sweden’s grant and foundation ecosystem accessible to everyone. <0> Our platform uses a blend of AI and structured data to match your unique profile with the most relevant funding opportunities. After a quick form and a one-time payment, you’ll receive a custom PDF report with recommendations sent straight to your inbox. No subscription, no recurring fees, just transparent, one-click access to your next potential funding source. We’ve built this for students, entrepreneurs, researchers, and changemakers who don’t have time to sift through hundreds and hundreds of foundation websites. We as founders and our system continuously learn and improve to deliver even smarter results over time. We believe in unlocking opportunities, not hiding them behind bureaucracy. Welcome to the smarter and easy way to find Swedish funding.</0>",
         "alexanderWinqvist": {
             "name": "Alexander Winqvist",
             "role": "Co-founder"

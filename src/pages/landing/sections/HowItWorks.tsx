@@ -44,8 +44,8 @@ const data = [
 
 function HowItWorks() {
     return (
-        <div className='pb-10 md:pb-12'>
-            <div className="max-w-7xl flex text-center my-10 md:mt-20 px-5  items-center justify-center">
+        <div className='pb-10 md:pb-12 flex flex-col items-center justify-center'>
+            <div className="max-w-7xl flex text-center my-10 md:mt-20 px-5 items-center justify-center">
                 <h2 className="text-4xl sm:text-5xl font-extrabold text-primary-text mb-4 max-w-2xl ">
                     {t("howItWorks.title")}
                 </h2>

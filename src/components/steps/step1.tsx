@@ -25,7 +25,7 @@ const EmailInputCard: React.FC = () => {
             {/* Header */}
             <div className="bg-gray-50 p-6 border-b border-gray-200">
                 <h2 className="text-2xl font-bold text-2ndcolor-text mb-2">{t("emailCard.title")}</h2>
-                <p className="text-2ndcolor-text">{t("emailCard.subtitle")}</p>
+                {/* <p className="text-2ndcolor-text">{t("emailCard.subtitle")}</p> */}
             </div>
 
             {/* Content */}
@@ -44,7 +44,7 @@ const EmailInputCard: React.FC = () => {
                     />
                 </div>
 
-                <p className="text-gray-600 text-sm mb-8">{t("emailCard.note")}</p>
+                <p className="text-gray-600 text-sm mb-8">{t("emailCard.subtitle")}</p>
 
                 {/* Buttons */}
                 <div className="flex flex-col sm:flex-row justify-between gap-4">

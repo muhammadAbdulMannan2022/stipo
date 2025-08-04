@@ -34,7 +34,7 @@ export default function App() {
 
       {/* button fixed to bottom right */}
       <button
-        className="fixed hover:cursor-pointer bottom-4 right-4 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all"
+        className="fixed hover:cursor-pointer bottom-4 right-4 bg-primary-text text-white p-3 rounded-full shadow-lg hover:bg-primary-text transition-all"
         onClick={scrollToFaq}
         aria-label="Help"
       >
