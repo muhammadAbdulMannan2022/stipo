@@ -7,12 +7,12 @@ export default function ContactUsPage() {
 
     return (
         <>
-            <main className="bg-[url('/contact.jpg')] bg-cover">
+            <main className="bg-[url('/contact.jpg')] bg-cover bg-center">
                 <div className="bg-[#1F2635CC] w-full h-full flex-grow relative flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
                     <div className="relative z-20 w-full max-w-3xl bg-white/10 p-8 rounded-lg shadow-xl backdrop-blur-sm">
                         <div className="text-center mb-8">
-                            <h1 className="text-4xl font-bold text-black mb-2">{t("contact.title")}</h1>
-                            <p className="text-black">{t("contact.subtitle")}</p>
+                            <h1 className="text-4xl font-bold text-white mb-2">{t("contact.title")}</h1>
+                            <p className="text-gray-300">{t("contact.subtitle")}</p>
                         </div>
 
                         <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
