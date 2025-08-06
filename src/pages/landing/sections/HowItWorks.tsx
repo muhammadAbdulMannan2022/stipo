@@ -8,7 +8,7 @@ const data = [
         labelKey: "howItWorks.step1_label",
         titleKey: "howItWorks.step1_title",
         descriptionKey: "howItWorks.step1_description",
-        image: "/howItsWorks.png",
+        image: "/step1.jpg",
         imageAltKey: "howItWorks.image_alt"
     },
     {

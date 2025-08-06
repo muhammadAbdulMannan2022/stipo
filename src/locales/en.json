@@ -151,9 +151,9 @@
     },
     "verification": {
         "title": "Enter Verification code",
-        "description": "Lorem Ipsum is simply dummy text of the printing and type",
+        "description": "Enter the 4-digit code to verify your email.",
         "messageTitle": "We have sent you an activation code",
-        "messageDescription": "An email has been sent to your address containing a code to reset your password.",
+        "messageDescription": "An email has been sent to your address containing a code to verify you.",
         "enterCodeLabel": "Enter verification code",
         "resendPrompt": "If you didn’t receive a code!",
         "resendLink": "Click here",
@@ -175,7 +175,7 @@
     },
     "aboutUs": {
         "title": "About Us",
-        "description": "We’re Alexander Winqvist and Alexander Svensson, two friends who met during our master’s studies at Stockholm University. While studying, we were amazed by the number of Swedish scholarships available, but equally frustrated by how difficult it was to find them and to figure out what they actually funded. That challenge sparked our mission: to make Sweden’s grant and foundation ecosystem accessible to everyone.  Our platform uses a blend of AI and structured data to match your unique profile with the most relevant funding opportunities.<0> After a quick form and a one-time payment, you’ll receive a custom PDF report with recommendations sent straight to your inbox. No subscription, no recurring fees, just transparent, one-click access to your next potential funding source. We’ve built this for students, entrepreneurs, researchers, and changemakers who don’t have time to sift through hundreds and hundreds of foundation websites. We as founders and our system continuously learn and improve to deliver even smarter results over time. We believe in unlocking opportunities, not hiding them behind bureaucracy. Welcome to the smarter and easy way to find Swedish funding.</0>",
+        "description": "<0>We’re Alexander Winqvist and Alexander Svensson, two friends who met during our master’s studies at Stockholm University. While studying, we were amazed by the number of Swedish scholarships available, but equally frustrated by how difficult it was to find them and to figure out what they actually funded. That challenge sparked our mission: to make Sweden’s grant and foundation ecosystem accessible to everyone.</0><1>  Our platform uses a blend of AI and structured data to match your unique profile with the most relevant funding opportunities.After a quick form and a one-time payment, you’ll receive a custom PDF report with recommendations sent straight to your inbox. No subscription, no recurring fees, just transparent, one-click access to your next potential funding source.</1><2> We’ve built this for students, entrepreneurs, researchers, and changemakers who don’t have time to sift through hundreds and hundreds of foundation websites. We as founders and our system continuously learn and improve to deliver even smarter results over time. We believe in unlocking opportunities, not hiding them behind bureaucracy. Welcome to the smarter and easy way to find Swedish funding.</2>",
         "alexanderWinqvist": {
             "name": "Alexander Winqvist",
             "role": "Co-founder"

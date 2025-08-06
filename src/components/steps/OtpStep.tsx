@@ -88,9 +88,6 @@ const VerificationCodeInput = () => {
             </div>
 
             <div className="p-6 text-center">
-                <h3 className="text-xl font-bold text-2ndcolor-text mb-2">
-                    {t("verification.messageTitle")}
-                </h3>
                 <p className="text-2ndcolor-text mb-8">{t("verification.messageDescription")}</p>
 
                 <p className="text-2ndcolor-text text-lg font-medium mb-4">

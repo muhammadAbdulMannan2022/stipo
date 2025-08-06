@@ -10,12 +10,17 @@ const AboutUsSection: React.FC = () => {
     return (
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
             <h1 className="w-full text-center text-3xl md:text-5xl font-bold">{t("aboutUs.title")}</h1>
-            <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed mt-5 md:mt-8 text-center">
+            <div className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed mt-5 md:mt-8 text-center space-y-6">
                 <Trans
                     i18nKey="aboutUs.description"
-                    components={[<p className="mt-6"></p>]}
+                    components={[
+                        <p key="0" className="mt-6" />,
+                        <p key="1" className="mt-6" />,
+                        <p key="2" className="mt-6" />
+                    ]}
                 />
-            </p>
+            </div>
+
 
             <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-center items-center gap-8 mt-12">
                 <div className="flex flex-col items-center text-center">

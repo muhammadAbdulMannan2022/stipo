@@ -151,9 +151,9 @@
     },
     "verification": {
         "title": "Ange verifieringskod",
-        "description": "Lorem Ipsum är helt enkelt dummytext inom tryck- och tryckbranschen",
+        "description": "Ange den fyrsiffriga koden för att verifiera din e-post.",
         "messageTitle": "Vi har skickat en aktiveringskod",
-        "messageDescription": "Ett e-postmeddelande har skickats till din adress med en kod för att återställa ditt lösenord.",
+        "messageDescription": "Ett e-postmeddelande har skickats till din adress med en kod för att verifiera dig.",
         "enterCodeLabel": "Ange verifieringskod",
         "resendPrompt": "Om du inte fick någon kod!",
         "resendLink": "Klicka här",
@@ -175,7 +175,7 @@
     },
     "aboutUs": {
         "title": "Om oss",
-        "description": "Vi är Alexander Winqvist och Alexander Svensson, två vänner som träffades under våra masterstudier vid Stockholms universitet. Under studierna blev vi förvånade över hur många stipendier som fanns i Sverige, men också frustrerade över hur svårt det var att hitta dem och förstå vad de faktiskt finansierade. Den utmaningen blev starten på vårt uppdrag: att göra Sveriges bidrags- och stiftelsevärld tillgänglig för alla. Vår plattform använder en kombination av AI och strukturerad data för att matcha din unika profil med de mest relevanta finansieringsmöjligheterna. Efter ett snabbt formulär och en engångsbetalning får du en skräddarsydd PDF-rapport med rekommendationer skickade direkt till din inkorg. <0>Inga prenumerationer, inga återkommande avgifter – bara transparent och enkel tillgång till din nästa potentiella finansieringskälla. Vi har byggt detta för studenter, entreprenörer, forskare och förändringsskapare som inte har tid att söka igenom hundratals stiftelsesajter. Vi som grundare och vårt system lär oss ständigt för att leverera ännu smartare resultat över tid. Vi tror på att låsa upp möjligheter, inte gömma dem bakom byråkrati. Välkommen till ett smartare och enklare sätt att hitta svensk finansiering.</0>",
+        "description": "<0>Vi är Alexander Winqvist och Alexander Svensson, två vänner som träffades under våra masterstudier vid Stockholms universitet. Under studierna blev vi förvånade över hur många stipendier som fanns i Sverige, men också frustrerade över hur svårt det var att hitta dem och förstå vad de faktiskt finansierade. Den utmaningen blev starten på vårt uppdrag: att göra Sveriges bidrags- och stiftelsevärld tillgänglig för alla.</0><1>Vår plattform använder en kombination av AI och strukturerad data för att matcha din unika profil med de mest relevanta finansieringsmöjligheterna. Efter ett snabbt formulär och en engångsbetalning får du en skräddarsydd PDF-rapport med rekommendationer skickade direkt till din inkorg. Inga prenumerationer, inga återkommande avgifter – bara transparent och enkel tillgång till din nästa potentiella finansieringskälla.</1><2>Vi har byggt detta för studenter, entreprenörer, forskare och förändringsskapare som inte har tid att söka igenom hundratals stiftelsesajter. Vi som grundare och vårt system lär oss ständigt för att leverera ännu smartare resultat över tid. Vi tror på att låsa upp möjligheter, inte gömma dem bakom byråkrati. Välkommen till ett smartare och enklare sätt att hitta svensk finansiering.</2>",
         "alexanderWinqvist": {
             "name": "Alexander Winqvist",
             "role": "Medskapare"

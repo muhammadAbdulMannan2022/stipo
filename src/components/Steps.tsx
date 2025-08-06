@@ -47,7 +47,7 @@ const Steps: React.FC<StepProps> = ({
                     alt={t(imageAltKey)}
                     width={600}
                     height={400}
-                    className="max-w-full h-auto"
+                    className="w-auto max-h-[400px] h-full"
                 />
             </div>
         </div>

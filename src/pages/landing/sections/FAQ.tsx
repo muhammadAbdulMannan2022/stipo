@@ -28,12 +28,10 @@ const FAQSection: React.FC = () => {
                     <h2 className="text-4xl sm:text-5xl font-extrabold text-2ndcolor-text mb-6">
                         {t("faq.title")}
                     </h2>
-                    <p className="text-lg text-2ndcolor-text mb-4">
-                        {t("faq.subtitle")}
-                    </p>
-                    <Link to={`mailto:${t("faq.email")}`} className="text-lg text-primary-text hover:underline">
-                        {t("faq.email")}
-                    </Link>
+                    <div className="flex flex-col items-start gap-4 mt-10">
+                        <p className="text-2ndcolor-text text-xl font-bold">{t("faq.buttonTitle")}</p>
+                        <Link to="/contact" className="bg-primary-text text-white px-3 py-2 rounded-md">{t("faq.button")}</Link>
+                    </div>
                 </div>
 
                 {/* Right FAQ Items Section */}
@@ -48,10 +46,7 @@ const FAQSection: React.FC = () => {
                             onClick={() => handleItemClick(index)}
                         />
                     ))}
-                    <div className="flex flex-col items-start gap-4 mt-10">
-                        <p className="text-2ndcolor-text text-xl font-bold">{t("faq.buttonTitle")}</p>
-                        <Link to="/contact" className="bg-primary-text text-white px-3 py-2 rounded-md">{t("faq.button")}</Link>
-                    </div>
+
                 </div>
 
             </div>
