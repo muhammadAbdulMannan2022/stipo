@@ -56,12 +56,19 @@ export default function HomePage() {
                     {/* Right Image Section */}
                     <div className="flex flex-1 justify-center md:justify-end px-4">
                         <img
+                            src="/test.jpg"
+                            alt={t("home.img_alt")}
+                            width={800}
+                            height={600}
+                            className="max-w-full h-auto rounded-full shadow-md shadow-indigo-300"
+                        />
+                        {/* <img
                             src="/student1.png"
                             alt={t("home.img_alt")}
                             width={600}
                             height={800}
                             className="max-w-full h-auto"
-                        />
+                        /> */}
                     </div>
                 </div>
             </main>

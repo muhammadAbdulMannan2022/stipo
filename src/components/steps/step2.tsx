@@ -168,6 +168,8 @@ const PersonalForm: React.FC = () => {
                     {renderSelect("gender", "gender", {
                         male: t("personalForm.male"),
                         female: t("personalForm.female"),
+                        non_binary: t("personalForm.nonBinary"),
+                        preferNotSay: t("personalForm.noSay"),
                         other: t("personalForm.otherGender"),
                     })}
                     <div>

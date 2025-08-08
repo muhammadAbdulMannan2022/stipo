@@ -12,7 +12,7 @@
     "home": {
         "tagline": "Lär dig",
         "heading": "Få en ekonomisk boost för dina <0>studier eller aktiviteter</0>",
-        "description": "För dig som både student och organisation. Att hitta finansiering kan vara en djungel – vi gör det enkelt. Utvalda svenska stipendier i databasen, uppdateras kontinuerligt. Svar inom 2 timmar. AI-matchning skräddarsydd efter dina preferenser.",
+        "description": "För dig som är student eller bedriver ideell idrottsförening. Att hitta finansiering kan vara en djungel, men vi gör det lättare! Vi har noggrant valt ut svenska stipendier och uppdaterar dessa kontinuerligt. Vår AI-matchningsfunktion skräddarsyr efter just dina önskemål",
         "cta": "Hitta stipendier nu",
         "img_alt": "Studentmössa på böcker med ett diplom"
     },
@@ -21,23 +21,23 @@
         "subtitle": "Klassrummet har ett dynamiskt uppsättning undervisningsverktyg",
         "step1_label": "Steg 1",
         "step1_title": "den <0>personliga formen</0>",
-        "step1_description": "För att kunna hitta och välja de mest lämpliga stipendierna för dig behöver vi veta mer om dig.",
+        "step1_description": "För att hitta de stipendier som passar dig bäst behöver vi veta mer om dig. ",
         "image_alt": "Illustration av böcker, ett äpple och skrivmaterial",
         "step2_label": "Steg 2",
         "step2_title": "Vänligen verifiera<0> din e-postadress</0>",
-        "step2_description": "För att säkerställa att din skräddarsydda stipendielista skickas till rätt e-postadress ber vi dig att verifiera den. Detta hjälper oss att garantera en smidig och säker shoppingupplevelse för dig.",
+        "step2_description": "För att säkerställa att din skräddarsydda stipendielista skickas till rätt e-postadress ber vi dig att verifiera den. Detta hjälper oss att garantera en smidig och säker användarupplevelse för dig.",
         "step2_alt": "Illustration av quiz eller digitalt betygssystem",
         "step3_label": "Steg 3",
         "step3_title": "Finns det <0>några stipendier för mig och hur många?</0>",
         "step3_description": "Vi kommer att meddela dig om det finns några stipendier som är lämpliga för dina specifika behov (kostnadsfritt).",
         "step3_alt": "Illustration av personlig stipendieplanering",
         "step4_label": "Steg 4",
-        "step4_title": "Betalning<0>.</0>",
-        "step4_description": "Du är bara ett steg ifrån att få tillgång till din personliga stipendielista, genererad med hjälp av AI och skräddarsydd för din unika bakgrund, dina mål och dina preferenser. Genom att slutföra din betalning låser du upp ditt anpassade urval av stipendier, noggrant matchade för att ge dig bästa möjliga möjligheter.",
+        "step4_title": "Betalning<0></0>",
+        "step4_description": "Du är bara ett steg ifrån att få tillgång till din personliga stipendielista, framtagen med hjälp av AI och anpassad efter din unika bakgrund, dina önskemål och dina preferenser. Genom att slutföra din betalning får du tillgång till ett specialanpassat urval av stipendier, specifikt matchade för att ge dig de mest lämpade alternativen.",
         "step4_alt": "Illustration av nedladdning av stipendie-PDF",
         "step5_label": "Steg 5",
         "step5_title": "Din anpassade <0>stipendielista är på väg!</0>",
-        "step5_description": "Vänligen ha tålamod medan vi använder AI för att skapa din personliga stipendielista, noggrant utvald för att matcha din profil, dina behov och dina preferenser. Den kommer snart till din inkorg!",
+        "step5_description": "Luta dig tillbaka medan vi med hjälp av AI tar fram en personlig stipendielista, noggrant utvald för att passa just din profil, dina behov och önskemål. Den dyker snart upp i din inkorg!",
         "step5_alt": "Illustration av nedladdning av ett stipendie-PDF"
     },
     "scholarshipFeatures": {
@@ -142,7 +142,7 @@
     },
     "emailCard": {
         "title": "Ange e-postadress",
-        "subtitle": "Om du redan har använt vår tjänst tidigare, ange din e-postadress och klicka på 'nästa'. Om det här är din första gång, klicka på 'Ny användare'.",
+        "subtitle": "Om du redan har använt vår tjänst tidigare, ange din e-postadress och klicka på 'nästa'.Om det här är första gången, klicka på 'Ny användare'.",
         "label": "E-post",
         "placeholder": "Ange här",
         "note": "Om du redan har fyllt i data, ange e-post eller starta en ny analys",
@@ -151,7 +151,7 @@
     },
     "verification": {
         "title": "Ange verifieringskod",
-        "description": "Ange den fyrsiffriga koden för att verifiera din e-post.",
+        "description": "Ett verifieringsmejl har skickats till din adress. Kontrollera din inkorg och ange den fyrsiffriga koden för att verifiera din e-postadress.",
         "messageTitle": "Vi har skickat en aktiveringskod",
         "messageDescription": "Ett e-postmeddelande har skickats till din adress med en kod för att verifiera dig.",
         "enterCodeLabel": "Ange verifieringskod",
@@ -163,13 +163,13 @@
     "success": {
         "title": "Analysresultat",
         "congrats": "Grattis!",
-        "message": "Du är berättigad till {{count}} olika stipendier nu!",
-        "button": "Klicka för att få listan"
+        "message": "Du matchar med {{count}} stipendier!",
+        "button": "Klicka här för att köpa listan"
     },
     "payment": {
         "title": "Stipendielista",
-        "confirmationTitle": "Betalningen bekräftad!",
-        "message": "Din lista över berättigade stipendier skickas till din e-post inom <1>{{time}}</1>. Tack för att du använder vår tjänst.",
+        "confirmationTitle": "Betalningen är bekräftad!",
+        "message": "Din personliga stipendielista skickas till din e-post inom <1>{{time}}</1>. timmar. Tack för att du använder StipendiePortalen!",
         "button": "Tillbaka till startsidan",
         "review": "Ge en recension"
     },
@@ -178,11 +178,11 @@
         "description": "<0>Vi är Alexander Winqvist och Alexander Svensson, två vänner som träffades under våra masterstudier vid Stockholms universitet. Under studierna blev vi förvånade över hur många stipendier som fanns i Sverige, men också frustrerade över hur svårt det var att hitta dem och förstå vad de faktiskt finansierade. Den utmaningen blev starten på vårt uppdrag: att göra Sveriges bidrags- och stiftelsevärld tillgänglig för alla.</0><1>Vår plattform använder en kombination av AI och strukturerad data för att matcha din unika profil med de mest relevanta finansieringsmöjligheterna. Efter ett snabbt formulär och en engångsbetalning får du en skräddarsydd PDF-rapport med rekommendationer skickade direkt till din inkorg. Inga prenumerationer, inga återkommande avgifter – bara transparent och enkel tillgång till din nästa potentiella finansieringskälla.</1><2>Vi har byggt detta för studenter, entreprenörer, forskare och förändringsskapare som inte har tid att söka igenom hundratals stiftelsesajter. Vi som grundare och vårt system lär oss ständigt för att leverera ännu smartare resultat över tid. Vi tror på att låsa upp möjligheter, inte gömma dem bakom byråkrati. Välkommen till ett smartare och enklare sätt att hitta svensk finansiering.</2>",
         "alexanderWinqvist": {
             "name": "Alexander Winqvist",
-            "role": "Medskapare"
+            "role": "Medgrundare"
         },
         "alexanderSvensson": {
             "name": "Alexander Svensson",
-            "role": "Medskapare"
+            "role": "Medgrundare"
         }
     },
     "review": {
@@ -206,9 +206,11 @@
         "gender": "Kön",
         "male": "Man",
         "female": "Kvinna",
+        "nonBinary": " Icke-binär ",
+        "noSay": "Vill ej ange",
         "age": "Ålder",
         "otherGender": "Annat",
-        "educationLevel": "Vilken utbildningsnivå studerar du för närvarande på?",
+        "educationLevel": "Vilken utbildningsnivå studerar du på eller ämnar att studera?",
         "universityUndergraduate": "Universitet, Kandidatnivå",
         "universityMasters": "Universitet, Magister / Master",
         "postSecondary": "Eftergymnasial utbildning",
@@ -516,7 +518,7 @@
             "Vi på StiPo W&S AB, ett svenskt företag med säte i Täby, värnar om din integritet och följer gällande dataskyddslagstiftning, inklusive Dataskyddsförordningen (GDPR) och kompletterande svensk lagstiftning. Denna policy förklarar hur vi samlar in, behandlar och skyddar dina personuppgifter.",
             "Vi samlar in personuppgifter när du:",
             "– Fyller i formulär eller enkäter på vår webbplats",
-            "– Köper våra tjänster eller deltar i våra aktiviteter",
+            "– Köper våra tjänster eller deltar i våra idrottsaktiviteter",
             "De uppgifter vi kan komma att samla in inkluderar:",
             "– Namn",
             "– Kontaktuppgifter (e-post, telefonnummer)",

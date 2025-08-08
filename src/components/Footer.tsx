@@ -2,11 +2,12 @@
 
 import type React from "react"
 import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react"
-import { Link } from "react-router"
+import { Link, useNavigate } from "react-router"
 import { useTranslation } from "react-i18next"
 
 const Footer: React.FC = () => {
     const { t } = useTranslation()
+    const navigate = useNavigate()
 
     return (
         <footer className="bg-black text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
@@ -32,7 +33,8 @@ const Footer: React.FC = () => {
                         </p>
                         <button
                             type="button"
-                            className="mt-6 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded transition-colors duration-200"
+                            onClick={() => navigate("/start")}
+                            className="mt-6 bg-indigo-600 hover:bg-indigo-700 text-white hover:cursor-pointer font-semibold py-2 px-4 rounded transition-colors duration-200"
                         >
                             {t("footer.findScholarships")}
                         </button>
