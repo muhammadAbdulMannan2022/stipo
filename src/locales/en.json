@@ -94,7 +94,7 @@
         "button": "Get Started Now"
     },
     "footer": {
-        "brand": "Stipendieportalen",
+        "brand": "StipendiePortalen",
         "address": {
             "line1": "Göran Elgfelts Gata 1 a,",
             "line2": "183 39 Täby"
@@ -123,7 +123,7 @@
         },
         "followUs": "Follow us on",
         "email": "kontakt@stipendieportalen.se",
-        "copyright": "© 2025 Stipendieportalen. All rights reserved"
+        "copyright": "© 2025 StipendiePortalen. All rights reserved"
     },
     "contact": {
         "title": "Contact Us",
@@ -155,8 +155,8 @@
         "messageTitle": "We have sent you an activation code",
         "messageDescription": "An email has been sent to your address containing a code to verify you.",
         "enterCodeLabel": "Enter verification code",
-        "resendPrompt": "If you didn’t receive a code!",
-        "resendLink": "Click here",
+        "resendPrompt": "If you didn’t receive a code",
+        "resendLink": "click here.",
         "next": "Next",
         "incompleteCode": "Please enter the complete verification code."
     },
@@ -164,12 +164,12 @@
         "title": "Analysis result",
         "congrats": "Congratulations!",
         "message": "You are eligible for {{count}} different scholarships now!",
-        "button": "Click to get the list"
+        "button": "Click to purchase your list"
     },
     "payment": {
         "title": "List of Scholarships",
         "confirmationTitle": "Payment confirmed!",
-        "message": "Your eligible scholarships list will be sent to your Email within <1>{{time}}</1>. Thanks for using our service.",
+        "message": "Your eligible scholarships list will be sent to your email address within <1>{{time}}</1>. Thanks for using our service.",
         "button": "Back to home page",
         "review": "Give a review"
     },
@@ -210,7 +210,7 @@
         "noSay": "Prefer not to say",
         "age": "Age",
         "otherGender": "Other",
-        "educationLevel": "What level are you currently studying at?",
+        "educationLevel": "What level are you currently studying at or intend to study at?",
         "universityUndergraduate": "University, Undergraduate",
         "universityMasters": "University, Master’s / Postgraduate",
         "postSecondary": "Post-secondary Education",

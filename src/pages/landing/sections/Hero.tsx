@@ -30,15 +30,11 @@ export default function HomePage() {
                 <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-blue-200 text-opacity-50 text-6xl hidden md:block">
                     <span className="block leading-none">~ ~ ~ ~</span>
                 </div>
-                <div className="absolute bottom-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-purple-200 text-opacity-50 text-6xl hidden md:block">
-                    <span className="block leading-none">~ ~ ~ ~</span>
-                </div>
-
                 <div className="max-w-7xl mx-auto flex justify-between flex-col-reverse md:flex-row gap-12 items-center z-10">
                     {/* Left Content Section */}
                     <div className="text-center flex-1 md:text-left px-4">
 
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-main-text leading-tight mb-6">
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-text leading-tight mb-6">
                             <Trans
                                 i18nKey="home.heading"
                                 components={[<span className="text-primary-text" />]}

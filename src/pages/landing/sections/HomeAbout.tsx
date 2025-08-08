@@ -9,7 +9,7 @@ const AboutUsSection: React.FC = () => {
 
     return (
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-            <h1 className="w-full text-center text-3xl md:text-5xl font-bold">{t("aboutUs.title")}</h1>
+            <h1 className="w-full text-center text-primary-text text-3xl md:text-5xl font-bold">{t("aboutUs.title")}</h1>
             <div className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed mt-5 md:mt-8 text-center space-y-6">
                 <Trans
                     i18nKey="aboutUs.description"

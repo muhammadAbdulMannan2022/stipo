@@ -11,8 +11,8 @@
     },
     "home": {
         "tagline": "Lär dig",
-        "heading": "Få en ekonomisk boost för dina <0>studier eller aktiviteter</0>",
-        "description": "För dig som är student eller bedriver ideell idrottsförening. Att hitta finansiering kan vara en djungel, men vi gör det lättare! Vi har noggrant valt ut svenska stipendier och uppdaterar dessa kontinuerligt. Vår AI-matchningsfunktion skräddarsyr efter just dina önskemål",
+        "heading": "Få en ekonomisk boost för dina <0>studier eller idrottsaktiviteter</0>",
+        "description": "För dig som är student eller bedriver ideell idrottsförening. Att hitta finansiering kan vara en djungel, men vi gör det lättare! Vi har noggrant valt ut svenska stipendier och uppdaterar dessa kontinuerligt. Vår AI-matchningsfunktion skräddarsyr efter just dina önskemål.",
         "cta": "Hitta stipendier nu",
         "img_alt": "Studentmössa på böcker med ett diplom"
     },
@@ -20,7 +20,7 @@
         "titleSection": "Hur StipendiePortalen fungerar",
         "subtitle": "Klassrummet har ett dynamiskt uppsättning undervisningsverktyg",
         "step1_label": "Steg 1",
-        "step1_title": "den <0>personliga formen</0>",
+        "step1_title": "Fyll i  <0>formuläret så kommer vi igång.</0>",
         "step1_description": "För att hitta de stipendier som passar dig bäst behöver vi veta mer om dig. ",
         "image_alt": "Illustration av böcker, ett äpple och skrivmaterial",
         "step2_label": "Steg 2",
@@ -86,15 +86,15 @@
             }
         ],
         "buttonTitle": "Har du fortfarande en fråga? Kontakta oss gärna.",
-        "button": "kontakta oss"
+        "button": "Kontakta oss"
     },
     "cta": {
         "title": "Snabb, transparent och AI-driven",
-        "description": "Du kan sluta söka och börja ansöka på några minuter.",
+        "description": "Hitta rätt direkt, ansök på bara några minuter.",
         "button": "Kom igång nu"
     },
     "footer": {
-        "brand": "Stipendieportalen",
+        "brand": "StipendiePortalen",
         "address": {
             "line1": "Göran Elgfelts Gata 1 a,",
             "line2": "183 39 Täby"
@@ -123,7 +123,7 @@
         },
         "followUs": "Följ oss på",
         "email": "kontakt@stipendieportalen.se",
-        "copyright": "© 2025 Stipendieportalen. Alla rättigheter förbehållna"
+        "copyright": "© 2025 StipendiePortalen. Alla rättigheter förbehållna"
     },
     "contact": {
         "title": "Kontakta oss",
@@ -155,8 +155,8 @@
         "messageTitle": "Vi har skickat en aktiveringskod",
         "messageDescription": "Ett e-postmeddelande har skickats till din adress med en kod för att verifiera dig.",
         "enterCodeLabel": "Ange verifieringskod",
-        "resendPrompt": "Om du inte fick någon kod!",
-        "resendLink": "Klicka här",
+        "resendPrompt": "Om du inte fick någon kod",
+        "resendLink": "klicka här.",
         "next": "Nästa",
         "incompleteCode": "Vänligen ange hela verifieringskoden."
     },
@@ -164,18 +164,18 @@
         "title": "Analysresultat",
         "congrats": "Grattis!",
         "message": "Du matchar med {{count}} stipendier!",
-        "button": "Klicka här för att köpa listan"
+        "button": "Klicka här för att köpa din lista"
     },
     "payment": {
         "title": "Stipendielista",
         "confirmationTitle": "Betalningen är bekräftad!",
-        "message": "Din personliga stipendielista skickas till din e-post inom <1>{{time}}</1>. timmar. Tack för att du använder StipendiePortalen!",
+        "message": "Din personliga stipendielista skickas till din e-post inom <1>{{time}}</1> timmar. Tack för att du använder StipendiePortalen!",
         "button": "Tillbaka till startsidan",
         "review": "Ge en recension"
     },
     "aboutUs": {
         "title": "Om oss",
-        "description": "<0>Vi är Alexander Winqvist och Alexander Svensson, två vänner som träffades under våra masterstudier vid Stockholms universitet. Under studierna blev vi förvånade över hur många stipendier som fanns i Sverige, men också frustrerade över hur svårt det var att hitta dem och förstå vad de faktiskt finansierade. Den utmaningen blev starten på vårt uppdrag: att göra Sveriges bidrags- och stiftelsevärld tillgänglig för alla.</0><1>Vår plattform använder en kombination av AI och strukturerad data för att matcha din unika profil med de mest relevanta finansieringsmöjligheterna. Efter ett snabbt formulär och en engångsbetalning får du en skräddarsydd PDF-rapport med rekommendationer skickade direkt till din inkorg. Inga prenumerationer, inga återkommande avgifter – bara transparent och enkel tillgång till din nästa potentiella finansieringskälla.</1><2>Vi har byggt detta för studenter, entreprenörer, forskare och förändringsskapare som inte har tid att söka igenom hundratals stiftelsesajter. Vi som grundare och vårt system lär oss ständigt för att leverera ännu smartare resultat över tid. Vi tror på att låsa upp möjligheter, inte gömma dem bakom byråkrati. Välkommen till ett smartare och enklare sätt att hitta svensk finansiering.</2>",
+        "description": "<0>Vi är Alexander Winqvist och Alexander Svensson, två vänner som träffades under våra masterstudier vid Stockholms universitet. Under studierna blev vi förvånade över hur många stipendier som fanns i Sverige, men också frustrerade över hur svårt det var att hitta dem och förstå vad de faktiskt finansierade. Den utmaningen blev starten på vårt uppdrag: att göra Sveriges bidrags- och stiftelsevärld tillgänglig för alla.</0><1>Vår plattform använder en kombination av AI och strukturerad data för att matcha din unika profil med de mest relevanta finansieringsmöjligheterna. Efter ett snabbt formulär och en engångsbetalning får du en skräddarsydd PDF-rapport med rekommendationer skickade direkt till din inkorg. Inga prenumerationer, inga återkommande avgifter – bara transparent och enkel tillgång till din nästa potentiella finansieringskälla.</1><2>Vi har byggt detta primärt för för studenter, forskare och ideella idrottsföreningar som inte har tid att söka igenom hundratals stiftelse-sajter. Vi som grundare och vårt system lär oss ständigt för att leverera ännu smartare resultat över tid. Vi tror på att tillgängliggöra finansieringsmöjligheter, inte gömma dem bakom byråkrati. Välkommen till ett smartare och enklare sätt att hitta svensk finansiering.</2>",
         "alexanderWinqvist": {
             "name": "Alexander Winqvist",
             "role": "Medgrundare"
@@ -197,7 +197,7 @@
         "title": "Personligt formulär",
         "description": "För att hitta och välja de mest lämpliga stipendierna för dig behöver vi veta mer om dig.",
         "whoAreYou": "Vem är du?",
-        "individual": "Individ",
+        "individual": "Privatperson",
         "organization": "Organisation",
         "other": "Annat",
         "name": "Namn",

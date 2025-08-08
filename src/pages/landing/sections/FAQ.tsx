@@ -25,12 +25,15 @@ const FAQSection: React.FC = () => {
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
                 {/* Left Content Section */}
                 <div className="text-center lg:text-left lg:pr-12">
-                    <h2 className="text-4xl sm:text-5xl font-extrabold text-2ndcolor-text mb-6">
+                    <h2 className="text-4xl sm:text-5xl font-extrabold text-primary-text mb-6">
                         {t("faq.title")}
                     </h2>
                     <div className="flex flex-col items-start gap-4 mt-10">
                         <p className="text-2ndcolor-text text-xl font-bold">{t("faq.buttonTitle")}</p>
                         <Link to="/contact" className="bg-primary-text text-white px-3 py-2 rounded-md">{t("faq.button")}</Link>
+                    </div>
+                    <div className="mt-5">
+                        <a href={"mailto:kontakt@stipendieportalen.se"} className="text-primary-text">kontakt@stipendieportalen.se</a>
                     </div>
                 </div>
 

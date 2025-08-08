@@ -37,7 +37,7 @@ const TestimonialsSection: React.FC = () => {
         <section className="py-16 md:pt-20 px-4 sm:px-6 lg:px-8 bg-white">
             <div className="max-w-7xl mx-auto mb-12">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-8">
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-2ndcolor-text mb-6 md:mb-0">
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-primary-text mb-6 md:mb-0">
                         <Trans i18nKey="testimonial.question" components={[<span />, <br />]} />
                     </h2>
                     <div className="flex flex-row sm:space-x-8 space-y-4 sm:space-y-0 text-center md:text-right items-start justify-between">
