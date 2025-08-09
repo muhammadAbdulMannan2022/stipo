@@ -32,9 +32,10 @@ const Steps: React.FC<StepProps> = ({
                 <h3 className="text-3xl sm:text-4xl font-bold text-indigo-500 leading-tight mb-12">
                     <Trans
                         i18nKey={titleKey}
-                        components={[<span className="text-indigo-500" />]}
+                        components={[<br />]}
                     />
                 </h3>
+
                 <p className="text-base sm:text-lg text-2ndcolor-text max-w-xl mx-auto md:mx-0">
                     {t(descriptionKey)}
                 </p>

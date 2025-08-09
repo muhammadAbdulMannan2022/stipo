@@ -8,14 +8,14 @@ const data = [
         labelKey: "howItWorks.step1_label",
         titleKey: "howItWorks.step1_title",
         descriptionKey: "howItWorks.step1_description",
-        image: "/step1.jpg",
+        image: "/info.png",
         imageAltKey: "howItWorks.image_alt"
     },
     {
         labelKey: "howItWorks.step2_label",
         titleKey: "howItWorks.step2_title",
         descriptionKey: "howItWorks.step2_description",
-        image: "/step2.png",
+        image: "/email.png",
         imageAltKey: "howItWorks.step2_alt",
         reverse: true
     },
@@ -23,14 +23,14 @@ const data = [
         labelKey: "howItWorks.step3_label",
         titleKey: "howItWorks.step3_title",
         descriptionKey: "howItWorks.step3_description",
-        image: "/step3.png",
+        image: "/qu.png",
         imageAltKey: "howItWorks.step3_alt"
     },
     {
         labelKey: "howItWorks.step4_label",
         titleKey: "howItWorks.step4_title",
         descriptionKey: "howItWorks.step4_description",
-        image: "/step4.png",
+        image: "/payment.png",
         imageAltKey: "howItWorks.step4_alt",
         reverse: true
     },
@@ -38,7 +38,7 @@ const data = [
         labelKey: "howItWorks.step5_label",
         titleKey: "howItWorks.step5_title",
         descriptionKey: "howItWorks.step5_description",
-        image: "/step5.png",
+        image: "/waitfor.png",
         imageAltKey: "howItWorks.step5_alt",
     }
 ]
