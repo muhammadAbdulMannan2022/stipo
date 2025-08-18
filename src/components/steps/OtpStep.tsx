@@ -3,6 +3,7 @@
 import { useCallback, useRef, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router"
+import { useVeryfyOtpMutation } from "../../store/api/appSlice"
 
 // Define types for the input element refs
 type InputRef = HTMLInputElement | null
@@ -10,9 +11,11 @@ type InputRef = HTMLInputElement | null
 const VerificationCodeInput = () => {
     const { t } = useTranslation()
     const navigate = useNavigate()
+    const [verifyOtp, { isLoading, isError }] = useVeryfyOtpMutation()
 
     const codeLength: number = 4
     const [code, setCode] = useState<string[]>(new Array(codeLength).fill(""))
+    const [errorMessage, setErrorMessage] = useState<string | null>(null)
     const inputRefs = useRef<InputRef[]>(new Array(codeLength).fill(null))
 
     const handleChange = useCallback(
@@ -28,7 +31,7 @@ const VerificationCodeInput = () => {
                 }
 
                 if (newCode.every((digit) => digit !== "")) {
-                    // Could call backend here
+                    // Could call backend here if needed immediately
                 }
             }
         },
@@ -64,14 +67,26 @@ const VerificationCodeInput = () => {
         [code, codeLength]
     )
 
-    const handleNextClick = useCallback(() => {
+    const handleNextClick = useCallback(async () => {
         const fullCode = code.join("")
-        if (fullCode.length === codeLength) {
-            navigate("/start/success")
-        } else {
-            alert(t("verification.incompleteCode"))
+        if (fullCode.length !== codeLength) {
+            setErrorMessage(t("verification.incompleteCode"))
+            return
         }
-    }, [code, codeLength, navigate, t])
+
+        try {
+            setErrorMessage(null) // Clear any previous errors
+            const response = await verifyOtp({ otp: Number(fullCode) }).unwrap()
+            // Assuming the backend returns a success indicator
+            if (response.success) {
+                navigate("/start/success")
+            } else {
+                setErrorMessage(t("verification.invalidCode"))
+            }
+        } catch (error) {
+            setErrorMessage(t("verification.error"))
+        }
+    }, [code, codeLength, navigate, t, verifyOtp])
 
     const handleResendCode = useCallback(() => {
         // Handle resend logic
@@ -88,8 +103,6 @@ const VerificationCodeInput = () => {
             </div>
 
             <div className="p-6 text-center">
-                {/* <p className="text-2ndcolor-text mb-8">{t("verification.messageDescription")}</p> */}
-
                 <p className="text-2ndcolor-text text-lg font-medium mb-4">
                     {t("verification.enterCodeLabel")}
                 </p>
@@ -113,6 +126,10 @@ const VerificationCodeInput = () => {
                     ))}
                 </div>
 
+                {errorMessage && (
+                    <p className="text-red-500 mb-4">{errorMessage}</p>
+                )}
+
                 <p className="text-2ndcolor-text mb-8">
                     {t("verification.resendPrompt")}{" "}
                     <button
@@ -126,12 +143,14 @@ const VerificationCodeInput = () => {
                 <div className="text-center">
                     <button
                         onClick={handleNextClick}
-                        className="w-full py-3 px-6 rounded-lg font-semibold text-white
+                        disabled={isLoading}
+                        className={`w-full py-3 px-6 rounded-lg font-semibold text-white
               bg-gradient-to-r from-purple-600 to-indigo-600
               hover:from-purple-700 hover:to-indigo-700 hover:cursor-pointer
-              transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
+              ${isLoading ? "opacity-50 cursor-not-allowed" : ""}`}
                     >
-                        {t("verification.next")}
+                        {isLoading ? t("verification.loading") : t("verification.next")}
                     </button>
                 </div>
             </div>

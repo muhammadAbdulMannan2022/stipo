@@ -228,6 +228,21 @@
             "email": "Skriv din e-postadress",
             "age": "Skriv din ålder",
             "select": "Välj ett alternativ"
+        },
+        "errors": {
+            "whoAreYou": "Vänligen välj vem du är",
+            "name": "Namn krävs",
+            "organizationName": "Organisationsnamn krävs",
+            "email": "E-post krävs",
+            "emailInvalid": "Vänligen ange en giltig e-postadress",
+            "gender": "Vänligen välj kön",
+            "age": "Ålder krävs",
+            "ageInvalid": "Vänligen ange en giltig ålder mellan 0 och 150",
+            "educationLevel": "Vänligen välj utbildningsnivå",
+            "eliteAthlete": "Vänligen välj elitidrottsstatus",
+            "municipality": "Vänligen välj en kommun",
+            "captcha": "Vänligen slutför CAPTCHA-verifieringen",
+            "submit": "Ett fel uppstod vid inlämning av formuläret"
         }
     },
     "list": {

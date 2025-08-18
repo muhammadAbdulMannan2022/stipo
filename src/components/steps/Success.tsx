@@ -1,13 +1,32 @@
 "use client"
 
-import React from "react"
+import React, { useState } from "react"
 import { CheckCircle } from "lucide-react"
 import { useTranslation } from "react-i18next"
-import { Link } from "react-router"
+import { useNavigate } from "react-router"
+import { useCreatePaymentMutation } from "../../store/api/appSlice"
 
 const Success: React.FC = () => {
     const { t } = useTranslation()
     const eligibleScholarshipsCount = 10
+    const [pay, { isLoading }] = useCreatePaymentMutation()
+    const navigate = useNavigate()
+    const [errorMessage, setErrorMessage] = useState<string | null>(null)
+
+    const handlePayment = async () => {
+        try {
+            setErrorMessage(null) // Clear any previous errors
+            const response = await pay({ email: "test@gmail.com" }).unwrap() // Adjust payload as needed
+            // Assuming the backend returns a success indicator
+            if (response.success) {
+                navigate("/start/paymentSuccess")
+            } else {
+                setErrorMessage("error")
+            }
+        } catch (error) {
+            setErrorMessage("erro")
+        }
+    }
 
     return (
         <div className="bg-white rounded-lg shadow-lg max-w-md mx-auto overflow-hidden">
@@ -33,17 +52,23 @@ const Success: React.FC = () => {
                     })}
                 </p>
 
+                {errorMessage && (
+                    <p className="text-red-500 mb-4" aria-live="polite">{errorMessage}</p>
+                )}
+
                 {/* Button */}
                 <div className="text-center pb-5">
-                    <Link to="/start/paymentSuccess"
-                        onClick={() => console.log("Clicked")}
-                        className="w-full py-3 px-6 rounded-lg font-semibold text-white
-            bg-gradient-to-r from-purple-600 to-indigo-600
-            hover:from-purple-700 hover:to-indigo-700
-            transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    <button
+                        onClick={handlePayment}
+                        disabled={isLoading}
+                        className={`w-full py-3 px-6 rounded-lg font-semibold text-white
+                            bg-gradient-to-r from-purple-600 to-indigo-600
+                            hover:from-purple-700 hover:to-indigo-700
+                            transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
+                            ${isLoading ? "opacity-50 cursor-not-allowed" : ""}`}
                     >
-                        {t("success.button")}
-                    </Link>
+                        {isLoading ? t("success.processing") : t("success.button")}
+                    </button>
                 </div>
             </div>
         </div>

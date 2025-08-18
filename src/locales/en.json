@@ -228,6 +228,21 @@
             "email": "Enter your email",
             "age": "Enter your age",
             "select": "Select an option"
+        },
+        "errors": {
+            "whoAreYou": "Please select who you are",
+            "name": "Name is required",
+            "organizationName": "Organization name is required",
+            "email": "Email is required",
+            "emailInvalid": "Please enter a valid email address",
+            "gender": "Please select a gender",
+            "age": "Age is required",
+            "ageInvalid": "Please enter a valid age between 0 and 150",
+            "educationLevel": "Please select an education level",
+            "eliteAthlete": "Please select elite athlete status",
+            "municipality": "Please select a municipality",
+            "captcha": "Please complete the CAPTCHA verification",
+            "submit": "An error occurred while submitting the form"
         }
     },
     "list": {
