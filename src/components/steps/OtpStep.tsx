@@ -2,7 +2,7 @@
 
 import { useCallback, useRef, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { useNavigate } from "react-router"
+import { useLocation, useNavigate } from "react-router"
 import { useVeryfyOtpMutation } from "../../store/api/appSlice"
 
 // Define types for the input element refs
@@ -11,7 +11,8 @@ type InputRef = HTMLInputElement | null
 const VerificationCodeInput = () => {
     const { t } = useTranslation()
     const navigate = useNavigate()
-    const [verifyOtp, { isLoading, isError }] = useVeryfyOtpMutation()
+    const [verifyOtp, { isLoading }] = useVeryfyOtpMutation()
+    const { email } = useLocation().state || { email: "" }
 
     const codeLength: number = 4
     const [code, setCode] = useState<string[]>(new Array(codeLength).fill(""))
@@ -76,15 +77,14 @@ const VerificationCodeInput = () => {
 
         try {
             setErrorMessage(null) // Clear any previous errors
-            const response = await verifyOtp({ otp: Number(fullCode) }).unwrap()
+            const response = await verifyOtp({ otp: String(fullCode), email }).unwrap()
             // Assuming the backend returns a success indicator
-            if (response.success) {
+            if (response) {
                 navigate("/start/success")
-            } else {
-                setErrorMessage(t("verification.invalidCode"))
             }
-        } catch (error) {
-            setErrorMessage(t("verification.error"))
+        } catch (error: any) {
+            console.log(error)
+            setErrorMessage(error?.data?.detail || error?.data?.error || "An error occurred")
         }
     }, [code, codeLength, navigate, t, verifyOtp])
 

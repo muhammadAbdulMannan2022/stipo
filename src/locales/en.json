@@ -222,6 +222,7 @@
         "municipality": "Municipality",
         "notRobot": "I'm not a robot",
         "next": "Next",
+        "submitting": "submitting...",
         "placeholder": {
             "name": "Enter your name",
             "organizationName": "Enter organization name",

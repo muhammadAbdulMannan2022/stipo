@@ -14,11 +14,11 @@ export const appApi = createApi({
                 body: data,
             }),
         }),
-        veryfyOtp: builder.mutation<any, { otp: Number }>({
-            query: (otp) => ({
+        veryfyOtp: builder.mutation<any, { otp: string, email: string }>({
+            query: (data) => ({
                 method: "POST",
                 url: "/app/verify_otp/",
-                body: otp
+                body: data
             })
         }),
         createPayment: builder.mutation<any, { email: string }>({

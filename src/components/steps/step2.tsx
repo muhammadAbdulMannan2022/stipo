@@ -154,7 +154,7 @@ const PersonalForm: React.FC = () => {
 
             try {
                 await submitNewForm(submitData).unwrap();
-                navigate("/start/otp");
+                navigate("/start/otp", { state: { email: formData.email } });
             } catch (error) {
                 console.error("Form submission failed:", error);
                 setErrors((prev) => ({

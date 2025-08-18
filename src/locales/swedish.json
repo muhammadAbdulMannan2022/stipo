@@ -222,6 +222,7 @@
         "municipality": "Kommun",
         "notRobot": "Jag är inte en robot",
         "next": "Nästa",
+        "submitting": "inlämnande...",
         "placeholder": {
             "name": "Skriv ditt namn",
             "organizationName": "Skriv organisationens namn",
