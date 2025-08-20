@@ -74,12 +74,13 @@ const VerificationCodeInput = () => {
             setErrorMessage(t("verification.incompleteCode"))
             return
         }
-
         try {
             setErrorMessage(null) // Clear any previous errors
             const response = await verifyOtp({ otp: String(fullCode), email }).unwrap()
             // Assuming the backend returns a success indicator
             if (response) {
+                localStorage.setItem("email", email)
+                localStorage.setItem("application_token", response.application_token)
                 navigate("/start/success")
             }
         } catch (error: any) {

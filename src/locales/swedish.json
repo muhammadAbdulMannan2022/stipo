@@ -164,7 +164,9 @@
         "title": "Analysresultat",
         "congrats": "Grattis!",
         "message": "Du matchar med {{count}} stipendier!",
-        "button": "Klicka här för att köpa din lista"
+        "button": "Klicka här för att köpa din lista",
+        "paymentError": "Fel",
+        "processing": "Bearbetning"
     },
     "payment": {
         "title": "Stipendielista",

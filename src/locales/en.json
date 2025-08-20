@@ -164,7 +164,9 @@
         "title": "Analysis result",
         "congrats": "Congratulations!",
         "message": "You are eligible for {{count}} different scholarships now!",
-        "button": "Click to purchase your list"
+        "button": "Click to purchase your list",
+        "paymentError": "Error",
+        "processing": "Processing"
     },
     "payment": {
         "title": "List of Scholarships",

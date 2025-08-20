@@ -21,14 +21,22 @@ export const appApi = createApi({
                 body: data
             })
         }),
-        createPayment: builder.mutation<any, { email: string }>({
-            query: (email) => ({
+        createPayment: builder.mutation<any, { email: string, success_url: string, cancel_url: string }>({
+            query: (data) => ({
                 method: "POST",
-                url: `/app/${email.email}/pay/`
+                url: `/app/${data.email}/pay/`,
+                body: { success_url: data.success_url, cancel_url: data.cancel_url }
+            })
+        }),
+        generateData: builder.mutation<any, { application_token: string }>({
+            query: data => ({
+                method: "POST",
+                url: "/app/generate_data/",
+                body: data
             })
         })
     }),
 });
 
 // Hooks auto-generated ✅
-export const { useSubmitNewFormMutation, useVeryfyOtpMutation, useCreatePaymentMutation } = appApi;
+export const { useSubmitNewFormMutation, useVeryfyOtpMutation, useCreatePaymentMutation, useGenerateDataMutation } = appApi;
