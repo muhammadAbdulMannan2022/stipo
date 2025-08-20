@@ -147,7 +147,10 @@
         "placeholder": "Enter here",
         "note": "If you already filled up data, then enter email Or start new analysis",
         "startNew": "New User",
-        "next": "Next"
+        "next": "Next",
+        "error": "Email is Required",
+        "failed": "Failed to submit",
+        "loading": "loading..."
     },
     "verification": {
         "title": "Enter Verification code",

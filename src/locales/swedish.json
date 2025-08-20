@@ -147,7 +147,10 @@
         "placeholder": "Ange här",
         "note": "Om du redan har fyllt i data, ange e-post eller starta en ny analys",
         "startNew": "Ny användare",
-        "next": "Nästa"
+        "next": "Nästa",
+        "error": "E-postadress krävs",
+        "failed": "misslyckades med att skicka in",
+        "loading": "belastning..."
     },
     "verification": {
         "title": "Ange verifieringskod",

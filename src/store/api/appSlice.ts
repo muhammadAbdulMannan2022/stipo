@@ -4,7 +4,16 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const appApi = createApi({
     reducerPath: "appApi",
     baseQuery: fetchBaseQuery({
-        baseUrl: "https://personally-liberal-scorpion.ngrok-free.app/",
+        baseUrl: "https://personally-liberal-scorpion.ngrok-free.app",
+        prepareHeaders: (headers, { endpoint }) => {
+            const getEndpoints = ["getReview", "getFAQ"]
+            if (getEndpoints.includes(endpoint)) {
+
+                headers.set("ngrok-skip-browser-warning", "true")
+            }
+            return headers
+        }
+
     }),
     endpoints: (builder) => ({
         submitNewForm: builder.mutation<any, { role: string, name: string, email: string, gender: string, age: string | number, study_level: string, elite_athlete: string, municipality: string }>({
@@ -34,9 +43,28 @@ export const appApi = createApi({
                 url: "/app/generate_data/",
                 body: data
             })
+        }),
+        goWithEmail: builder.mutation<any, { email: string }>({
+            query: email => ({
+                method: "POST",
+                url: `/app/${email.email}/send_code/`
+            })
+        }),
+        getReview: builder.query({
+            query: () => "/app/review/"
+        }),
+        postReview: builder.mutation<any, { email: string, description: string, stars: number }>({
+            query: (data) => ({
+                method: "POST",
+                url: "/app/review/",
+                body: data
+            })
+        }),
+        getFAQ: builder.query({
+            query: () => `/app/faqs`
         })
     }),
 });
 
 // Hooks auto-generated ✅
-export const { useSubmitNewFormMutation, useVeryfyOtpMutation, useCreatePaymentMutation, useGenerateDataMutation } = appApi;
+export const { useSubmitNewFormMutation, useVeryfyOtpMutation, useCreatePaymentMutation, useGenerateDataMutation, useGoWithEmailMutation, useGetReviewQuery, usePostReviewMutation, useGetFAQQuery } = appApi;

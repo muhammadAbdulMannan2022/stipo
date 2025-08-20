@@ -1,23 +1,33 @@
 "use client"
 
-import type React from "react"
-import { useState } from "react"
+import React, { useState } from "react"
 import { useNavigate } from "react-router"
 import { useTranslation } from "react-i18next"
+import { useGoWithEmailMutation } from "../../store/api/appSlice"
 
 const EmailInputCard: React.FC = () => {
     const { t } = useTranslation()
     const [email, setEmail] = useState("")
+    const [error, setError] = useState<string | null>(null)
     const navigate = useNavigate()
+    const [sendOtp, { isLoading }] = useGoWithEmailMutation()
 
     const handleStartNewAnalysis = () => {
         setEmail("")
         navigate("/start/2")
     }
 
-    const handleNext = () => {
-        setEmail("")
-        navigate("/start/otp")
+    const handleNext = async () => {
+        if (!email) return setError(t("emailCard.error"))
+
+        try {
+            setError(null)
+            await sendOtp({ email }).unwrap()
+            setEmail("")
+            navigate("/start/otp", { state: { email } })
+        } catch (err: any) {
+            setError(err?.error || err?.data?.message || t("emailCard.failed"))
+        }
     }
 
     return (
@@ -25,7 +35,6 @@ const EmailInputCard: React.FC = () => {
             {/* Header */}
             <div className="bg-gray-50 p-6 border-b border-gray-200">
                 <h2 className="text-2xl font-bold text-2ndcolor-text mb-2">{t("emailCard.title")}</h2>
-                {/* <p className="text-2ndcolor-text">{t("emailCard.subtitle")}</p> */}
             </div>
 
             {/* Content */}
@@ -42,6 +51,7 @@ const EmailInputCard: React.FC = () => {
                         placeholder={t("emailCard.placeholder")}
                         className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-900"
                     />
+                    {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
                 </div>
 
                 <p className="text-gray-600 text-sm mb-8">{t("emailCard.subtitle")}</p>
@@ -51,14 +61,16 @@ const EmailInputCard: React.FC = () => {
                     <button
                         onClick={handleStartNewAnalysis}
                         className="hover:cursor-pointer flex-1 py-3 px-6 rounded-lg border border-primary-text text-indigo-600 font-semibold hover:bg-indigo-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        disabled={isLoading}
                     >
                         {t("emailCard.startNew")}
                     </button>
                     <button
                         onClick={handleNext}
                         className="hover:cursor-pointer flex-1 py-3 px-6 rounded-lg bg-primary-text text-white font-semibold hover:bg-indigo-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        disabled={isLoading}
                     >
-                        {t("emailCard.next")}
+                        {isLoading ? t("emailCard.loading") : t("emailCard.next")}
                     </button>
                 </div>
             </div>

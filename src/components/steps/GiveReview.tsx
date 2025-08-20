@@ -4,20 +4,47 @@ import React, { useState } from "react"
 import { Star } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router"
+import { usePostReviewMutation } from "../../store/api/appSlice"
 
 const GiveReviewForm: React.FC = () => {
     const { t } = useTranslation()
     const [rating, setRating] = useState(0)
     const [reviewText, setReviewText] = useState("")
     const navigate = useNavigate()
+    const email = localStorage.getItem("email")
+    const [giveReview, { isLoading }] = usePostReviewMutation()
+    const [error, setError] = useState<string>("")
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        navigate("/")
-        // Handle submission here if needed
-        setRating(0)
-        setReviewText("")
+
+        if (!rating || !reviewText) {
+            setError(t("review.validationError")) // <- add i18n message like "Please add a rating and review"
+            return
+        }
+
+        try {
+            setError("") // clear previous error
+            await giveReview({
+                description: reviewText,
+                email: email || "",
+                stars: rating,
+            }).unwrap()
+
+            setRating(0)
+            setReviewText("")
+            navigate("/")
+        } catch (err: any) {
+            // check API error shape
+            if (err?.data?.error) {
+                setError(err.data.error) // backend message
+            } else {
+                console.error("Failed to submit review:", err)
+            }
+        }
     }
+
+
 
     return (
         <div className="bg-white rounded-lg shadow-lg max-w-md w-full mx-auto overflow-hidden">
@@ -60,15 +87,19 @@ const GiveReviewForm: React.FC = () => {
                         className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-900 resize-none"
                     />
                 </div>
+                {error && (
+                    <p className="mt-4 text-red-600 text-sm text-center mb-3">{error}</p>
+                )}
 
                 {/* Button */}
                 <div className="text-center">
                     <button
                         type="submit"
+                        disabled={isLoading}
                         className="w-full py-3 px-6 rounded-lg font-semibold text-white
               bg-gradient-to-r from-purple-600 to-indigo-600
               hover:from-purple-700 hover:to-indigo-700
-              transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 hover:cursor-pointer disabled:cursor-not-allowed"
                     >
                         {t("review.submitButton")}
                     </button>

@@ -3,7 +3,8 @@
 import { useCallback, useRef, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { useLocation, useNavigate } from "react-router"
-import { useVeryfyOtpMutation } from "../../store/api/appSlice"
+import { useGoWithEmailMutation, useVeryfyOtpMutation } from "../../store/api/appSlice"
+import toast, { Toaster } from "react-hot-toast"
 
 // Define types for the input element refs
 type InputRef = HTMLInputElement | null
@@ -12,6 +13,7 @@ const VerificationCodeInput = () => {
     const { t } = useTranslation()
     const navigate = useNavigate()
     const [verifyOtp, { isLoading }] = useVeryfyOtpMutation()
+    const [resendOtp] = useGoWithEmailMutation()
     const { email } = useLocation().state || { email: "" }
 
     const codeLength: number = 4
@@ -89,13 +91,23 @@ const VerificationCodeInput = () => {
         }
     }, [code, codeLength, navigate, t, verifyOtp])
 
-    const handleResendCode = useCallback(() => {
+    const handleResendCode = useCallback(async () => {
+        console.log(email)
+        if (email) {
+            try {
+                const res = await resendOtp({ email })
+                toast.success(res.data.message || "no data")
+            } catch (error: any) {
+                toast.error(error?.error || error?.data?.error || "")
+            }
+        }
         // Handle resend logic
         console.log("Resend clicked")
     }, [])
 
     return (
         <div className="bg-white rounded-lg shadow-lg max-w-md mx-auto overflow-hidden">
+            <Toaster />
             <div className="bg-gray-50 p-6 border-b border-gray-200">
                 <h2 className="text-2xl font-bold text-2ndcolor-text mb-2">
                     {t("verification.title")}
@@ -135,7 +147,7 @@ const VerificationCodeInput = () => {
                     {t("verification.resendPrompt")}{" "}
                     <button
                         onClick={handleResendCode}
-                        className="text-indigo-600 hover:underline focus:outline-none"
+                        className="text-indigo-600 hover:underline focus:outline-none hover:cursor-pointer"
                     >
                         {t("verification.resendLink")}
                     </button>

@@ -2,9 +2,11 @@ import type React from "react"
 import { Trans, useTranslation } from "react-i18next"
 import TestimonialCard from "../../../components/TestimonialCard"
 import { Star } from "lucide-react"
+import { useGetReviewQuery } from "../../../store/api/appSlice"
 
 const TestimonialsSection: React.FC = () => {
     const { t } = useTranslation()
+    const { data, isLoading } = useGetReviewQuery(null)
 
     const testimonials = [
         {
@@ -33,8 +35,10 @@ const TestimonialsSection: React.FC = () => {
         }
     ]
 
+    if (isLoading) return <div>loading....</div>
     return (
         <section className="py-16 md:pt-20 px-4 sm:px-6 lg:px-8 bg-white">
+            {/* {console.log(data)} */}
             <div className="max-w-7xl mx-auto mb-12">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-8">
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-primary-text mb-6 md:mb-0">
@@ -61,10 +65,6 @@ const TestimonialsSection: React.FC = () => {
                     {testimonials.map((testimonial, index) => (
                         <TestimonialCard
                             key={index}
-                            avatarSrc={testimonial.avatarSrc}
-                            avatarAlt={testimonial.avatarAlt}
-                            name={testimonial.name}
-                            role={testimonial.role}
                             testimonial={testimonial.testimonial}
                         />
                     ))}
