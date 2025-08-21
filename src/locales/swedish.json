@@ -161,7 +161,8 @@
         "resendPrompt": "Om du inte fick någon kod",
         "resendLink": "klicka här.",
         "next": "Nästa",
-        "incompleteCode": "Vänligen ange hela verifieringskoden."
+        "incompleteCode": "Vänligen ange hela verifieringskoden.",
+        "loading": "belastning..."
     },
     "success": {
         "title": "Analysresultat",

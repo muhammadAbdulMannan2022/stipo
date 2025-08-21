@@ -161,7 +161,8 @@
         "resendPrompt": "If you didn’t receive a code",
         "resendLink": "click here.",
         "next": "Next",
-        "incompleteCode": "Please enter the complete verification code."
+        "incompleteCode": "Please enter the complete verification code.",
+        "loading": "loading..."
     },
     "success": {
         "title": "Analysis result",
