@@ -1,11 +1,12 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
 import { useSubmitNewFormMutation } from "../../store/api/appSlice";
 import ReCAPTCHA from "react-google-recaptcha";
+import { RouteContext } from "../../App";
 
 interface FormDataInterface {
     whoAreYou: string;
@@ -38,6 +39,7 @@ interface FormErrors {
 const PersonalForm: React.FC = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
+    const { setCurrentRoute }: any = useContext(RouteContext)
     const [submitNewForm, { isLoading }] = useSubmitNewFormMutation();
 
     const [formData, setFormData] = useState<FormDataInterface>({
@@ -154,6 +156,8 @@ const PersonalForm: React.FC = () => {
 
             try {
                 await submitNewForm(submitData).unwrap();
+                setCurrentRoute("/start/otp")
+                localStorage.setItem("email", formData.email)
                 navigate("/start/otp", { state: { email: formData.email } });
             } catch (error) {
                 console.error("Form submission failed:", error);

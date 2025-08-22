@@ -14,14 +14,14 @@ export const PrivateRoute = ({ children }: PrivateRouteProps) => {
     console.log(location.pathname, currentRoute)
 
     // Check if the route user is trying to access is allowed
-    if (currentRoute === "/start/success" || currentRoute === "/start/paymentSuccess") {
+    if (location.pathname === "/start/success" || location.pathname === "/start/paymentSuccess") {
         return <>{children}</>
     } else {
         if (location.pathname === currentRoute) {
             return <>{children}</>;
+        } else {
+            // Otherwise redirect to current route
+            return <Navigate to={currentRoute} replace />;
         }
     }
-
-    // Otherwise redirect to current route
-    return <Navigate to={currentRoute} replace />;
 };
