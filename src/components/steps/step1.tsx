@@ -1,11 +1,13 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import { useNavigate } from "react-router"
 import { useTranslation } from "react-i18next"
 import { useGoWithEmailMutation } from "../../store/api/appSlice"
+import { RouteContext } from "../../App"
 
 const EmailInputCard: React.FC = () => {
+    const { setCurrentRoute }: any = useContext(RouteContext)
     const { t } = useTranslation()
     const [email, setEmail] = useState("")
     const [error, setError] = useState<string | null>(null)
@@ -14,6 +16,7 @@ const EmailInputCard: React.FC = () => {
 
     const handleStartNewAnalysis = () => {
         setEmail("")
+        setCurrentRoute("/start/2")
         navigate("/start/2")
     }
 
@@ -24,7 +27,9 @@ const EmailInputCard: React.FC = () => {
             setError(null)
             await sendOtp({ email }).unwrap()
             setEmail("")
-            navigate("/start/otp", { state: { email } })
+            setCurrentRoute("/start/otp")
+            navigate("/start/otp")
+            localStorage.setItem("email", email)
         } catch (err: any) {
             setError(err?.error || err?.data?.message || t("emailCard.failed"))
         }

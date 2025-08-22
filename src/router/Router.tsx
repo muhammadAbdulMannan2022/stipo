@@ -12,6 +12,7 @@ import AnalysisResultFailureCard from "../components/steps/NotFoundStep";
 import PaymentConfirmedCard from "../components/steps/PaymentFinalStep";
 import GiveReviewForm from "../components/steps/GiveReview";
 import UserConditionsPage from "../pages/Policy/UserConditionPage";
+import { PrivateRoute } from "../pages/Private/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -37,7 +38,9 @@ const router = createBrowserRouter([
             },
             {
                 path: "/start",
-                element: <FlowLayout />,
+                element: <PrivateRoute >
+                    <FlowLayout />
+                </PrivateRoute>,
                 children: [
                     {
                         path: "",

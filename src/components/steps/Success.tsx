@@ -1,12 +1,14 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { CheckCircle } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router"
 import { useCreatePaymentMutation, useGenerateDataMutation } from "../../store/api/appSlice"
+import { RouteContext } from "../../App"
 
 const Success: React.FC = () => {
+    const { setCurrentRoute }: any = useContext(RouteContext)
     const { t } = useTranslation()
     const navigate = useNavigate()
     const applicationToken = localStorage.getItem("application_token") || ""
@@ -27,6 +29,8 @@ const Success: React.FC = () => {
                     setErrorMessage(error?.data?.error || error?.data?.detail || "error")
                 }
                 console.error("Failed to fetch scholarship data:", error.originalStatus)
+            } finally {
+
             }
         }
     }
@@ -41,6 +45,7 @@ const Success: React.FC = () => {
             if (email) {
                 const response = await pay({ email, success_url: "http://localhost:5151/start/paymentSuccess", cancel_url: "http://localhost:5151/start/success" }).unwrap() // Replace with dynamic email
                 if (response.payment_link) {
+                    setCurrentRoute()
                     window.location.assign(response.payment_link)
                 } else {
                     setErrorMessage(t("success.paymentFailed"))
@@ -48,6 +53,7 @@ const Success: React.FC = () => {
             }
         } catch (error: any) {
             if (error?.data?.error === "you have already paid.") {
+                setCurrentRoute("/start/paymentSuccess")
                 navigate("/start/paymentSuccess")
             } else {
                 console.error("Payment error:", error)

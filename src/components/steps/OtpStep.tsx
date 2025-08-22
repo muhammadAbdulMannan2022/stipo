@@ -1,20 +1,22 @@
 "use client"
 
-import { useCallback, useRef, useState } from "react"
+import { useCallback, useContext, useRef, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { useLocation, useNavigate } from "react-router"
+import { useNavigate } from "react-router"
 import { useGoWithEmailMutation, useVeryfyOtpMutation } from "../../store/api/appSlice"
 import toast, { Toaster } from "react-hot-toast"
+import { RouteContext } from "../../App"
 
 // Define types for the input element refs
 type InputRef = HTMLInputElement | null
 
 const VerificationCodeInput = () => {
+    const { setCurrentRoute }: any = useContext(RouteContext)
     const { t } = useTranslation()
     const navigate = useNavigate()
     const [verifyOtp, { isLoading }] = useVeryfyOtpMutation()
     const [resendOtp] = useGoWithEmailMutation()
-    const { email } = useLocation().state || { email: "" }
+    const email = localStorage.getItem("email") || ""
 
     const codeLength: number = 4
     const [code, setCode] = useState<string[]>(new Array(codeLength).fill(""))
@@ -83,6 +85,7 @@ const VerificationCodeInput = () => {
             if (response) {
                 localStorage.setItem("email", email)
                 localStorage.setItem("application_token", response.application_token)
+                setCurrentRoute("/start/success")
                 navigate("/start/success")
             }
         } catch (error: any) {
