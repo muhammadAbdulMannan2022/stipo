@@ -64,7 +64,7 @@
         "overallRating": "Overall rating"
     },
     "faq": {
-        "title": "Frequently Asked Questions",
+        "title": "Frequently asked questions",
         "subtitle": "Still have questions? Contact our team via",
         "email": "kontakt@stipendieportalen.se",
         "items": [
@@ -114,7 +114,7 @@
             "userCondition": "User condition"
         },
         "about": {
-            "title": "About us",
+            "title": "Who are we",
             "aboutUs": "About us"
         },
         "faq": {
@@ -222,6 +222,7 @@
         "postSecondary": "Post-secondary Education",
         "upperSecondary": "Upper Secondary School / Folk High School",
         "compulsory": "Compulsory School",
+        "phd": "PhD studies",
         "eliteAthlete": "Are you an elite athlete?",
         "yes": "Yes",
         "no": "No",
@@ -601,6 +602,23 @@
                     "text": "We may collaborate with external providers bound by confidentiality agreements. Note: infrastructure providers like hosting and internet providers may not be under such agreements."
                 }
             ]
+        }
+    },
+    "pricing": {
+        "title": "Pricing Information",
+        "plans": {
+            "student": {
+                "price": "299 SEK – Student",
+                "desc": "Unlock new opportunities, knowledge, and resources to boost your growth."
+            },
+            "phd": {
+                "price": "599 SEK – PhD Studies",
+                "desc": "Support for your research journey, take the next step toward insights, innovation, and success."
+            },
+            "nonprofit": {
+                "price": "1599 SEK – Non-profit Sports Organization",
+                "desc": "Together we empower clubs and non-profits to build a sustainable and thriving sports community."
+            }
         }
     }
 }

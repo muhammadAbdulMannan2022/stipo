@@ -6,6 +6,7 @@ import HowItWorksSection from "./sections/HowItWorks";
 import TestimonialsSection from "./sections/Testimonials";
 import { useEffect } from "react";
 import AboutUsSection from "./sections/HomeAbout";
+import PricingPage from "./sections/Priceing";
 
 
 export default function Home() {
@@ -18,11 +19,19 @@ export default function Home() {
                 el.scrollIntoView({ behavior: "smooth" })
             }
         }
+        if (location.hash === "#about") {
+            const el = document.getElementById("about")
+            if (el) {
+                el.scrollIntoView({ behavior: "smooth" })
+            }
+        }
+
     }, [location])
     return (
         <>
             <HeroPage />
             <HowItWorksSection />
+            <PricingPage />
             <AboutUsSection />
             <TestimonialsSection />
             <FAQSection />

@@ -4,6 +4,7 @@ import type React from "react"
 import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react"
 import { Link, useNavigate } from "react-router"
 import { useTranslation } from "react-i18next"
+import { FaTiktok } from "react-icons/fa"
 
 const Footer: React.FC = () => {
     const { t } = useTranslation()
@@ -16,7 +17,7 @@ const Footer: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-8 pb-8 border-b border-gray-700">
                     {/* Brand/Address */}
                     <div className="flex flex-col items-center md:items-start text-center md:text-left">
-                        <h3 className="text-xl font-bold text-white mb-4">{t("footer.brand")}</h3>
+                        <img width={120} height={70} src="/logow.png" alt="StipendiePortalen" className="mb-4" />
                         <p className="text-sm">
                             {t("footer.address.line1")}
                             <br />
@@ -55,14 +56,14 @@ const Footer: React.FC = () => {
                                 </Link>
                             </li>
                         </ul>
-                        <h4 className="text-lg font-semibold text-white mt-6 mb-4">{t("footer.terms.userConditionTitle")}</h4>
-                        <ul className="space-y-2">
+                        {/* <h4 className="text-lg font-semibold text-white mt-6 mb-4">{t("footer.terms.userConditionTitle")}</h4> */}
+                        {/* <ul className="space-y-2">
                             <li>
                                 <Link to="/user-conditions" className="hover:text-white transition-colors duration-200">
                                     {t("footer.terms.userCondition")}
                                 </Link>
                             </li>
-                        </ul>
+                        </ul> */}
                     </div>
 
                     {/* About Us */}
@@ -70,7 +71,7 @@ const Footer: React.FC = () => {
                         <h4 className="text-lg font-semibold text-white mb-4">{t("footer.about.title")}</h4>
                         <ul className="space-y-2">
                             <li>
-                                <Link to="/about" className="hover:text-white transition-colors duration-200">
+                                <Link to="/#about" className="hover:text-white transition-colors duration-200">
                                     {t("footer.about.aboutUs")}
                                 </Link>
                             </li>
@@ -93,14 +94,14 @@ const Footer: React.FC = () => {
                     <div className="flex flex-col items-center md:items-start text-center md:text-left">
                         <h4 className="text-lg font-semibold text-white mb-4">{t("footer.followUs")}</h4>
                         <div className="flex space-x-4">
-                            <a href="#" aria-label="Facebook" className="text-gray-400 hover:text-white transition-colors duration-200">
+                            <a href="https://www.facebook.com/share/1KSTuxuPDW/?mibextid=wwXIfr" target="_blank" aria-label="Facebook" className="text-gray-400 hover:text-white transition-colors duration-200">
                                 <Facebook size={24} />
                             </a>
-                            <a href="#" aria-label="Instagram" className="text-gray-400 hover:text-white transition-colors duration-200">
+                            <a href="https://www.instagram.com/stipendieportalen.se?igsh=d284YW43a2VtY2Vp&utm_source=qr" target="_blank" aria-label="Instagram" className="text-gray-400 hover:text-white transition-colors duration-200">
                                 <Instagram size={24} />
                             </a>
-                            <a href="#" aria-label="Twitter" className="text-gray-400 hover:text-white transition-colors duration-200">
-                                <Twitter size={24} />
+                            <a href="https://www.tiktok.com/@stipendieportalen?_t=ZN-8z77eI2BetS&_r=1" target="_blank" aria-label="Twitter" className="text-gray-400 hover:text-white transition-colors duration-200">
+                                <FaTiktok size={24} />
                             </a>
                             <a href="#" aria-label="LinkedIn" className="text-gray-400 hover:text-white transition-colors duration-200">
                                 <Linkedin size={24} />

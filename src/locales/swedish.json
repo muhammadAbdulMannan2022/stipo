@@ -103,18 +103,18 @@
             "title": "Kontakt",
             "email": "E-post: kontakt@stipendieportalen.se",
             "phone": "Telefon: +46 721 77 33 34",
-            "hours": "Tillgänglig 8-16 vardagar."
+            "hours": "Tillgängliga 8-16 vardagar."
         },
         "findScholarships": "Hitta stipendier nu",
         "terms": {
-            "title": "Villkor",
+            "title": "Integritet och villko",
             "integrityPolicy": "Integritetspolicy",
             "privacyPolicy": "Sekretesspolicy",
             "userConditionTitle": "Användarvillkor",
             "userCondition": "Användarvillkor"
         },
         "about": {
-            "title": "Om oss",
+            "title": "Vilka är vi",
             "aboutUs": "Om oss"
         },
         "faq": {
@@ -222,6 +222,7 @@
         "postSecondary": "Eftergymnasial utbildning",
         "upperSecondary": "Gymnasieskola / Folkhögskola",
         "compulsory": "Grundskola",
+        "phd": "Doktorandstudier",
         "eliteAthlete": "Är du en elitidrottare?",
         "yes": "Ja",
         "no": "Nej",
@@ -601,6 +602,23 @@
                     "text": "Vi samarbetar ibland med externa leverantörer som är bundna av sekretessavtal. Infrastrukturleverantörer kan dock stå utanför sådana avtal."
                 }
             ]
+        }
+    },
+    "pricing": {
+        "title": "Prisuppgifter",
+        "plans": {
+            "student": {
+                "price": "299 SEK – Student",
+                "desc": "Få tillgång till nya möjligheter, kunskap och resurser som stärker din utveckling."
+            },
+            "phd": {
+                "price": "599 SEK – Doktorandstudier",
+                "desc": "Stöd för dig som forskar, ta nästa steg mot insikter, innovation och framgång."
+            },
+            "nonprofit": {
+                "price": "1599 SEK – Ideell idrottsorganisation",
+                "desc": "Tillsammans stärker vi föreningar och ideella krafter för en hållbar och levande idrottsrörelse."
+            }
         }
     }
 }

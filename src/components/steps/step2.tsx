@@ -226,7 +226,6 @@ const PersonalForm: React.FC = () => {
                     {renderSelect("whoAreYou", "whoAreYou", {
                         individual: t("personalForm.individual"),
                         organization: t("personalForm.organization"),
-                        other: t("personalForm.other"),
                     })}
                     <div>
                         <label htmlFor="name" className="block text-gray-700 text-base font-medium mb-2">
