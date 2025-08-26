@@ -227,9 +227,11 @@
         "yes": "Yes",
         "no": "No",
         "municipality": "Municipality",
-        "notRobot": "I'm not a robot",
+        "notRobot": "Agree to Terms and Conditions",
         "next": "Next",
         "submitting": "submitting...",
+        "educationLevelOption": "Subject",
+        "subjectName": "Subject name",
         "placeholder": {
             "name": "Enter your name",
             "organizationName": "Enter organization name",
@@ -250,7 +252,76 @@
             "eliteAthlete": "Please select elite athlete status",
             "municipality": "Please select a municipality",
             "captcha": "Please complete the CAPTCHA verification",
-            "submit": "An error occurred while submitting the form"
+            "submit": "An error occurred while submitting the form",
+            "sportName": "Sports name is required"
+        },
+        "sports": {
+            "SportsName": "Sports name",
+            "title": "Which sport do you practice?",
+            "football": "Football (Soccer)",
+            "athletics": "Athletics (Track and Field)",
+            "golf": "Golf",
+            "gymnastics": "Gymnastics",
+            "floorball": "Floorball",
+            "iceHockey": "Ice Hockey",
+            "swimming": "Swimming",
+            "handball": "Handball",
+            "equestrian": "Equestrian Sports (Horseback Riding)",
+            "motorsport": "Motorsports / Snowmobile Racing",
+            "other": "Other"
+        },
+        "education": {
+            "upperSecondary": {
+                "socialSciences": "Social Sciences Program",
+                "economics": "Economics Program",
+                "naturalSciences": "Natural Sciences Program",
+                "technology": "Technology Program",
+                "arts": "Arts Program",
+                "electricityEnergy": "Electricity and Energy Program",
+                "vehicleTransport": "Vehicle and Transport Program",
+                "construction": "Construction and Civil Engineering Program",
+                "salesService": "Sales and Service Program",
+                "childRecreation": "Child and Recreation Program",
+                "other": "Other"
+            },
+            "universityPrograms": {
+                "engineering": "Engineering and Technology",
+                "economics": "Economics, Business Administration & Management",
+                "medicine": "Medicine and Health Sciences",
+                "cs": "Computer Science / IT / Data Science",
+                "education": "Education and Pedagogy",
+                "psychology": "Psychology and Behavioral Sciences",
+                "law": "Law and Political Science",
+                "environment": "Environmental and Sustainability Sciences",
+                "design": "Design, Architecture, and Creative Arts",
+                "biology": "Biology, Chemistry, and Life Sciences",
+                "other": "Other"
+            },
+            "masterPrograms": {
+                "publicHealth": "Public Health / Epidemiology",
+                "engineering": "Engineering & Technology (including cybersecurity, supply chain, machine engineering)",
+                "business": "Business & Management (Finance, Accounting, International Business)",
+                "cs": "Computer Science / Digital Business / Data Science",
+                "education": "Education & Pedagogy (Didactics, Leadership)",
+                "environment": "Environmental & Sustainability Sciences / Urban Planning",
+                "lifeScience": "Life Sciences & Biotechnology",
+                "law": "Law (LL.M / Legal Studies)",
+                "design": "Design, Architecture & Creative Arts",
+                "socialSciences": "Social Sciences (Psychology, Social Work, Political Science, etc.)",
+                "other": "Other"
+            },
+            "postSecondaryPrograms": {
+                "pharmacyTech": "Pharmacy Technician",
+                "ambulance": "Ambulance Paramedic",
+                "animalCare": "Animal Care Specialist",
+                "softwareDev": "Software Developer / IT Specialist",
+                "trainDriver": "Train Driver",
+                "dentalNurse": "Dental Nurse",
+                "medicalAdmin": "Medical Secretary / Health Administrator",
+                "accounting": "Accounting Economist",
+                "childcare": "Childcare Assistant / Teaching Assistant",
+                "other": "Other"
+            }
         }
     },
     "list": {

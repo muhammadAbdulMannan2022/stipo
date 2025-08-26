@@ -18,7 +18,11 @@ interface FormDataInterface {
     educationLevel: string;
     eliteAthlete: string;
     municipality: string;
+    sport: string;
     notRobot?: string;
+    sportName?: string;
+    educationLevelOption?: string,
+    educationLevelOther?: string,
 }
 
 interface FormErrors {
@@ -34,6 +38,11 @@ interface FormErrors {
     notRobot?: string;
     captcha?: string;
     submit?: string;
+    sport?: string;
+    sportName?: string;
+    educationLevelOption?: string,
+    educationLevelOther?: string,
+
 }
 
 const PersonalForm: React.FC = () => {
@@ -52,12 +61,26 @@ const PersonalForm: React.FC = () => {
         educationLevel: "",
         eliteAthlete: "",
         municipality: "",
+        sport: "",
         notRobot: "true",
+        sportName: "",
+        educationLevelOption: "",
+        educationLevelOther: "",
     });
 
     const [errors, setErrors] = useState<FormErrors>({});
     // const [acceptedTerms, setAcceptedTerms] = useState(false);
     const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+    const education = t("personalForm.education", { returnObjects: true }) as {
+        upperSecondary: { [key: string]: string };
+        universityPrograms: { [key: string]: string };
+        masterPrograms: { [key: string]: string };
+        postSecondaryPrograms: { [key: string]: string };
+    };
+    const upperSecondaryOptions = education.upperSecondary;
+    const universityOptions = education.universityPrograms;
+    const masterOptions = education.masterPrograms;
+    const postSecondaryOptions = education.postSecondaryPrograms;
 
     const validateForm = useCallback(() => {
         const newErrors: FormErrors = {};
@@ -104,6 +127,9 @@ const PersonalForm: React.FC = () => {
 
         if (!captchaToken) {
             newErrors.captcha = t("personalForm.errors.captcha");
+        }
+        if (formData.sport === t("personalForm.sports.other") && !formData.sportName?.trim()) {
+            newErrors.sport = t("personalForm.errors.sportName"); // add this key in i18n
         }
 
         setErrors(newErrors);
@@ -211,6 +237,7 @@ const PersonalForm: React.FC = () => {
 
     const municipalityOptions = t("list", { returnObjects: true }) as { [key: string]: string };
 
+
     return (
         <div className="bg-white rounded-lg shadow-lg max-w-3xl mx-auto overflow-hidden">
             <div className="bg-gray-50 p-6 border-b border-gray-200">
@@ -282,46 +309,129 @@ const PersonalForm: React.FC = () => {
                     )}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {renderSelect("gender", "gender", {
-                        male: t("personalForm.male"),
-                        female: t("personalForm.female"),
-                        non_binary: t("personalForm.nonBinary"),
-                        preferNotSay: t("personalForm.noSay"),
-                        other: t("personalForm.otherGender"),
-                    })}
+                {/* Gender, Age, Education Level, Elite Athlete */}
+                {formData.whoAreYou !== t("personalForm.organization") && (
+                    <>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {renderSelect("gender", "gender", {
+                                male: t("personalForm.male"),
+                                female: t("personalForm.female"),
+                                non_binary: t("personalForm.nonBinary"),
+                                preferNotSay: t("personalForm.noSay"),
+                                other: t("personalForm.otherGender"),
+                            })}
+                            <div>
+                                <label htmlFor="age" className="block text-gray-700 text-base font-medium mb-2">
+                                    {t("personalForm.age")}
+                                </label>
+                                <input
+                                    id="age"
+                                    name="age"
+                                    type="number"
+                                    value={formData.age}
+                                    onChange={handleChange}
+                                    placeholder={t("personalForm.placeholder.age") || ""}
+                                    className={`w-full p-3 border ${errors.age ? 'border-red-500' : 'border-gray-300'} rounded-md`}
+                                />
+                                {errors.age && <p className="mt-1 text-sm text-red-500">{errors.age}</p>}
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-end">
+                            {renderSelect("educationLevel", "educationLevel", {
+                                upperSecondary: t("personalForm.upperSecondary"),
+                                universityUndergraduate: t("personalForm.universityUndergraduate"),
+                                universityMasters: t("personalForm.universityMasters"),
+                                postSecondary: t("personalForm.postSecondary"),
+                                compulsory: t("personalForm.compulsory"),
+                            })}
+                            {renderSelect("eliteAthlete", "eliteAthlete", {
+                                yes: t("personalForm.yes"),
+                                no: t("personalForm.no"),
+                            })}
+                        </div>
+                        {/* schools */}
+                        {formData.educationLevel && (
+                            <div>
+                                {formData.educationLevel === t("personalForm.upperSecondary") && renderSelect(
+                                    "educationLevelOption",
+                                    "educationLevelOption",
+                                    upperSecondaryOptions
+                                )}
+                                {formData.educationLevel === t("personalForm.universityUndergraduate") && renderSelect(
+                                    "educationLevelOption",
+                                    "educationLevelOption",
+                                    universityOptions
+                                )}
+                                {formData.educationLevel === t("personalForm.universityMasters") && renderSelect(
+                                    "educationLevelOption",
+                                    "educationLevelOption",
+                                    masterOptions
+                                )}
+                                {formData.educationLevel === t("personalForm.postSecondary") && renderSelect(
+                                    "educationLevelOption",
+                                    "educationLevelOption",
+                                    postSecondaryOptions
+                                )}
+                            </div>
+                        )}
+                        {
+                            formData.educationLevelOption === t("personalForm.sports.other") && <div>
+                                <label htmlFor="educationLevelOther" className="block text-gray-700 text-base font-medium mb-2">
+                                    {t("personalForm.subjectName")}
+                                </label>
+                                <input
+                                    id="educationLevelOther"
+                                    name="educationLevelOther"
+                                    type="text"
+                                    value={formData.educationLevelOther || ""}
+                                    onChange={handleChange}
+                                    placeholder={t("personalForm.sports.SportsName") || ""}
+                                    className={`w-full p-3 border ${errors.sport ? 'border-red-500' : 'border-gray-300'} rounded-md`}
+                                />
+                                {errors.sport && <p className="mt-1 text-sm text-red-500">{errors.sport}</p>}
+                            </div>
+                        }
+
+                    </>
+                )}
+
+
+                {
+                    formData.eliteAthlete === t("personalForm.yes") && renderSelect("sport", "sports.title", {
+                        football: t("personalForm.sports.football"),
+                        athletics: t("personalForm.sports.athletics"),
+                        golf: t("personalForm.sports.golf"),
+                        gymnastics: t("personalForm.sports.gymnastics"),
+                        floorball: t("personalForm.sports.floorball"),
+                        iceHockey: t("personalForm.sports.iceHockey"),
+                        swimming: t("personalForm.sports.swimming"),
+                        handball: t("personalForm.sports.handball"),
+                        equestrian: t("personalForm.sports.equestrian"),
+                        motorsport: t("personalForm.sports.motorsport"),
+                        other: t("personalForm.sports.other"),
+                    })
+
+                }
+                {formData.sport === t("personalForm.sports.other") && (
                     <div>
-                        <label htmlFor="age" className="block text-gray-700 text-base font-medium mb-2">
-                            {t("personalForm.age")}
+                        <label htmlFor="sportName" className="block text-gray-700 text-base font-medium mb-2">
+                            {t("personalForm.sports.SportsName")}
                         </label>
                         <input
-                            id="age"
-                            name="age"
-                            type="number"
-                            value={formData.age}
+                            id="sportName"
+                            name="sportName"
+                            type="text"
+                            value={formData.sportName || ""}
                             onChange={handleChange}
-                            placeholder={t("personalForm.placeholder.age") || ""}
-                            className={`w-full p-3 border ${errors.age ? 'border-red-500' : 'border-gray-300'} rounded-md`}
+                            placeholder={t("personalForm.sports.SportsName") || ""}
+                            className={`w-full p-3 border ${errors.sport ? 'border-red-500' : 'border-gray-300'} rounded-md`}
                         />
-                        {errors.age && (
-                            <p className="mt-1 text-sm text-red-500">{errors.age}</p>
-                        )}
+                        {errors.sport && <p className="mt-1 text-sm text-red-500">{errors.sport}</p>}
                     </div>
-                </div>
+                )}
+                {/* new  */}
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-end">
-                    {renderSelect("educationLevel", "educationLevel", {
-                        upperSecondary: t("personalForm.upperSecondary"),
-                        universityUndergraduate: t("personalForm.universityUndergraduate"),
-                        universityMasters: t("personalForm.universityMasters"),
-                        postSecondary: t("personalForm.postSecondary"),
-                        compulsory: t("personalForm.compulsory"),
-                    })}
-                    {renderSelect("eliteAthlete", "eliteAthlete", {
-                        yes: t("personalForm.yes"),
-                        no: t("personalForm.no"),
-                    })}
-                </div>
 
                 {renderSelect("municipality", "municipality", municipalityOptions)}
 

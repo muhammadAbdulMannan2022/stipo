@@ -227,9 +227,11 @@
         "yes": "Ja",
         "no": "Nej",
         "municipality": "Kommun",
-        "notRobot": "Jag är inte en robot",
+        "notRobot": "Godkänn villkoren",
         "next": "Nästa",
         "submitting": "inlämnande...",
+        "educationLevelOption": "Ämne",
+        "subjectName": "Ämnesnamn",
         "placeholder": {
             "name": "Skriv ditt namn",
             "organizationName": "Skriv organisationens namn",
@@ -250,7 +252,84 @@
             "eliteAthlete": "Vänligen välj elitidrottsstatus",
             "municipality": "Vänligen välj en kommun",
             "captcha": "Vänligen slutför CAPTCHA-verifieringen",
-            "submit": "Ett fel uppstod vid inlämning av formuläret"
+            "submit": "Ett fel uppstod vid inlämning av formuläret",
+            "sportName": "Sportnamn krävs"
+        },
+        "sports": {
+            "SportsName": "Sportnamn",
+            "title": "Vilken idrott utövas?”",
+            "football": "Fotboll",
+            "athletics": "Friidrott",
+            "golf": "Golf",
+            "gymnastics": "Gymnastik",
+            "floorball": "Innebandy",
+            "iceHockey": "Ishockey",
+            "swimming": "Simidrott (simning)",
+            "handball": "Handboll",
+            "equestrian": "Ridsport",
+            "motorsport": "Motorsport / Snöskoter",
+            "other": "Annat"
+        },
+        "education": {
+            "educationLevels": {
+                "primarySchool": "Grundskola",
+                "secondarySchool": "Gymnasieskola",
+                "postSecondary": "Eftergymnasial utbildning / yrkeshögskola",
+                "university": "Universitet kandidat",
+                "master": "Magister / Master",
+                "phd": "Doktorand"
+            },
+            "upperSecondary": {
+                "socialSciences": "Samhällsvetenskapsprogrammet",
+                "economics": "Ekonomiprogrammet",
+                "naturalSciences": "Naturvetenskapsprogrammet",
+                "technology": "Teknikprogrammet",
+                "arts": "Estetiska programmet",
+                "electricityEnergy": "El- och energiprogrammet",
+                "vehicleTransport": "Fordons- och transportprogrammet",
+                "construction": "Bygg- och anläggningsprogrammet",
+                "salesService": "Försäljnings- och serviceprogrammet",
+                "childRecreation": "Barn- och fritidsprogrammet",
+                "other": "Annat"
+            },
+            "universityPrograms": {
+                "engineering": "Teknik och ingenjörsvetenskap",
+                "economics": "Ekonomi, företagsekonomi & management",
+                "medicine": "Medicin och vårdutbildningar",
+                "cs": "Datalogi / IT / Data Science",
+                "education": "Utbildning och pedagogik",
+                "psychology": "Psykologi och beteendevetenskap",
+                "law": "Juridik och statsvetenskap",
+                "environment": "Miljö- och hållbarhetsvetenskap",
+                "design": "Design, arkitektur och kreativa ämnen",
+                "biology": "Biologi, kemi och övriga livsvetenskaper",
+                "other": "Annat"
+            },
+            "masterPrograms": {
+                "publicHealth": "Folkhälsovetenskap och epidemiologi",
+                "engineering": "Teknik och ingenjörsvetenskap",
+                "business": "Ekonomi, företagsekonomi och management",
+                "cs": "Datalogi, IT och data science",
+                "education": "Utbildning och pedagogik",
+                "environment": "Miljö- och hållbarhetsvetenskap",
+                "lifeScience": "Life Science och bioteknik",
+                "law": "Juridik",
+                "design": "Design, arkitektur och kreativa ämnen",
+                "socialSciences": "Samhällsvetenskap och beteendevetenskap",
+                "other": "Annat"
+            },
+            "postSecondaryPrograms": {
+                "pharmacyTech": "Apotekstekniker",
+                "ambulance": "Ambulanssjukvårdare",
+                "animalCare": "Djurvårdare",
+                "softwareDev": "Systemutvecklare / IT-utbildning",
+                "trainDriver": "Lokförare",
+                "dentalNurse": "Tandsköterska",
+                "medicalAdmin": "Medicinsk vårdadministratör",
+                "accounting": "Redovisningsekonom",
+                "childcare": "Barnskötare / Elevassistent",
+                "other": "Annat"
+            }
         }
     },
     "list": {
