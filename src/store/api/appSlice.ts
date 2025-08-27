@@ -1,6 +1,35 @@
 // src/services/appApi.ts
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+// for individual applicants
+type IndividualForm = {
+    role: string;
+    name: string;
+    email: string;
+    gender: string;
+    age: number;
+    study_level: string;
+    elite_athlete: string;
+    municipality: string;
+    sport: string;
+    sport_name: string;
+    education_level_option: string;
+    education_level_other: string;
+    purpose_of_funding: string;
+};
+
+// for organizations
+type OrganizationForm = {
+    role: string;
+    name: string;
+    email: string;
+    organizationName: string;
+};
+
+// union type
+export type SubmitForm = IndividualForm | OrganizationForm;
+
+
 export const appApi = createApi({
     reducerPath: "appApi",
     baseQuery: fetchBaseQuery({
@@ -16,13 +45,14 @@ export const appApi = createApi({
 
     }),
     endpoints: (builder) => ({
-        submitNewForm: builder.mutation<any, { role: string, name: string, email: string, gender: string, age: string | number, study_level: string, elite_athlete: string, municipality: string }>({
+        submitNewForm: builder.mutation<any, SubmitForm>({
             query: (data) => ({
                 url: "/app/apply/",
                 method: "POST",
                 body: data,
             }),
         }),
+
         veryfyOtp: builder.mutation<any, { otp: string, email: string }>({
             query: (data) => ({
                 method: "POST",

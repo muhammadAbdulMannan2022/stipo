@@ -4,7 +4,7 @@ import { useCallback, useContext, useState } from "react";
 import { ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
-import { useSubmitNewFormMutation } from "../../store/api/appSlice";
+import { useSubmitNewFormMutation, type SubmitForm } from "../../store/api/appSlice";
 import ReCAPTCHA from "react-google-recaptcha";
 import { RouteContext } from "../../App";
 
@@ -23,6 +23,7 @@ interface FormDataInterface {
     sportName?: string;
     educationLevelOption?: string,
     educationLevelOther?: string,
+    purposeoffunding?: string,
 }
 
 interface FormErrors {
@@ -42,6 +43,7 @@ interface FormErrors {
     sportName?: string;
     educationLevelOption?: string,
     educationLevelOther?: string,
+    purposeoffunding?: string,
 
 }
 
@@ -66,6 +68,7 @@ const PersonalForm: React.FC = () => {
         sportName: "",
         educationLevelOption: "",
         educationLevelOther: "",
+        purposeoffunding: ""
     });
 
     const [errors, setErrors] = useState<FormErrors>({});
@@ -168,16 +171,34 @@ const PersonalForm: React.FC = () => {
                 return;
             }
 
-            const submitData = {
-                role: formData.whoAreYou,
-                name: formData.name,
-                email: formData.email,
-                gender: formData.gender,
-                age: parseInt(formData.age) || 0,
-                study_level: formData.educationLevel,
-                elite_athlete: formData.eliteAthlete,
-                municipality: formData.municipality,
-            };
+
+            let submitData: SubmitForm;
+            console.log(formData.whoAreYou, t("personalForm.organization"))
+            if (formData.whoAreYou !== t("personalForm.organization")) {
+                submitData = {
+                    role: formData.whoAreYou,
+                    name: formData.name,
+                    email: formData.email,
+                    gender: formData.gender,
+                    age: parseInt(formData.age) || 0,
+                    study_level: formData.educationLevel,
+                    elite_athlete: formData.eliteAthlete,
+                    municipality: formData.municipality,
+                    sport: formData.sport,
+                    sport_name: formData.sportName || "",
+                    education_level_option: formData.educationLevelOption || "",
+                    education_level_other: formData.educationLevelOther || "",
+                    purpose_of_funding: formData.purposeoffunding || "",
+                };
+            } else {
+                submitData = {
+                    role: formData.whoAreYou,
+                    name: formData.name,
+                    email: formData.email,
+                    organizationName: formData.organizationName || ""
+                }
+            }
+
             // captcha: captchaToken,
 
             try {
@@ -430,6 +451,24 @@ const PersonalForm: React.FC = () => {
                         {errors.sport && <p className="mt-1 text-sm text-red-500">{errors.sport}</p>}
                     </div>
                 )}
+
+                {
+                    formData.whoAreYou !== t("personalForm.organization") && <div>
+                        <label htmlFor="purposeoffunding" className="block text-gray-700 text-base font-medium mb-2">
+                            {t("personalForm.purposeoffunding")}
+                        </label>
+                        <input
+                            id="purposeoffunding"
+                            name="purposeoffunding"
+                            type="text"
+                            value={formData.purposeoffunding || ""}
+                            onChange={handleChange}
+                            placeholder={t("personalForm.purposeoffunding") || ""}
+                            className={`w-full p-3 border ${errors.sport ? 'border-red-500' : 'border-gray-300'} rounded-md`}
+                        />
+                        {errors.purposeoffunding && <p className="mt-1 text-sm text-red-500">{errors.purposeoffunding}</p>}
+                    </div>
+                }
                 {/* new  */}
 
 
