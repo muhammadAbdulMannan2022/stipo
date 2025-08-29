@@ -93,12 +93,16 @@ const Success: React.FC = () => {
                                 </path>
                             </svg>
                         </div>
-                    </div> : <p className="text-xl text-gray-800 mb-8">
-                        {t("success.message", {
-                            count: scholarshipCount,
-                            interpolation: { escapeValue: false },
-                        })}
-                    </p>
+                    </div> : <div>
+                        {
+                            scholarshipCount < 1 ? <p className="text-xl text-gray-800 mb-8">{t("success.noScholarship")}</p> : <p className="text-xl text-gray-800 mb-8">
+                                {t("success.message", {
+                                    count: scholarshipCount,
+                                    interpolation: { escapeValue: false },
+                                })}
+                            </p>
+                        }
+                    </div>
                 }
 
                 {errorMessage && (
@@ -107,17 +111,32 @@ const Success: React.FC = () => {
 
                 {/* Button */}
                 <div className="text-center pb-5">
-                    <button
-                        onClick={handlePayment}
-                        disabled={isPaymentLoading || isGetDataLoading}
-                        className={`w-full py-3 px-6 rounded-lg font-semibold hover:cursor-pointer text-white
-              bg-gradient-to-r from-purple-600 to-indigo-600
-              hover:from-purple-700 hover:to-indigo-700
-              transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
-              ${isPaymentLoading || isGetDataLoading ? "opacity-50 cursor-not-allowed" : ""}`}
-                    >
-                        {isPaymentLoading ? t("success.processing") : t("success.button")}
-                    </button>
+                    {scholarshipCount === 0 ? (
+                        <>
+                            <p className="text-red-500 mb-4">{t("success.noScholarship")}</p>
+                            <button
+                                onClick={() => {
+                                    navigate("/start")
+                                    setCurrentRoute("/start")
+                                }} // Go back to previous page
+                                className="w-full py-3 px-6 rounded-lg font-semibold text-white bg-gray-600 hover:bg-gray-700 transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                            >
+                                {t("success.goBack")}
+                            </button>
+                        </>
+                    ) : (
+                        <button
+                            onClick={handlePayment}
+                            disabled={isPaymentLoading || isGetDataLoading}
+                            className={`w-full py-3 px-6 rounded-lg font-semibold hover:cursor-pointer text-white
+                bg-gradient-to-r from-purple-600 to-indigo-600
+                hover:from-purple-700 hover:to-indigo-700
+                transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
+                ${isPaymentLoading || isGetDataLoading ? "opacity-50 cursor-not-allowed" : ""}`}
+                        >
+                            {isPaymentLoading ? t("success.processing") : t("success.button")}
+                        </button>
+                    )}
                 </div>
             </div>
         </div>

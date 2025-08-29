@@ -170,7 +170,9 @@
         "message": "Du matchar med {{count}} stipendier!",
         "button": "Klicka här för att köpa din lista",
         "paymentError": "Fel",
-        "processing": "Bearbetning"
+        "processing": "Bearbetning",
+        "noScholarship": "Inga stipendier hittades",
+        "goBack": "Gå tillbaka"
     },
     "payment": {
         "title": "Stipendielista",

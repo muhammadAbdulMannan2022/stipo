@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react"
+import { Facebook, Instagram, Linkedin } from "lucide-react"
 import { Link, useNavigate } from "react-router"
 import { useTranslation } from "react-i18next"
 import { FaTiktok } from "react-icons/fa"

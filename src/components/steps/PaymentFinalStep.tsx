@@ -1,14 +1,16 @@
 "use client"
 
-import React from "react"
+import React, { useContext } from "react"
 import { CheckCircle } from "lucide-react"
 import { Trans, useTranslation } from "react-i18next"
 import { useNavigate } from "react-router"
+import { RouteContext } from "../../App"
 
 const PaymentConfirmedCard: React.FC = () => {
     const { t } = useTranslation()
     const timeHighlight = "2 hours"
     const navigate = useNavigate()
+    const { setCurrentRoute }: any = useContext(RouteContext)
 
     return (
         <div className="bg-white rounded-lg shadow-lg max-w-md mx-auto overflow-hidden">
@@ -48,7 +50,10 @@ const PaymentConfirmedCard: React.FC = () => {
                         {t("payment.button")}
                     </button>
                     <button
-                        onClick={() => navigate("/start/review")}
+                        onClick={() => {
+                            setCurrentRoute("/start/review")
+                            navigate("/start/review")
+                        }}
                         className="w-full py-3 px-6 rounded-lg font-semibold text-gray-900
     bg-gradient-to-r from-gray-300 to-gray-400
     hover:from-gray-400 hover:to-gray-500

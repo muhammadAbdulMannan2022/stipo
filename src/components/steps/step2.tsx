@@ -92,47 +92,56 @@ const PersonalForm: React.FC = () => {
             newErrors.whoAreYou = t("personalForm.errors.whoAreYou");
         }
 
-        if (!formData.name.trim()) {
-            newErrors.name = t("personalForm.errors.name");
-        }
+        if (formData.whoAreYou === t("personalForm.individual")) {
+            if (!formData.name.trim()) {
+                newErrors.name = t("personalForm.errors.name");
+            }
 
-        if (formData.whoAreYou === t("personalForm.organization") && !formData.organizationName?.trim()) {
-            newErrors.organizationName = t("personalForm.errors.organizationName");
-        }
+            if (formData.whoAreYou === t("personalForm.organization") && !formData.organizationName?.trim()) {
+                newErrors.organizationName = t("personalForm.errors.organizationName");
+            }
 
-        if (!formData.email.trim()) {
-            newErrors.email = t("personalForm.errors.email");
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-            newErrors.email = t("personalForm.errors.emailInvalid");
-        }
+            if (!formData.email.trim()) {
+                newErrors.email = t("personalForm.errors.email");
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+                newErrors.email = t("personalForm.errors.emailInvalid");
+            }
 
-        if (!formData.gender) {
-            newErrors.gender = t("personalForm.errors.gender");
-        }
+            if (!formData.gender) {
+                newErrors.gender = t("personalForm.errors.gender");
+            }
 
-        if (!formData.age) {
-            newErrors.age = t("personalForm.errors.age");
-        } else if (parseInt(formData.age) < 0 || parseInt(formData.age) > 150) {
-            newErrors.age = t("personalForm.errors.ageInvalid");
-        }
+            if (!formData.age) {
+                newErrors.age = t("personalForm.errors.age");
+            } else if (parseInt(formData.age) < 0 || parseInt(formData.age) > 150) {
+                newErrors.age = t("personalForm.errors.ageInvalid");
+            }
 
-        if (!formData.educationLevel) {
-            newErrors.educationLevel = t("personalForm.errors.educationLevel");
-        }
+            if (!formData.educationLevel) {
+                newErrors.educationLevel = t("personalForm.errors.educationLevel");
+            }
 
-        if (!formData.eliteAthlete) {
-            newErrors.eliteAthlete = t("personalForm.errors.eliteAthlete");
-        }
+            if (!formData.eliteAthlete) {
+                newErrors.eliteAthlete = t("personalForm.errors.eliteAthlete");
+            }
 
-        if (!formData.municipality) {
-            newErrors.municipality = t("personalForm.errors.municipality");
-        }
+            if (!formData.municipality) {
+                newErrors.municipality = t("personalForm.errors.municipality");
+            }
 
-        if (!captchaToken) {
-            newErrors.captcha = t("personalForm.errors.captcha");
-        }
-        if (formData.sport === t("personalForm.sports.other") && !formData.sportName?.trim()) {
-            newErrors.sport = t("personalForm.errors.sportName"); // add this key in i18n
+            if (!captchaToken) {
+                newErrors.captcha = t("personalForm.errors.captcha");
+            }
+            if (formData.sport === t("personalForm.sports.other") && !formData.sportName?.trim()) {
+                newErrors.sport = t("personalForm.errors.sportName"); // add this key in i18n
+            }
+        } else {
+            if (!captchaToken) {
+                newErrors.captcha = t("personalForm.errors.captcha");
+            }
+            if (!formData.municipality) {
+                newErrors.municipality = t("personalForm.errors.municipality");
+            }
         }
 
         setErrors(newErrors);
@@ -160,12 +169,14 @@ const PersonalForm: React.FC = () => {
 
     const handleSubmit = useCallback(
         async (e: React.FormEvent<HTMLFormElement>) => {
+            const lang = localStorage.getItem("i18nextLng") || ""
             e.preventDefault();
 
             // if (!acceptedTerms) {
             //     alert(t("personalForm.acceptTermsAlert"));
             //     return;
             // }
+            console.log(lang)
 
             if (!validateForm()) {
                 return;
@@ -189,13 +200,16 @@ const PersonalForm: React.FC = () => {
                     education_level_option: formData.educationLevelOption || "",
                     education_level_other: formData.educationLevelOther || "",
                     purpose_of_funding: formData.purposeoffunding || "",
+                    language: lang
                 };
             } else {
                 submitData = {
                     role: formData.whoAreYou,
                     name: formData.name,
                     email: formData.email,
-                    organizationName: formData.organizationName || ""
+                    organizationName: formData.organizationName || "",
+                    municipality: formData.municipality || "",
+                    language: lang
                 }
             }
 

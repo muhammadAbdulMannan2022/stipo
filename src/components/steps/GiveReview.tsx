@@ -1,12 +1,14 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import { Star } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router"
 import { usePostReviewMutation } from "../../store/api/appSlice"
+import { RouteContext } from "../../App"
 
 const GiveReviewForm: React.FC = () => {
+    const { setCurrentRoute }: any = useContext(RouteContext)
     const { t } = useTranslation()
     const [rating, setRating] = useState(0)
     const [reviewText, setReviewText] = useState("")
@@ -33,6 +35,7 @@ const GiveReviewForm: React.FC = () => {
 
             setRating(0)
             setReviewText("")
+            setCurrentRoute("/start")
             navigate("/")
         } catch (err: any) {
             // check API error shape

@@ -16,6 +16,7 @@ type IndividualForm = {
     education_level_option: string;
     education_level_other: string;
     purpose_of_funding: string;
+    language: string;
 };
 
 // for organizations
@@ -24,6 +25,7 @@ type OrganizationForm = {
     name: string;
     email: string;
     organizationName: string;
+    language: string;
 };
 
 // union type

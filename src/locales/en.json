@@ -170,7 +170,9 @@
         "message": "You are eligible for {{count}} different scholarships now!",
         "button": "Click to purchase your list",
         "paymentError": "Error",
-        "processing": "Processing"
+        "processing": "Processing",
+        "noScholarship": "No scholarships found",
+        "goBack": "Go Back"
     },
     "payment": {
         "title": "List of Scholarships",
@@ -204,7 +206,7 @@
         "description": "In order to find and select the most suitable scholarships for you we need to know more about you.",
         "whoAreYou": "Who are you?",
         "individual": "Individual",
-        "organization": "Organization",
+        "organization": "Organisation",
         "other": "Other",
         "name": "Name",
         "organizationName": "Name of the organization",
