@@ -103,9 +103,6 @@ const Footer: React.FC = () => {
                             <a href="https://www.tiktok.com/@stipendieportalen?_t=ZN-8z77eI2BetS&_r=1" target="_blank" aria-label="Twitter" className="text-gray-400 hover:text-white transition-colors duration-200">
                                 <FaTiktok size={24} />
                             </a>
-                            <a href="#" aria-label="LinkedIn" className="text-gray-400 hover:text-white transition-colors duration-200">
-                                <Linkedin size={24} />
-                            </a>
                         </div>
                     </div>
                 </div>

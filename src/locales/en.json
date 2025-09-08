@@ -234,6 +234,7 @@
         "submitting": "submitting...",
         "educationLevelOption": "Subject",
         "subjectName": "Subject name",
+        "readMore": "Read more here",
         "placeholder": {
             "name": "Enter your name",
             "organizationName": "Enter organization name",

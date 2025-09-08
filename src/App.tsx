@@ -34,6 +34,14 @@ export default function App() {
         faqElement.scrollIntoView({ behavior: "smooth" });
       }
     }
+    if (hash !== "#about") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const faqElement = document.getElementById("about");
+      if (faqElement) {
+        faqElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   }, [pathname, hash]);
 
   const scrollToFaq = () => {

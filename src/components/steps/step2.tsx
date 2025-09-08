@@ -2,7 +2,7 @@
 
 import { useCallback, useContext, useState } from "react";
 import { ChevronRight } from "lucide-react";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
 import { useSubmitNewFormMutation, type SubmitForm } from "../../store/api/appSlice";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -169,22 +169,19 @@ const PersonalForm: React.FC = () => {
 
     const handleSubmit = useCallback(
         async (e: React.FormEvent<HTMLFormElement>) => {
-            const lang = localStorage.getItem("i18nextLng") || ""
+            const lang = localStorage.getItem("i18nextLng") || "";
             e.preventDefault();
 
             // if (!acceptedTerms) {
             //     alert(t("personalForm.acceptTermsAlert"));
             //     return;
             // }
-            console.log(lang)
 
             if (!validateForm()) {
                 return;
             }
 
-
             let submitData: SubmitForm;
-            console.log(formData.whoAreYou, t("personalForm.organization"))
             if (formData.whoAreYou !== t("personalForm.organization")) {
                 submitData = {
                     role: formData.whoAreYou,
@@ -200,7 +197,7 @@ const PersonalForm: React.FC = () => {
                     education_level_option: formData.educationLevelOption || "",
                     education_level_other: formData.educationLevelOther || "",
                     purpose_of_funding: formData.purposeoffunding || "",
-                    language: lang
+                    language: lang,
                 };
             } else {
                 submitData = {
@@ -209,16 +206,18 @@ const PersonalForm: React.FC = () => {
                     email: formData.email,
                     organizationName: formData.organizationName || "",
                     municipality: formData.municipality || "",
-                    language: lang
-                }
+                    elite_athlete: formData.eliteAthlete || "", // Include eliteAthlete
+                    sport: formData.sport || "", // Include sport
+                    sport_name: formData.sportName || "", // Include sportName if sport is "other"
+                    purpose_of_funding: formData.purposeoffunding || "", // Include purposeoffunding
+                    language: lang,
+                };
             }
-
-            // captcha: captchaToken,
 
             try {
                 await submitNewForm(submitData).unwrap();
-                setCurrentRoute("/start/otp")
-                localStorage.setItem("email", formData.email)
+                setCurrentRoute("/start/otp");
+                localStorage.setItem("email", formData.email);
                 navigate("/start/otp", { state: { email: formData.email } });
             } catch (error) {
                 console.error("Form submission failed:", error);
@@ -380,10 +379,13 @@ const PersonalForm: React.FC = () => {
                                 postSecondary: t("personalForm.postSecondary"),
                                 compulsory: t("personalForm.compulsory"),
                             })}
-                            {renderSelect("eliteAthlete", "eliteAthlete", {
-                                yes: t("personalForm.yes"),
-                                no: t("personalForm.no"),
-                            })}
+                            {/* atlit */}
+                            {
+                                renderSelect("eliteAthlete", "eliteAthlete", {
+                                    yes: t("personalForm.yes"),
+                                    no: t("personalForm.no"),
+                                })
+                            }
                         </div>
                         {/* schools */}
                         {formData.educationLevel && (
@@ -430,8 +432,10 @@ const PersonalForm: React.FC = () => {
 
                     </>
                 )}
-
-
+                {formData.whoAreYou === t("personalForm.organization") && renderSelect("eliteAthlete", "eliteAthlete", {
+                    yes: t("personalForm.yes"),
+                    no: t("personalForm.no"),
+                })}
                 {
                     formData.eliteAthlete === t("personalForm.yes") && renderSelect("sport", "sports.title", {
                         football: t("personalForm.sports.football"),
@@ -466,30 +470,30 @@ const PersonalForm: React.FC = () => {
                     </div>
                 )}
 
-                {
-                    formData.whoAreYou !== t("personalForm.organization") && <div>
-                        <label htmlFor="purposeoffunding" className="block text-gray-700 text-base font-medium mb-2">
-                            {t("personalForm.purposeoffunding")}
-                        </label>
-                        <input
-                            id="purposeoffunding"
-                            name="purposeoffunding"
-                            type="text"
-                            value={formData.purposeoffunding || ""}
-                            onChange={handleChange}
-                            placeholder={t("personalForm.purposeoffunding") || ""}
-                            className={`w-full p-3 border ${errors.sport ? 'border-red-500' : 'border-gray-300'} rounded-md`}
-                        />
-                        {errors.purposeoffunding && <p className="mt-1 text-sm text-red-500">{errors.purposeoffunding}</p>}
-                    </div>
-                }
+
+                <div>
+                    <label htmlFor="purposeoffunding" className="block text-gray-700 text-base font-medium mb-2">
+                        {t("personalForm.purposeoffunding")}
+                    </label>
+                    <input
+                        id="purposeoffunding"
+                        name="purposeoffunding"
+                        type="text"
+                        value={formData.purposeoffunding || ""}
+                        onChange={handleChange}
+                        placeholder={t("personalForm.purposeoffunding") || ""}
+                        className={`w-full p-3 border ${errors.sport ? 'border-red-500' : 'border-gray-300'} rounded-md`}
+                    />
+                    {errors.purposeoffunding && <p className="mt-1 text-sm text-red-500">{errors.purposeoffunding}</p>}
+                </div>
+
                 {/* new  */}
 
 
                 {renderSelect("municipality", "municipality", municipalityOptions)}
 
                 {/* notRobot checkbox */}
-                <div className="pt-4">
+                <div className="pt-4 flex items-center">
                     <label htmlFor="notRobot" className="flex items-center cursor-pointer">
                         <input
                             type="checkbox"
@@ -499,8 +503,11 @@ const PersonalForm: React.FC = () => {
                             onChange={handleChange}
                             className="h-5 w-5 text-indigo-600 border-gray-300 focus:ring-indigo-500"
                         />
-                        <span className="ml-3 text-gray-700 text-base">{t("personalForm.notRobot")}</span>
                     </label>
+                    <div className="flex gap-4 w-full">
+                        <div className="ml-3 text-gray-700 text-base">{t("personalForm.notRobot")}</div>
+                        <div className="ml-3 text-blue-600 text-base"><Link to="/privacy" className="underline">{t("personalForm.readMore")}</Link></div>
+                    </div>
                 </div>
 
                 {/* Google reCAPTCHA */}

@@ -107,7 +107,7 @@
         },
         "findScholarships": "Hitta stipendier nu",
         "terms": {
-            "title": "Integritet och villko",
+            "title": "Integritet och villkor",
             "integrityPolicy": "Integritetspolicy",
             "privacyPolicy": "Sekretesspolicy",
             "userConditionTitle": "Användarvillkor",
@@ -234,6 +234,7 @@
         "submitting": "inlämnande...",
         "educationLevelOption": "Ämne",
         "subjectName": "Ämnesnamn",
+        "readMore": "Läs mer här",
         "placeholder": {
             "name": "Skriv ditt namn",
             "organizationName": "Skriv organisationens namn",
