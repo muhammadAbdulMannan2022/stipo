@@ -222,7 +222,7 @@
         "universityUndergraduate": "University, Undergraduate",
         "universityMasters": "University, Master’s / Postgraduate",
         "postSecondary": "Post-secondary Education",
-        "upperSecondary": "Upper Secondary School / Folk High School",
+        "upperSecondary": "PHD Study",
         "compulsory": "Compulsory School",
         "phd": "PhD studies",
         "eliteAthlete": "Are you an elite athlete?",
@@ -695,5 +695,11 @@
                 "desc": "Together we empower clubs and non-profits to build a sustainable and thriving sports community."
             }
         }
-    }
+    },
+    "sorry":"Sorry",
+    "noSc":"Unfortunately, you are not eligible for any scholarship.",
+    "warning":"Data is loading, it may take 1 minute",
+    "pk":"Pay with klarna",
+    "pc":"Pay with card",
+    "pl":"Pay with paypal"
 }

@@ -62,10 +62,10 @@ export const appApi = createApi({
                 body: data
             })
         }),
-        createPayment: builder.mutation<any, { email: string, success_url: string, cancel_url: string }>({
+        createPayment: builder.mutation<any, { email: string, success_url: string, cancel_url: string,pay_type:string }>({
             query: (data) => ({
                 method: "POST",
-                url: `/app/${data.email}/pay/`,
+                url: `/app/${data.email}/${data.pay_type}/pay/`,
                 body: { success_url: data.success_url, cancel_url: data.cancel_url }
             })
         }),

@@ -34,10 +34,10 @@ export default function HomePage() {
                     {/* Left Content Section */}
                     <div className="text-center flex-1 md:text-left px-4">
 
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-text leading-tight mb-6">
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold  text-[#4133ac] leading-tight mb-6">
                             <Trans
                                 i18nKey="home.heading"
-                                components={[<span className="text-2ndcolor-text" />]}
+                                components={[<span className="text-primary-text" />]}
                             />
                         </h1>
 

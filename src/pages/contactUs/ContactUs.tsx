@@ -1,9 +1,30 @@
 "use client"
 import { useTranslation } from "react-i18next"
 import CallToActionSection from "../landing/sections/CallToAction"
+import ReCAPTCHA from "react-google-recaptcha"
+import { useCallback, useState } from "react"
 
 export default function ContactUsPage() {
     const { t } = useTranslation()
+    const [captchaToken, setCaptchaToken] = useState<string | null>(null)
+    const [errors, setErrors] = useState<{ captcha?: string }>({})
+
+    const handleSubmit = useCallback(
+        (e: React.FormEvent<HTMLFormElement>) => {
+            e.preventDefault()
+
+            if (!captchaToken) {
+                setErrors({ captcha: t("contact.form.errors.captcha") || "Please complete the CAPTCHA." })
+                return
+            }
+
+            // Proceed with form submission logic (e.g., API call)
+            console.log("Form submitted with CAPTCHA token:", captchaToken)
+            setErrors({})
+            // Add your form submission logic here (e.g., send data to an API)
+        },
+        [captchaToken, t]
+    )
 
     return (
         <>
@@ -15,7 +36,7 @@ export default function ContactUsPage() {
                             <p className="text-gray-300">{t("contact.subtitle")}</p>
                         </div>
 
-                        <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleSubmit}>
                             {[
                                 "firstName",
                                 "email",
@@ -45,6 +66,20 @@ export default function ContactUsPage() {
                                     placeholder={t("contact.form.placeholder")}
                                     className="w-full resize-none p-3 rounded-md bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                                 ></textarea>
+                            </div>
+
+                            {/* Google reCAPTCHA */}
+                            <div className="md:col-span-2">
+                                <ReCAPTCHA
+                                    sitekey={import.meta.env.VITE_CAPTCHA_SITE_KEY}
+                                    onChange={(token) => {
+                                        setCaptchaToken(token)
+                                        setErrors((prev) => ({ ...prev, captcha: undefined }))
+                                    }}
+                                />
+                                {errors.captcha && (
+                                    <p className="mt-2 text-sm text-red-400">{errors.captcha}</p>
+                                )}
                             </div>
 
                             <div className="md:col-span-2 text-center">

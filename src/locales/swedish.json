@@ -222,7 +222,7 @@
         "universityUndergraduate": "Universitet, Kandidatnivå",
         "universityMasters": "Universitet, Magister / Master",
         "postSecondary": "Eftergymnasial utbildning",
-        "upperSecondary": "Gymnasieskola / Folkhögskola",
+        "upperSecondary": "PhD-studie",
         "compulsory": "Grundskola",
         "phd": "Doktorandstudier",
         "eliteAthlete": "Är du en elitidrottare?",
@@ -703,5 +703,11 @@
                 "desc": "Tillsammans stärker vi föreningar och ideella krafter för en hållbar och levande idrottsrörelse."
             }
         }
-    }
+    },
+    "sorry":"Förlåt",
+    "noSc":"Tyvärr är du inte berättigad till något stipendium.",
+    "warning":"Data laddas, det kan ta 1 minut",
+    "pk":"Betala med klarna",
+    "pc":"Betala med kort",
+    "pl":"Betala med paypal"
 }

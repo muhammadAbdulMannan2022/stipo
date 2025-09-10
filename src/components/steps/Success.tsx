@@ -1,146 +1,161 @@
-"use client"
+"use client";
 
-import React, { useContext, useEffect, useState } from "react"
-import { CheckCircle } from "lucide-react"
-import { useTranslation } from "react-i18next"
-import { useNavigate } from "react-router"
-import { useCreatePaymentMutation, useGenerateDataMutation } from "../../store/api/appSlice"
-import { RouteContext } from "../../App"
+import React, { useContext, useEffect, useState } from "react";
+import { CheckCircle, RotateCcw } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
+import { useCreatePaymentMutation, useGenerateDataMutation } from "../../store/api/appSlice";
+import { RouteContext } from "../../App";
+
+interface RouteContextType {
+    setCurrentRoute: (route: string) => void;
+}
 
 const Success: React.FC = () => {
-    const { setCurrentRoute }: any = useContext(RouteContext)
-    const { t } = useTranslation()
-    const navigate = useNavigate()
-    const applicationToken = localStorage.getItem("application_token") || ""
-    const [errorMessage, setErrorMessage] = useState<string | null>(null)
-    const [pay, { isLoading: isPaymentLoading }] = useCreatePaymentMutation()
-    const [generateData, { isLoading: isGetDataLoading }] = useGenerateDataMutation()
-    const [scholarshipCount, setScholarships] = useState<number | "loading...">("loading...")
+    const { setCurrentRoute } = useContext(RouteContext) as RouteContextType;
+    const { t } = useTranslation();
+    const navigate = useNavigate();
+    const applicationToken = localStorage.getItem("application_token") || "";
+    const [errorMessage, setErrorMessage] = useState<string | null>(null);
+    const [pay] = useCreatePaymentMutation();
+    const [generateData, { isLoading: isGetDataLoading }] = useGenerateDataMutation();
+    const [scholarshipCount, setScholarships] = useState<number | "loading...">("loading...");
+    const [isPaymentProcessing, setIsPaymentProcessing] = useState(false);
+
     const fetchData = async () => {
         if (applicationToken) {
             try {
-                const response = await generateData({ application_token: applicationToken }).unwrap()
-                console.log("Generated data:", response?.success_count)
-                setScholarships(Number(response.success_count))
-            } catch (error: any) {
-                if (error.originalStatus == 500) {
-                    setErrorMessage("Internal Server Error")
+                const response = await generateData({ application_token: applicationToken }).unwrap();
+                const count = Number(response.success_count);
+                if (!isNaN(count)) {
+                    setScholarships(count);
                 } else {
-                    setErrorMessage(error?.data?.error || error?.data?.detail || "error")
+                    setErrorMessage("Invalid scholarship count received");
                 }
-                console.error("Failed to fetch scholarship data:", error.originalStatus)
-            } finally {
-
+            } catch (error: any) {
+                setErrorMessage(error?.data?.error || "error");
             }
         }
-    }
-    useEffect(() => {
-        fetchData()
-    }, [])
+    };
 
-    const handlePayment = async () => {
-        const email = localStorage.getItem("email") || ""
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const handlePayment = async (pay_type: "klarna" | "card" | "payple") => {
+        const email = localStorage.getItem("email") || "";
         try {
-            setErrorMessage(null) // Clear any previous errors
-            if (email) {
-                const response = await pay({ email, success_url: "http://localhost:5151/start/paymentSuccess", cancel_url: "http://localhost:5151/start/success" }).unwrap() // Replace with dynamic email
-                if (response.payment_link) {
-                    setCurrentRoute()
-                    window.location.assign(response.payment_link)
-                } else {
-                    setErrorMessage(t("success.paymentFailed"))
-                }
+            setErrorMessage(null);
+            if (!email) return;
+
+            setIsPaymentProcessing(true);
+
+            const response = await pay({
+                email,
+                pay_type,
+                success_url: "http://localhost:5151/start/paymentSuccess",
+                cancel_url: "http://localhost:5151/start/success",
+            }).unwrap();
+
+            if (response.payment_link) {
+                window.location.assign(response.payment_link);
+            } else {
+                setErrorMessage(t("success.paymentFailed"));
             }
         } catch (error: any) {
             if (error?.data?.error === "you have already paid.") {
-                setCurrentRoute("/start/paymentSuccess")
-                navigate("/start/paymentSuccess")
+                setCurrentRoute("/start/paymentSuccess");
+                navigate("/start/paymentSuccess");
             } else {
-                console.error("Payment error:", error)
-                setErrorMessage(error?.error || error?.data?.error || t("success.paymentError"))
+                setErrorMessage(error?.error || error?.data?.error || t("success.paymentError"));
             }
+        } finally {
+            setIsPaymentProcessing(false);
         }
-    }
+    };
 
     return (
-        <div className="bg-white rounded-lg shadow-lg max-w-md min-w-md mx-auto overflow-hidden">
-            {/* Header Section */}
-            <div className="bg-gray-50 p-6 border-b border-gray-200">
-                <h2 className="text-2xl font-bold text-2ndcolor-text">{t("success.title")}</h2>
-            </div>
-
-            {/* Content Section */}
-            <div className="p-6 text-center">
-                <div className="flex justify-center mb-6">
-                    <div className="bg-green-500 rounded-full p-3 flex items-center justify-center">
-                        <CheckCircle size={48} className="text-white" />
-                    </div>
+        <div className="bg-white rounded-xl shadow-2xl max-w-lg mx-auto overflow-hidden">
+            {typeof scholarshipCount === "number" && scholarshipCount > 0 && (
+                <div className="bg-gradient-to-r from-blue-50 to-gray-50 p-6 border-b border-gray-200">
+                    <h2 className="text-3xl font-extrabold text-gray-900">{t("success.title")}</h2>
                 </div>
+            )}
 
-                <h3 className="text-3xl font-bold text-green-600 mb-4">{t("success.congrats")}</h3>
-
-                {
-                    scholarshipCount === "loading..." ? <div className="w-full">
-                        <div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
-                            <svg className="text-gray-300 animate-spin" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24">
-                                <path
-                                    d="M32 3C35.8083 3 39.5794 3.75011 43.0978 5.20749C46.6163 6.66488 49.8132 8.80101 52.5061 11.4939C55.199 14.1868 57.3351 17.3837 58.7925 20.9022C60.2499 24.4206 61 28.1917 61 32C61 35.8083 60.2499 39.5794 58.7925 43.0978C57.3351 46.6163 55.199 49.8132 52.5061 52.5061C49.8132 55.199 46.6163 57.3351 43.0978 58.7925C39.5794 60.2499 35.8083 61 32 61C28.1917 61 24.4206 60.2499 20.9022 58.7925C17.3837 57.3351 14.1868 55.199 11.4939 52.5061C8.801 49.8132 6.66487 46.6163 5.20749 43.0978C3.7501 39.5794 3 35.8083 3 32C3 28.1917 3.75011 24.4206 5.2075 20.9022C6.66489 17.3837 8.80101 14.1868 11.4939 11.4939C14.1868 8.80099 17.3838 6.66487 20.9022 5.20749C24.4206 3.7501 28.1917 3 32 3L32 3Z"
-                                    stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"></path>
-                                <path
-                                    d="M32 3C36.5778 3 41.0906 4.08374 45.1692 6.16256C49.2477 8.24138 52.7762 11.2562 55.466 14.9605C58.1558 18.6647 59.9304 22.9531 60.6448 27.4748C61.3591 31.9965 60.9928 36.6232 59.5759 40.9762"
-                                    stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-900">
-                                </path>
-                            </svg>
+            <div className="p-8 text-center flex flex-col items-center justify-center min-h-[400px]">
+                {!errorMessage && typeof scholarshipCount === "number" && scholarshipCount > 0 && (
+                    <div className="flex justify-center mb-6">
+                        <div className="bg-green-500 rounded-full p-4 flex items-center justify-center">
+                            <CheckCircle size={56} className="text-white" />
                         </div>
-                    </div> : <div>
-                        {
-                            scholarshipCount < 1 ? <p className="text-xl text-gray-800 mb-8">{t("success.noScholarship")}</p> : <p className="text-xl text-gray-800 mb-8">
-                                {t("success.message", {
-                                    count: scholarshipCount,
-                                    interpolation: { escapeValue: false },
-                                })}
-                            </p>
-                        }
                     </div>
-                }
-
-                {errorMessage && (
-                    <p className="text-red-500 mb-4" aria-live="polite">{errorMessage}</p>
                 )}
 
-                {/* Button */}
-                <div className="text-center pb-5">
-                    {scholarshipCount === 0 ? (
-                        <>
-                            <p className="text-red-500 mb-4">{t("success.noScholarship")}</p>
-                            <button
-                                onClick={() => {
-                                    navigate("/start")
-                                    setCurrentRoute("/start")
-                                }} // Go back to previous page
-                                className="w-full py-3 px-6 rounded-lg font-semibold text-white bg-gray-600 hover:bg-gray-700 transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-                            >
-                                {t("success.goBack")}
-                            </button>
-                        </>
-                    ) : (
+                {!errorMessage && scholarshipCount === "loading..." ? (
+                    <div className="flex flex-col items-center">
+                        <div className="three-body">
+                            <div className="three-body__dot"></div>
+                            <div className="three-body__dot"></div>
+                            <div className="three-body__dot"></div>
+                        </div>
+                        <p className="text-gray-600 mt-4">{t("warning")}</p>
+                    </div>
+                ) : typeof scholarshipCount === "number" && scholarshipCount < 1 ? (
+                    <p className="text-xl text-gray-700 mb-8">{t("noSc")}</p>
+                ) : typeof scholarshipCount === "number" ? (
+                    <p className="text-xl text-gray-700 mb-8 font-medium">
+                        {t("success.message", { count: scholarshipCount })}
+                    </p>
+                ) : null}
+
+                {errorMessage && (
+                    <div className="flex flex-col items-center justify-center">
+                        <img src="/img.jpg" width={150} height={150} alt="Error" />
+                        <RotateCcw
+                            className="hover:cursor-pointer my-6 text-blue-600 font-bold hover:scale-110 transition-transform duration-200"
+                            size={32}
+                            onClick={() => window.location.reload()}
+                        />
+                        <p className="text-red-500 text-lg">{errorMessage}</p>
+                    </div>
+                )}
+
+                {!errorMessage && scholarshipCount !== "loading..." && (
+                    <div className="flex flex-col gap-4 w-full max-w-xs">
                         <button
-                            onClick={handlePayment}
-                            disabled={isPaymentLoading || isGetDataLoading}
-                            className={`w-full py-3 px-6 rounded-lg font-semibold hover:cursor-pointer text-white
-                bg-gradient-to-r from-purple-600 to-indigo-600
-                hover:from-purple-700 hover:to-indigo-700
-                transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
-                ${isPaymentLoading || isGetDataLoading ? "opacity-50 cursor-not-allowed" : ""}`}
+                            onClick={() => handlePayment("klarna")}
+                            disabled={isPaymentProcessing || isGetDataLoading}
+                            className={`w-full py-3 px-6 rounded-lg font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300 shadow-md ${
+                                isPaymentProcessing || isGetDataLoading ? "opacity-50 cursor-not-allowed" : ""
+                            }`}
                         >
-                            {isPaymentLoading ? t("success.processing") : t("success.button")}
+                            {isPaymentProcessing ? t("success.processing") : t("pk")}
                         </button>
-                    )}
-                </div>
+
+                        <button
+                            onClick={() => handlePayment("card")}
+                            disabled={isPaymentProcessing || isGetDataLoading}
+                            className={`w-full py-3 px-6 rounded-lg font-semibold text-white bg-purple-600 hover:bg-purple-700 transition-all duration-300 shadow-md ${
+                                isPaymentProcessing || isGetDataLoading ? "opacity-50 cursor-not-allowed" : ""
+                            }`}
+                        >
+                            {isPaymentProcessing ? t("success.processing") : t("pc")}
+                        </button>
+
+                        <button
+                            onClick={() => handlePayment("payple")}
+                            disabled={isPaymentProcessing || isGetDataLoading}
+                            className={`w-full py-3 px-6 rounded-lg font-semibold text-white bg-teal-600 hover:bg-teal-700 transition-all duration-300 shadow-md ${
+                                isPaymentProcessing || isGetDataLoading ? "opacity-50 cursor-not-allowed" : ""
+                            }`}
+                        >
+                            {isPaymentProcessing ? t("success.processing") : t("pl")}
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Success
+export default Success;
