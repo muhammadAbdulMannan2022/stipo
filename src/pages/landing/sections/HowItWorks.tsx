@@ -52,7 +52,7 @@ function HowItWorks() {
                     {t("howItWorks.titleSection")}
                 </h2>
             </div>
-            {data.map((stp, i) => <Steps key={i} {...stp} />)}
+            {data.map((stp, i) => <Steps key={i} {...stp} id={i} />)}
         </div>
     )
 }

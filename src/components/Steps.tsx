@@ -1,4 +1,3 @@
-import React from "react";
 import { useTranslation, Trans } from "react-i18next";
 
 interface StepProps {
@@ -8,16 +7,18 @@ interface StepProps {
     image: string;
     imageAltKey: string;
     reverse?: boolean;
+    id:any
 }
 
-const Steps: React.FC<StepProps> = ({
+const Steps = ({
     labelKey,
     titleKey,
     descriptionKey,
     image,
     imageAltKey,
     reverse = false,
-}) => {
+    id,
+}:StepProps) => {
     const { t } = useTranslation();
 
     return (
@@ -42,7 +43,7 @@ const Steps: React.FC<StepProps> = ({
             </div>
 
             {/* Right Image Section */}
-            <div className="flex justify-center md:justify-end px-4 flex-1">
+            <div className={`${Number(id)%2 != 0 ? "md:justify-start":"md:justify-end" } flex justify-center  px-4 flex-1`}>
                 <img
                     src={image}
                     alt={t(imageAltKey)}
