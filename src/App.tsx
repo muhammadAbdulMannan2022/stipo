@@ -26,6 +26,24 @@ export const RouteProvider = ({ children }: { children: ReactNode }) => {
 // 4️⃣ App component
 export default function App() {
   const { pathname, hash } = useLocation();
+  useEffect(() => {
+    const handleHashChange = () => {
+      const { hash } = window.location;
+
+      if (hash) {
+        const element = document.getElementById(hash.slice(1));
+        if (element) element.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    };
+
+    // run on mount
+    handleHashChange();
+
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   useEffect(() => {
     if (hash !== "#faq") {
