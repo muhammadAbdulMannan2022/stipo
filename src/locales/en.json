@@ -204,6 +204,7 @@
     "submitButton": "Submit Review"
   },
   "personalForm": {
+    "organizationId": "Organisation ID",
     "title": "Personal Form",
     "description": "In order to find and select the most suitable scholarships for you we need to know more about you.",
     "whoAreYou": "Who are you?",
@@ -242,7 +243,8 @@
       "organizationName": "Enter organization name",
       "email": "Enter your email",
       "age": "Enter your age",
-      "select": "Select an option"
+      "select": "Select an option",
+      "organizationId": "Enter Organisation ID"
     },
     "errors": {
       "whoAreYou": "Please select who you are",

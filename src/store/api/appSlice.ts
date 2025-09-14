@@ -26,6 +26,7 @@ type OrganizationForm = {
   email: string;
   organizationName: string;
   language: string;
+  organizationId: string;
 };
 
 // union type

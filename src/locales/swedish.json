@@ -204,6 +204,7 @@
     "submitButton": "Skicka omdöme"
   },
   "personalForm": {
+    "organizationId": "Organisations-ID",
     "title": "Personligt formulär",
     "description": "För att hitta och välja de mest lämpliga stipendierna för dig behöver vi veta mer om dig.",
     "whoAreYou": "Vem är du?",
@@ -242,7 +243,8 @@
       "organizationName": "Skriv organisationens namn",
       "email": "Skriv din e-postadress",
       "age": "Skriv din ålder",
-      "select": "Välj ett alternativ"
+      "select": "Välj ett alternativ",
+      "organizationId": "Ange organisations-ID"
     },
     "errors": {
       "whoAreYou": "Vänligen välj vem du är",

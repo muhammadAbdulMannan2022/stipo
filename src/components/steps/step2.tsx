@@ -15,6 +15,7 @@ interface FormDataInterface {
   whoAreYou: string;
   name: string;
   organizationName?: string;
+  organizationId?: string;
   email: string;
   gender: string;
   age: string;
@@ -33,6 +34,7 @@ interface FormErrors {
   whoAreYou?: string;
   name?: string;
   organizationName?: string;
+  organizationId?: string;
   email?: string;
   gender?: string;
   age?: string;
@@ -59,6 +61,7 @@ const PersonalForm: React.FC = () => {
     whoAreYou: "",
     name: "",
     organizationName: "",
+    organizationId: "",
     email: "",
     gender: "",
     age: "",
@@ -74,7 +77,6 @@ const PersonalForm: React.FC = () => {
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
-  // const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const education = t("personalForm.education", { returnObjects: true }) as {
     upperSecondary: { [key: string]: string };
@@ -104,6 +106,13 @@ const PersonalForm: React.FC = () => {
         !formData.organizationName?.trim()
       ) {
         newErrors.organizationName = t("personalForm.errors.organizationName");
+      }
+
+      if (
+        formData.whoAreYou === t("personalForm.organization") &&
+        !formData.organizationId?.trim()
+      ) {
+        newErrors.organizationId = t("personalForm.errors.organizationId");
       }
 
       if (!formData.email.trim()) {
@@ -141,14 +150,25 @@ const PersonalForm: React.FC = () => {
         formData.sport === t("personalForm.sports.other") &&
         !formData.sportName?.trim()
       ) {
-        newErrors.sport = t("personalForm.errors.sportName"); // add this key in i18n
+        newErrors.sport = t("personalForm.errors.sportName");
       }
     } else {
-      if (!captchaToken) {
-        newErrors.captcha = t("personalForm.errors.captcha");
+      if (!formData.organizationName?.trim()) {
+        newErrors.organizationName = t("personalForm.errors.organizationName");
+      }
+      if (!formData.organizationId?.trim()) {
+        newErrors.organizationId = t("personalForm.errors.organizationId");
+      }
+      if (!formData.email.trim()) {
+        newErrors.email = t("personalForm.errors.email");
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+        newErrors.email = t("personalForm.errors.emailInvalid");
       }
       if (!formData.municipality) {
         newErrors.municipality = t("personalForm.errors.municipality");
+      }
+      if (!captchaToken) {
+        newErrors.captcha = t("personalForm.errors.captcha");
       }
     }
 
@@ -172,7 +192,6 @@ const PersonalForm: React.FC = () => {
         [name]: checkedValue,
       }));
 
-      // Clear error for this field when user starts typing
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     },
     []
@@ -182,11 +201,6 @@ const PersonalForm: React.FC = () => {
     async (e: React.FormEvent<HTMLFormElement>) => {
       const lang = localStorage.getItem("i18nextLng") || "";
       e.preventDefault();
-
-      // if (!acceptedTerms) {
-      //     alert(t("personalForm.acceptTermsAlert"));
-      //     return;
-      // }
 
       if (!validateForm()) {
         return;
@@ -216,11 +230,12 @@ const PersonalForm: React.FC = () => {
           name: formData.name,
           email: formData.email,
           organizationName: formData.organizationName || "",
+          organizationId: formData.organizationId || "",
           municipality: formData.municipality || "",
-          elite_athlete: formData.eliteAthlete || "", // Include eliteAthlete
-          sport: formData.sport || "", // Include sport
-          sport_name: formData.sportName || "", // Include sportName if sport is "other"
-          purpose_of_funding: formData.purposeoffunding || "", // Include purposeoffunding
+          elite_athlete: formData.eliteAthlete || "",
+          sport: formData.sport || "",
+          sport_name: formData.sportName || "",
+          purpose_of_funding: formData.purposeoffunding || "",
           language: lang,
         };
       }
@@ -331,29 +346,56 @@ const PersonalForm: React.FC = () => {
         </div>
 
         {formData.whoAreYou === t("personalForm.organization") && (
-          <div>
-            <label
-              htmlFor="organizationName"
-              className="block text-gray-700 text-base font-medium mb-2"
-            >
-              {t("personalForm.organizationName")}
-            </label>
-            <input
-              id="organizationName"
-              name="organizationName"
-              value={formData.organizationName}
-              onChange={handleChange}
-              placeholder={t("personalForm.placeholder.organizationName") || ""}
-              className={`w-full p-3 border ${
-                errors.organizationName ? "border-red-500" : "border-gray-300"
-              } rounded-md`}
-            />
-            {errors.organizationName && (
-              <p className="mt-1 text-sm text-red-500">
-                {errors.organizationName}
-              </p>
-            )}
-          </div>
+          <>
+            <div>
+              <label
+                htmlFor="organizationName"
+                className="block text-gray-700 text-base font-medium mb-2"
+              >
+                {t("personalForm.organizationName")}
+              </label>
+              <input
+                id="organizationName"
+                name="organizationName"
+                value={formData.organizationName}
+                onChange={handleChange}
+                placeholder={
+                  t("personalForm.placeholder.organizationName") || ""
+                }
+                className={`w-full p-3 border ${
+                  errors.organizationName ? "border-red-500" : "border-gray-300"
+                } rounded-md`}
+              />
+              {errors.organizationName && (
+                <p className="mt-1 text-sm text-red-500">
+                  {errors.organizationName}
+                </p>
+              )}
+            </div>
+            <div>
+              <label
+                htmlFor="organizationId"
+                className="block text-gray-700 text-base font-medium mb-2"
+              >
+                {t("personalForm.organizationId")}
+              </label>
+              <input
+                id="organizationId"
+                name="organizationId"
+                value={formData.organizationId}
+                onChange={handleChange}
+                placeholder={t("personalForm.placeholder.organizationId") || ""}
+                className={`w-full p-3 border ${
+                  errors.organizationId ? "border-red-500" : "border-gray-300"
+                } rounded-md`}
+              />
+              {errors.organizationId && (
+                <p className="mt-1 text-sm text-red-500">
+                  {errors.organizationId}
+                </p>
+              )}
+            </div>
+          </>
         )}
 
         <div>
@@ -379,7 +421,6 @@ const PersonalForm: React.FC = () => {
           )}
         </div>
 
-        {/* Gender, Age, Education Level, Elite Athlete */}
         {formData.whoAreYou !== t("personalForm.organization") && (
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -425,13 +466,12 @@ const PersonalForm: React.FC = () => {
                 compulsory: t("personalForm.compulsory"),
                 phd: t("personalForm.phd"),
               })}
-              {/* atlit */}
               {renderSelect("eliteAthlete", "eliteAthlete", {
                 yes: t("personalForm.yes"),
                 no: t("personalForm.no"),
               })}
             </div>
-            {/* schools */}
+
             {formData.educationLevel && (
               <div>
                 {formData.educationLevel === t("personalForm.upperSecondary") &&
@@ -581,7 +621,7 @@ const PersonalForm: React.FC = () => {
             onChange={handleChange}
             placeholder={t("personalForm.purposeoffunding") || ""}
             className={`w-full p-3 border ${
-              errors.sport ? "border-red-500" : "border-gray-300"
+              errors.purposeoffunding ? "border-red-500" : "border-gray-300"
             } rounded-md`}
           />
           {errors.purposeoffunding && (
@@ -591,11 +631,8 @@ const PersonalForm: React.FC = () => {
           )}
         </div>
 
-        {/* new  */}
-
         {renderSelect("municipality", "municipality", municipalityOptions)}
 
-        {/* notRobot checkbox */}
         <div className="pt-4 flex items-center">
           <label
             htmlFor="notRobot"
@@ -622,7 +659,6 @@ const PersonalForm: React.FC = () => {
           </div>
         </div>
 
-        {/* Google reCAPTCHA */}
         <div className="pt-4">
           <ReCAPTCHA
             sitekey={import.meta.env.VITE_CAPTCHA_SITE_KEY}

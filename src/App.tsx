@@ -9,7 +9,9 @@ type RouteContextType = {
   setCurrentRoute: (route: string) => void;
 };
 
-export const RouteContext = createContext<RouteContextType | undefined>(undefined);
+export const RouteContext = createContext<RouteContextType | undefined>(
+  undefined
+);
 
 export const RouteProvider = ({ children }: { children: ReactNode }) => {
   const [currentRoute, setCurrentRoute] = useState<string>("/start"); // default starting route
@@ -53,6 +55,7 @@ export default function App() {
 
   return (
     <RouteProvider>
+      {/* <div className="bg-[url('/Pattern.jpg')] bg-contain"> */}
       <div>
         <Navbar />
         <Outlet />
