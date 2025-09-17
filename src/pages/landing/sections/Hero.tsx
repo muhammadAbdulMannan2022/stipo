@@ -7,8 +7,8 @@ export default function HomePage() {
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col min-h-[92vh] bg-[url('/Pattern.jpg')] bg-cover bg-no-repeat">
-      <main className="flex-grow bg-gradient-to-b from-white/70 to-[#F7F6FD]/70 relative overflow-hidden flex items-center justify-center py-10 sm:py-12 px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col min-h-[92vh] ">
+      <main className="flex-grow relative overflow-hidden flex items-center justify-center py-10 sm:py-12 px-4 sm:px-6 lg:px-8">
         {/* Decorative elements */}
         <div className="absolute top-8 left-1/4 w-16 h-4 bg-blue-200 rounded-full opacity-30 transform rotate-12 hidden md:block"></div>
         <div className="absolute top-1/4 right-1/4 w-24 h-24 bg-blue-100 rounded-full opacity-20 hidden md:block"></div>

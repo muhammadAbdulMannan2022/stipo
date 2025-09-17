@@ -623,42 +623,67 @@
     "ostragoinge": "Östra Göinge"
   },
   "legal": {
-    "privacyPolicyTitle": "Integritetspolicy – Så hanterar vi dina personuppgifter",
+    "privacyPolicyTitle": "Integritetspolicy – Hur vi hanterar dina personuppgifter",
     "privacyPolicyContent": [
-      "Vi på StiPo W&S AB, ett svenskt företag med säte i Täby, värnar om din integritet och följer gällande dataskyddslagstiftning, inklusive Dataskyddsförordningen (GDPR) och kompletterande svensk lagstiftning. Denna policy förklarar hur vi samlar in, behandlar och skyddar dina personuppgifter.",
+      "Vi på StiPo W&S AB, ett svenskt företag baserat i Täby, värnar om din integritet och följer gällande dataskyddslagstiftning, inklusive dataskyddsförordningen (GDPR) och kompletterande svensk lag. Denna policy förklarar hur vi samlar in, behandlar och skyddar dina personuppgifter.",
       "Vi samlar in personuppgifter när du:",
       "– Fyller i formulär eller enkäter på vår webbplats",
-      "– Köper våra tjänster eller deltar i våra idrottsaktiviteter",
-      "De uppgifter vi kan komma att samla in inkluderar:",
+      "– Köper våra tjänster eller deltar i våra aktiviteter",
+      "De uppgifter vi kan samla in inkluderar:",
       "– Namn",
       "– Kontaktuppgifter (e-post, telefonnummer)",
       "– Kön",
       "– Kommun",
-      "– Annan information du själv lämnar i fritextfält",
-      "Vi samlar enbart in den information som är nödvändig för att kunna:",
+      "– Annan information du lämnar i fritextfält",
+      "Vi samlar endast in den information som är nödvändig för att:",
       "– Leverera våra tjänster",
       "– Kommunicera med dig",
-      "– Följa upp statistik och förbättra våra erbjudanden",
-      "Dina personuppgifter behandlas med hög säkerhet och endast av behörig personal. Vi använder tekniska och organisatoriska säkerhetsåtgärder för att skydda informationen mot obehörig åtkomst, förlust eller manipulation.",
-      "Uppgifterna lagras inom EU/EES och lämnas inte vidare till tredje part utan ditt uttryckliga samtycke, om vi inte är skyldiga enligt lag att göra det.",
-      "Vi sparar dina uppgifter så länge det är nödvändigt för att uppfylla ändamålen med behandlingen eller så länge vi är skyldiga att göra det enligt lag (till exempel bokföringslagen)."
+      "– Föra statistik och förbättra vårt erbjudande",
+      "Dina personuppgifter behandlas säkert och endast av behörig personal. Vi använder tekniska och organisatoriska åtgärder för att skydda dina uppgifter mot obehörig åtkomst, förlust eller manipulation.",
+      "Uppgifter lagras inom EU/EES och delas inte med tredje part utan ditt uttryckliga samtycke, om det inte krävs enligt lag.",
+      "Vi sparar dina uppgifter endast så länge det behövs för angivna ändamål eller som lagen kräver (t.ex. bokföringslagar)."
     ],
     "yourRights": "Dina rättigheter enligt GDPR",
     "rightsList": [
-      "Få tillgång till de uppgifter vi har om dig",
-      "Begära rättelse eller radering av dina uppgifter",
-      "Begränsa eller invända mot behandlingen",
-      "Få dina uppgifter överförda (dataportabilitet)",
-      "Lämna klagomål till Integritetsskyddsmyndigheten (IMY)"
+      "Rätt att få tillgång till dina uppgifter",
+      "Rätt att begära rättelse eller radering",
+      "Rätt att begränsa eller invända mot behandling",
+      "Rätt till dataportabilitet",
+      "Rätt att lämna klagomål till Integritetsskyddsmyndigheten (IMY)"
     ],
     "disclaimer": {
       "title": "Ansvarsfriskrivning för externa länkar",
       "content": [
-        "Som en del av vår tjänst levererar vi information via e-post till våra kunder. Detta material innehåller uppgifter om olika stiftelser och fonder, inklusive länkar till externa webbplatser där mer information kan finnas tillgänglig.",
-        "Vi ansvarar inte för:",
-        "– Innehållet på dessa externa webbplatser",
-        "– Att informationen är korrekt, uppdaterad eller fullständig",
-        "– Eventuell direkt eller indirekt skada genom att besöka eller agera på informationen via dessa länkar"
+        "Som en del av vår tjänst tillhandahåller vi e-postinnehåll som inkluderar information om olika stiftelser samt länkar till externa webbplatser.",
+        "Vi tar inget ansvar för:",
+        "– Innehållet på externa webbplatser",
+        "– Informationens korrekthet, uppdatering eller fullständighet",
+        "– Direkta eller indirekta skador som kan uppstå vid besök eller agerande på grund av extern information"
+      ]
+    },
+    "termsOfPurchase": {
+      "title": "Köpvillkor",
+      "sections": [
+        {
+          "heading": "1. Allmänt",
+          "text": "När du genomför ett köp hos oss godkänner du följande villkor."
+        },
+        {
+          "heading": "2. Leverans",
+          "text": "Våra produkter levereras elektroniskt via e-post efter genomfört köp och betalning. Ingen fysisk vara skickas."
+        },
+        {
+          "heading": "3. Ångerrätt & returer",
+          "text": "Enligt gällande lag (Lag om distansavtal och avtal utanför affärslokaler) gäller inte ångerrätt för digitalt innehåll som levereras elektroniskt när leveransen har påbörjats med kundens uttryckliga samtycke. Detta innebär att returer och återköp inte är möjliga efter att beställningen har genomförts och produkten har levererats."
+        },
+        {
+          "heading": "4. Reklamationer",
+          "text": "Reklamationer hanteras i enlighet med svensk konsumentlagstiftning. Om en produkt inte fungerar som utlovat, eller om något fel uppstår vid leverans, ber vi dig kontakta vår kundsupport så hjälper vi dig."
+        },
+        {
+          "heading": "5. Godkännande av villkor",
+          "text": "Genom att genomföra ditt köp bekräftar du att du har tagit del av och godkänt våra köpvillkor samt att du är medveten om att ångerrätten inte gäller för produkter som levereras elektroniskt."
+        }
       ]
     },
     "termsOfUse": {
@@ -666,27 +691,27 @@
       "sections": [
         {
           "heading": "1. Äganderätt och upphovsrätt",
-          "text": "Allt innehåll på denna webbplats ägs eller licensieras exklusivt av Stipo W&S AB och skyddas av svensk och internationell upphovsrättslagstiftning. Innehållet får endast användas för privat bruk. Återanvändning utan skriftligt tillstånd är förbjudet."
+          "text": "Allt innehåll på denna webbplats ägs eller licensieras uteslutande av StiPo W&S AB och skyddas av svensk och internationell upphovsrättslagstiftning. Nedladdning eller användning av innehåll är tillåtet endast för privat bruk. Vidare spridning utan skriftligt tillstånd är förbjudet."
         },
         {
-          "heading": "2. Korrekthet och ansvar för information",
-          "text": "Vi strävar efter korrekt information men kan inte garantera att allt innehåll är felfritt. Vi ansvarar inte för eventuella förluster på grund av användning eller otillgänglighet."
+          "heading": "2. Korrekthet och ansvar",
+          "text": "Vi strävar efter korrekt och relevant information men kan inte garantera fullständighet eller felfrihet. StiPo W&S AB tar inget ansvar för förluster som orsakas av användning eller bristande åtkomst till webbplatsen."
         },
         {
           "heading": "3. Externa länkar",
-          "text": "Vår webbplats kan innehålla länkar till externa webbplatser. Vi ansvarar inte för innehållet eller eventuella skador orsakade av dessa länkar."
+          "text": "Vi kan inkludera länkar till externa webbplatser. Dessa tillhandahålls som en service och innebär inte att vi godkänner deras innehåll. Vi ansvarar inte för eventuella skador som orsakas av dessa länkar."
         },
         {
           "heading": "4. Varumärken och rättigheter",
-          "text": "Varumärken och logotyper på webbplatsen tillhör respektive ägare och får inte användas utan tillstånd."
+          "text": "Logotyper, varumärken och produktnamn tillhör respektive ägare och får inte användas utan tillstånd."
         },
         {
-          "heading": "5. Hantering av personuppgifter",
-          "text": "Vi samlar in och behandlar personuppgifter enligt vår integritetspolicy och gällande lagstiftning."
+          "heading": "5. Personuppgifter",
+          "text": "Vi samlar in och behandlar personuppgifter i enlighet med vår integritetspolicy och gällande lagstiftning."
         },
         {
           "heading": "6. Samarbeten med tredje part",
-          "text": "Vi samarbetar ibland med externa leverantörer som är bundna av sekretessavtal. Infrastrukturleverantörer kan dock stå utanför sådana avtal."
+          "text": "Vi kan samarbeta med externa leverantörer som omfattas av sekretessavtal. Observera dock att infrastrukturleverantörer, såsom webbhotell och internetleverantörer, inte alltid omfattas av sådana avtal."
         }
       ]
     }

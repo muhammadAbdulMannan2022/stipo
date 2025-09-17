@@ -8,34 +8,32 @@ import { useEffect } from "react";
 import AboutUsSection from "./sections/HomeAbout";
 import PricingPage from "./sections/Priceing";
 
-
 export default function Home() {
-    const location = useLocation()
-
-    useEffect(() => {
-        if (location.hash === "#faq") {
-            const el = document.getElementById("faq")
-            if (el) {
-                el.scrollIntoView({ behavior: "smooth" })
-            }
-        }
-        if (location.hash === "#about") {
-            const el = document.getElementById("about")
-            if (el) {
-                el.scrollIntoView({ behavior: "smooth" })
-            }
-        }
-
-    }, [location])
-    return (
-        <>
-            <HeroPage />
-            <HowItWorksSection />
-            <PricingPage />
-            <AboutUsSection />
-            <TestimonialsSection />
-            <FAQSection />
-            <CallToActionSection />
-        </>
-    )
+  const location = useLocation();
+  useEffect(() => {
+    console.log(location);
+    if (location.hash === "#faq") {
+      const el = document.getElementById("faq");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    if (location.hash === "#about") {
+      const el = document.getElementById("about");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location, location.hash, location.pathname]);
+  return (
+    <>
+      <HeroPage />
+      <HowItWorksSection />
+      <PricingPage />
+      <AboutUsSection />
+      <TestimonialsSection />
+      <FAQSection />
+      <CallToActionSection />
+    </>
+  );
 }

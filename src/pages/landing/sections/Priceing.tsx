@@ -11,7 +11,7 @@ const PricingPage: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative w-full bg-gradient-to-b from-gray-50 to-white py-16 px-6 ">
+    <section className="relative w-full py-16 px-6 ">
       <div className="max-w-7xl mx-auto text-center">
         {/* Title */}
         <h1 className="text-4xl md:text-5xl font-extrabold text-primary-text">

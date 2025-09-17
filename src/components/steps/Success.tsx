@@ -66,8 +66,10 @@ const Success: React.FC = () => {
         email,
         pay_type,
         coupon: coupon?.trim() || undefined, // only send if user entered one
-        success_url: "http://localhost:5151/start/paymentSuccess",
-        cancel_url: "http://localhost:5151/start/success",
+        success_url:
+          "https://funny-brigadeiros-2a37bf.netlify.app/start/paymentSuccess",
+        cancel_url:
+          "https://funny-brigadeiros-2a37bf.netlify.app/start/success",
       }).unwrap();
 
       if (response.payment_link) {

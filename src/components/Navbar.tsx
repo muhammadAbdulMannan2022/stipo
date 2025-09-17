@@ -15,7 +15,7 @@ const navLinks: NavLink[] = [
   { key: "home", to: "/" },
   { key: "contact_us", to: "/contact" },
   // { key: "privacy", to: "/privacy" },
-  { key: "faq", to: "#faq" },
+  { key: "faq", to: "/#faq" },
 ];
 
 const Navbar: React.FC = () => {

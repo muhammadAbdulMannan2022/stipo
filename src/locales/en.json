@@ -635,7 +635,7 @@
       "Data is stored within the EU/EEA and is not shared with third parties without your explicit consent unless required by law.",
       "We store your data only as long as needed for the intended purposes or as required by law (e.g., accounting laws)."
     ],
-    "yourRights": "Your rights under GDPR",
+    "yourRights": "Your Rights under GDPR",
     "rightsList": [
       "Access your data",
       "Request correction or deletion",
@@ -653,16 +653,41 @@
         "– Any direct or indirect damages from visiting or acting on external information"
       ]
     },
+    "termsOfPurchase": {
+      "title": "Terms of Purchase",
+      "sections": [
+        {
+          "heading": "1. General",
+          "text": "When you make a purchase from us, you agree to the following terms."
+        },
+        {
+          "heading": "2. Delivery",
+          "text": "Our products are delivered electronically via email after the purchase and payment have been completed. No physical items will be shipped."
+        },
+        {
+          "heading": "3. Right of Withdrawal & Returns",
+          "text": "According to applicable law (the Swedish Distance and Off-Premises Contracts Act), the right of withdrawal does not apply to digital content delivered electronically once the delivery has begun with the customer’s explicit consent. This means that returns and refunds are not possible after the order has been completed and the product has been delivered."
+        },
+        {
+          "heading": "4. Complaints",
+          "text": "Complaints are handled in accordance with Swedish consumer legislation. If a product does not function as promised, or if any error occurs during delivery, please contact our customer support and we will assist you."
+        },
+        {
+          "heading": "5. Acceptance of Terms",
+          "text": "By completing your purchase, you confirm that you have read and accepted our Terms of Purchase and that you understand the right of withdrawal does not apply to products delivered electronically."
+        }
+      ]
+    },
     "termsOfUse": {
       "title": "Terms of Use",
       "sections": [
         {
           "heading": "1. Ownership and Copyright",
-          "text": "All content on this website is exclusively owned or licensed by Stipo W&S AB and protected by Swedish and international copyright law. Downloading or using content is allowed for private use only. Redistribution without written permission is prohibited."
+          "text": "All content on this website is exclusively owned or licensed by StiPo W&S AB and protected by Swedish and international copyright law. Downloading or using content is allowed for private use only. Redistribution without written permission is prohibited."
         },
         {
           "heading": "2. Accuracy and Responsibility",
-          "text": "We strive for accurate and relevant information but cannot guarantee completeness or error-free content. Stipo W&S AB assumes no responsibility for losses caused by using or not accessing the site."
+          "text": "We strive for accurate and relevant information but cannot guarantee completeness or error-free content. StiPo W&S AB assumes no responsibility for losses caused by using or not accessing the site."
         },
         {
           "heading": "3. External Links",

@@ -74,19 +74,21 @@ export default function App() {
   return (
     <RouteProvider>
       {/* <div className="bg-[url('/Pattern.jpg')] bg-contain"> */}
-      <div>
-        <Navbar />
-        <Outlet />
-        <Footer />
+      <div className="bg-[url('/unnamed.jpg')] bg-cover">
+        <div className="bg-white/60">
+          <Navbar />
+          <Outlet />
+          <Footer />
 
-        {/* button fixed to bottom right */}
-        <button
-          className="fixed hover:cursor-pointer bottom-4 right-4 bg-primary-text text-white p-3 rounded-full shadow-lg hover:bg-primary-text transition-all"
-          onClick={scrollToFaq}
-          aria-label="Help"
-        >
-          <CircleQuestionMark className="w-5 h-5" />
-        </button>
+          {/* button fixed to bottom right */}
+          <button
+            className="fixed hover:cursor-pointer bottom-4 right-4 bg-primary-text text-white p-3 rounded-full shadow-lg hover:bg-primary-text transition-all"
+            onClick={scrollToFaq}
+            aria-label="Help"
+          >
+            <CircleQuestionMark className="w-5 h-5" />
+          </button>
+        </div>
       </div>
     </RouteProvider>
   );
