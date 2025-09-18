@@ -87,6 +87,13 @@ export const appApi = createApi({
         body: data,
       }),
     }),
+    chackAndGet: builder.mutation({
+      query: (data) => ({
+        method: "POST",
+        url: "/app/get_generated_result/",
+        body: data,
+      }),
+    }),
     goWithEmail: builder.mutation<any, { email: string }>({
       query: (email) => ({
         method: "POST",
@@ -122,4 +129,5 @@ export const {
   useGetReviewQuery,
   usePostReviewMutation,
   useGetFAQQuery,
+  useChackAndGetMutation,
 } = appApi;

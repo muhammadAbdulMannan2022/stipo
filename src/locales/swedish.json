@@ -735,7 +735,7 @@
   },
   "sorry": "Förlåt",
   "noSc": "Tyvärr är du inte berättigad till något stipendium.",
-  "warning": "Data laddas, det kan ta 1 minut",
+  "warning": "Data laddas, det kan ta 1-5 minut",
   "pk": "Betala med klarna",
   "pc": "Betala med kort",
   "pl": "Betala med paypal"

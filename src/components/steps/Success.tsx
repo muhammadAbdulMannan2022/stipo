@@ -5,6 +5,7 @@ import { CheckCircle, RotateCcw } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import {
+  useChackAndGetMutation,
   useCreatePaymentMutation,
   useGenerateDataMutation,
 } from "../../store/api/appSlice";
@@ -26,24 +27,24 @@ const Success: React.FC = () => {
   const [scholarshipCount, setScholarships] = useState<number | "loading...">(
     "loading..."
   );
+  const [taskId, setTaskId] = useState("");
   const [isPaymentProcessing, setIsPaymentProcessing] = useState(false);
+  const [chackAndGet, { isLoading: isCheckAndGetLoading }] =
+    useChackAndGetMutation();
 
   // coupon toggle + input state
   const [showCouponInput, setShowCouponInput] = useState(false);
   const [coupon, setCoupon] = useState<string>("");
 
+  // first request to generate task
   const fetchData = async () => {
     if (applicationToken) {
       try {
         const response = await generateData({
           application_token: applicationToken,
         }).unwrap();
-        const count = Number(response.success_count);
-        if (!isNaN(count)) {
-          setScholarships(count);
-        } else {
-          setErrorMessage("Invalid scholarship count received");
-        }
+        setTaskId(response.task_id);
+        console.log("Generated Task ID:", response.task_id);
       } catch (error: any) {
         setErrorMessage(error?.data?.error || "error");
       }
@@ -53,6 +54,56 @@ const Success: React.FC = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  // polling logic
+  useEffect(() => {
+    if (!taskId) return;
+
+    let intervalId: any = null;
+
+    const poll = async () => {
+      try {
+        const response = await chackAndGet({ task_id: taskId }).unwrap();
+        console.log("Polling response:", response);
+
+        // 🔴 Handle FAILED case
+        if (response?.status === "FAILED") {
+          setErrorMessage(response?.error || "Task failed");
+          setScholarships("loading..."); // reset or keep as is
+          if (intervalId) clearInterval(intervalId);
+          return;
+        }
+
+        // ✅ Handle SUCCESS_COUNT case
+        if (response?.success_count !== undefined) {
+          const count = Number(response.success_count);
+          if (!isNaN(count)) {
+            setScholarships(count);
+
+            // stop polling once data is available
+            if (intervalId) clearInterval(intervalId);
+          }
+        }
+      } catch (err) {
+        console.error("Polling error:", err);
+        setErrorMessage("Error fetching data");
+        if (intervalId) clearInterval(intervalId);
+      }
+    };
+
+    // run first check immediately
+    poll();
+
+    // then repeat every 6–10 seconds
+    intervalId = setInterval(
+      poll,
+      Math.floor(Math.random() * (10000 - 6000 + 1)) + 6000
+    );
+
+    return () => {
+      if (intervalId) clearInterval(intervalId);
+    };
+  }, [taskId, chackAndGet]);
 
   const handlePayment = async (pay_type: "klarna" | "card" | "paypal") => {
     const email = localStorage.getItem("email") || "";
