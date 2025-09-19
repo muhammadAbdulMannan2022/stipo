@@ -2,7 +2,7 @@
 
 import { useCallback, useContext, useState } from "react";
 import { ChevronRight } from "lucide-react";
-import { Link, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
 import {
   useSubmitNewFormMutation,
@@ -69,7 +69,7 @@ const PersonalForm: React.FC = () => {
     eliteAthlete: "",
     municipality: "",
     sport: "",
-    notRobot: "true",
+    notRobot: "false",
     sportName: "",
     educationLevelOption: "",
     educationLevelOther: "",
@@ -91,7 +91,10 @@ const PersonalForm: React.FC = () => {
 
   const validateForm = useCallback(() => {
     const newErrors: FormErrors = {};
-
+    console.log(formData.notRobot);
+    if (formData.notRobot != "true") {
+      newErrors.notRobot = "";
+    }
     if (!formData.whoAreYou) {
       newErrors.whoAreYou = t("personalForm.errors.whoAreYou");
     }
@@ -649,13 +652,13 @@ const PersonalForm: React.FC = () => {
           </label>
           <div className="flex gap-4 w-full items-center">
             <div className="ml-3 text-gray-700 text-base">
-              {t("personalForm.notRobot")}
-              <Link
+              {t("accept")}
+              {/* <Link
                 to="/privacy"
                 className="underline text-blue-600 text-base ms-1"
               >
                 {t("personalForm.readMore")}
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

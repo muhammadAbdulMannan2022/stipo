@@ -3,7 +3,7 @@
 import { useContext, useEffect, useState } from "react";
 import { CheckCircle, RotateCcw } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import {
   useChackAndGetMutation,
   useCreatePaymentMutation,
@@ -34,6 +34,7 @@ const Success: React.FC = () => {
   // coupon toggle + input state
   const [showCouponInput, setShowCouponInput] = useState(false);
   const [coupon, setCoupon] = useState<string>("");
+  const [accept, setAccept] = useState(false);
 
   // first request to generate task
   const fetchData = async () => {
@@ -105,6 +106,7 @@ const Success: React.FC = () => {
   }, [taskId, chackAndGet]);
 
   const handlePayment = async (pay_type: "klarna" | "card" | "paypal") => {
+    if (!accept) return;
     const email = localStorage.getItem("email") || "";
     try {
       setErrorMessage(null);
@@ -172,9 +174,9 @@ const Success: React.FC = () => {
             <p className="text-gray-600 mt-4">{t("warning")}</p>
           </div>
         ) : typeof scholarshipCount === "number" && scholarshipCount < 1 ? (
-          <p className="text-xl text-gray-700 mb-8">{t("noSc")}</p>
+          <p className="text-xl text-gray-700 mb-3">{t("noSc")}</p>
         ) : typeof scholarshipCount === "number" ? (
-          <p className="text-xl text-gray-700 mb-8 font-medium">
+          <p className="text-xl md:text-2xl text-gray-700 mb-3 font-medium max-w-sm">
             {t("success.message", { count: scholarshipCount })}
           </p>
         ) : null}
@@ -192,7 +194,33 @@ const Success: React.FC = () => {
         )}
 
         {!errorMessage && scholarshipCount !== "loading..." && (
-          <div className="flex flex-col gap-4 w-full max-w-xs">
+          <div className="flex flex-col gap-4 w-full max-w-sm">
+            <div className="pt-4 flex items-start mb-[8px]">
+              <label
+                htmlFor="notRobot"
+                className="flex items-center cursor-pointer mt-1.5"
+              >
+                <input
+                  type="checkbox"
+                  id="notRobot"
+                  name="notRobot"
+                  checked={accept}
+                  onChange={() => setAccept((prev) => !prev)}
+                  className="h-5 w-5 text-indigo-600 border-gray-300 focus:ring-indigo-500"
+                />
+              </label>
+              <div className="flex gap-4 w-full items-center">
+                <div className="ml-3 text-gray-700 text-base text-justify ">
+                  {t("personalForm.notRobot")}
+                  <Link
+                    to="/privacy"
+                    className="underline text-blue-600 text-base ms-1"
+                  >
+                    {t("personalForm.readMore")}
+                  </Link>
+                </div>
+              </div>
+            </div>
             {/* Coupon section */}
             {!showCouponInput ? (
               <p

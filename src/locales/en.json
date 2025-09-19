@@ -731,5 +731,6 @@
   "pk": "Pay with klarna",
   "pc": "Pay with card",
   "pl": "Pay with paypal",
-  "getStart": "Get Started"
+  "getStart": "Get Started",
+  "accept": "I hereby declare that the information i enter here is correct."
 }

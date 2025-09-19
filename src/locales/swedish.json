@@ -739,5 +739,6 @@
   "pk": "Betala med klarna",
   "pc": "Betala med kort",
   "pl": "Betala med paypal",
-  "getStart": "kom igång"
+  "getStart": "kom igång",
+  "accept": "Jag försäkrar härmed att informationen jag anger här är korrekt."
 }
