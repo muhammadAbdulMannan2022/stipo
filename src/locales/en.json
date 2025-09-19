@@ -109,7 +109,7 @@
     "terms": {
       "title": "Terms and Conditions",
       "integrityPolicy": "Integrity policy ",
-      "privacyPolicy": "Privacy policy",
+      "privacyPolicy": "Privacy Policy & Terms of Purchase",
       "userConditionTitle": "User condition",
       "userCondition": "User condition"
     },
@@ -232,7 +232,7 @@
     "yes": "Yes",
     "no": "No",
     "municipality": "Municipality",
-    "notRobot": "Agree to Terms and Conditions",
+    "notRobot": "I consent to the immediate delivery of the product via email and acknowledge that the right of withdrawal does not apply once the delivery has started.",
     "next": "Next",
     "submitting": "submitting...",
     "educationLevelOption": "Subject",
@@ -730,5 +730,6 @@
   "warning": "Data is loading, it may take 1-5 minute",
   "pk": "Pay with klarna",
   "pc": "Pay with card",
-  "pl": "Pay with paypal"
+  "pl": "Pay with paypal",
+  "getStart": "Get Started"
 }

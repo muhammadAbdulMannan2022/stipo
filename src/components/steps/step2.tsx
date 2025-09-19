@@ -647,12 +647,13 @@ const PersonalForm: React.FC = () => {
               className="h-5 w-5 text-indigo-600 border-gray-300 focus:ring-indigo-500"
             />
           </label>
-          <div className="flex gap-4 w-full">
+          <div className="flex gap-4 w-full items-center">
             <div className="ml-3 text-gray-700 text-base">
               {t("personalForm.notRobot")}
-            </div>
-            <div className="ml-3 text-blue-600 text-base">
-              <Link to="/privacy" className="underline">
+              <Link
+                to="/privacy"
+                className="underline text-blue-600 text-base ms-1"
+              >
                 {t("personalForm.readMore")}
               </Link>
             </div>

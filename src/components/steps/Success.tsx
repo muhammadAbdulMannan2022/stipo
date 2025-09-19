@@ -29,8 +29,7 @@ const Success: React.FC = () => {
   );
   const [taskId, setTaskId] = useState("");
   const [isPaymentProcessing, setIsPaymentProcessing] = useState(false);
-  const [chackAndGet, { isLoading: isCheckAndGetLoading }] =
-    useChackAndGetMutation();
+  const [chackAndGet] = useChackAndGetMutation();
 
   // coupon toggle + input state
   const [showCouponInput, setShowCouponInput] = useState(false);

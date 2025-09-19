@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import ToggleSwitch from "../utils/ToggleSwitch";
@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
       setIsOpen(false);
     }
   };
-
+  const navigate = useNavigate();
   useEffect(() => {
     if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside);
@@ -66,15 +66,36 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8 items-center">
-          {navLinks.map((link) => (
-            <Link
-              key={link.key}
-              to={link.to}
-              className="text-2ndcolor-text hover:text-indigo-700 transition-colors duration-200 text-lg font-medium"
-            >
-              {t(`navbar.${link.key}`)}
-            </Link>
-          ))}
+          <button
+            onClick={() => {
+              navigate("/start");
+            }}
+            className="bg-primary-text px-3 rounded-md text-white py-1.5 transition-colors duration-200 text-lg font-medium hover:cursor-pointer"
+          >
+            {t(`getStart`)}
+          </button>
+          {navLinks.map((link) =>
+            link.to !== "/#faq" ? (
+              <Link
+                key={link.key}
+                to={link.to}
+                className="text-2ndcolor-text hover:text-indigo-700 transition-colors duration-200 text-lg font-medium"
+              >
+                {t(`navbar.${link.key}`)}
+              </Link>
+            ) : (
+              <button
+                key={link.key}
+                onClick={() => {
+                  navigate("/#faq");
+                }}
+                className="text-2ndcolor-text hover:text-indigo-700 transition-colors duration-200 text-lg font-medium hover:cursor-pointer"
+              >
+                {t(`navbar.${link.key}`)}
+              </button>
+            )
+          )}
+
           <ToggleSwitch />
         </div>
 

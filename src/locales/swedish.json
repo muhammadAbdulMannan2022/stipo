@@ -109,7 +109,7 @@
     "terms": {
       "title": "Integritet och villkor",
       "integrityPolicy": "Integritetspolicy",
-      "privacyPolicy": "Sekretesspolicy",
+      "privacyPolicy": "Integritetspolicy & Köpvillkor",
       "userConditionTitle": "Användarvillkor",
       "userCondition": "Användarvillkor"
     },
@@ -232,7 +232,7 @@
     "yes": "Ja",
     "no": "Nej",
     "municipality": "Kommun",
-    "notRobot": "Godkänn villkoren",
+    "notRobot": "Jag samtycker till att leveransen av produkten påbörjas omedelbart via e-post och är medveten om att ångerrätten upphör när leveransen har startat.",
     "next": "Nästa",
     "submitting": "inlämnande...",
     "educationLevelOption": "Ämne",
@@ -738,5 +738,6 @@
   "warning": "Data laddas, det kan ta 1-5 minut",
   "pk": "Betala med klarna",
   "pc": "Betala med kort",
-  "pl": "Betala med paypal"
+  "pl": "Betala med paypal",
+  "getStart": "kom igång"
 }

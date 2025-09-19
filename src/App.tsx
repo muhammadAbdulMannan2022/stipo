@@ -46,17 +46,14 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (hash !== "#faq") {
+    if (hash !== "#faq" && hash !== "#about") {
       window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
+    } else if (hash == "#faq") {
       const faqElement = document.getElementById("faq");
       if (faqElement) {
         faqElement.scrollIntoView({ behavior: "smooth" });
       }
-    }
-    if (hash !== "#about") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
+    } else if (hash == "#about") {
       const faqElement = document.getElementById("about");
       if (faqElement) {
         faqElement.scrollIntoView({ behavior: "smooth" });
