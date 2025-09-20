@@ -146,6 +146,14 @@ const Navbar: React.FC = () => {
                 >
                   {t("navbar.brand")}
                 </Link>
+                <button
+                  onClick={() => {
+                    navigate("/start");
+                  }}
+                  className="bg-primary-text px-3 rounded-md text-white py-1.5 transition-colors duration-200 text-lg font-medium hover:cursor-pointer"
+                >
+                  {t(`getStart`)}
+                </button>
                 {navLinks.map((link) => (
                   <Link
                     key={link.key}

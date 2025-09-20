@@ -9,7 +9,7 @@ import { useGetFAQQuery } from "../../../store/api/appSlice";
 
 const FAQSection: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const { data: faqData, isLoading } = useGetFAQQuery(null);
 
   const handleItemClick = (index: number) => {
@@ -17,10 +17,11 @@ const FAQSection: React.FC = () => {
   };
 
   useEffect(() => {
+    console.log(isLoading, faqData);
     if (!isLoading) {
       console.log(faqData);
     }
-  }, [faqData, isLoading]);
+  }, []);
 
   // choose faqs based on language
   const faqs = faqData
@@ -30,14 +31,53 @@ const FAQSection: React.FC = () => {
     : [];
 
   return (
-    <section id="faq" className="py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-        {/* Left Content Section */}
-        <div className="text-center lg:text-left lg:pr-12">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-primary-text mb-6">
-            {t("faq.title")}
-          </h2>
-          <div className="flex flex-col items-start gap-4 mt-10">
+    <section className="">
+      <div id="faq" className="w-full p-10 text-white">
+        .
+      </div>
+      <div className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Left Content Section */}
+          <div className="text-center lg:text-left lg:pr-12">
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-primary-text mb-6">
+              {t("faq.title")}
+            </h2>
+            <div className=" flex-col items-start gap-4 mt-10 hidden md:flex">
+              <p className="text-2ndcolor-text text-xl font-bold">
+                {t("faq.buttonTitle")}
+              </p>
+              <Link
+                to="/contact"
+                className="bg-primary-text text-white px-3 py-2 rounded-md"
+              >
+                {t("faq.button")}
+              </Link>
+            </div>
+            <div className="mt-5 hidden md:inline-block">
+              <a
+                href={"mailto:kontakt@stipendieportalen.se"}
+                className="text-primary-text"
+              >
+                kontakt@stipendieportalen.se
+              </a>
+            </div>
+          </div>
+
+          {/* Right FAQ Items Section */}
+          <div className="space-y-4">
+            {console.log(faqs)}
+            {faqs.map((faq: any, index: number) => (
+              <FAQItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+                nestedContent={faq.nestedContent}
+                isOpen={activeIndex === index}
+                onClick={() => handleItemClick(index)}
+              />
+            ))}
+          </div>
+          <div className=" flex-col items-start gap-4 mt-10 flex md:hidden">
             <p className="text-2ndcolor-text text-xl font-bold">
               {t("faq.buttonTitle")}
             </p>
@@ -48,7 +88,7 @@ const FAQSection: React.FC = () => {
               {t("faq.button")}
             </Link>
           </div>
-          <div className="mt-5">
+          <div className="mt-5  md:hidden">
             <a
               href={"mailto:kontakt@stipendieportalen.se"}
               className="text-primary-text"
@@ -56,20 +96,6 @@ const FAQSection: React.FC = () => {
               kontakt@stipendieportalen.se
             </a>
           </div>
-        </div>
-
-        {/* Right FAQ Items Section */}
-        <div className="space-y-4">
-          {faqs.map((faq: any, index: number) => (
-            <FAQItem
-              key={index}
-              question={faq.question}
-              answer={faq.answer}
-              nestedContent={faq.nestedContent}
-              isOpen={activeIndex === index}
-              onClick={() => handleItemClick(index)}
-            />
-          ))}
         </div>
       </div>
     </section>

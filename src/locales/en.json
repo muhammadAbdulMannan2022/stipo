@@ -12,7 +12,7 @@
   "home": {
     "tagline": "Learn",
     "heading": "Get a financial boost for your <0>studies or activities</0>",
-    "description": "For you as both a student and an organization. Finding funding can be a jungle – we make it simple. Selected Swedish scholarships in the database, updated continuously. Response within 2 hours. AI matching tailored to your preferences.",
+    "description": "For you as both a student and an organization. Finding funding can be a jungle, we make it simple. Selected Swedish scholarships in the database, updated continuously. Response within 2 hours. AI matching tailored to your preferences.",
     "cta": "Find Scholarships Now",
     "img_alt": "Graduation cap on books with a diploma"
   },
@@ -232,7 +232,7 @@
     "yes": "Yes",
     "no": "No",
     "municipality": "Municipality",
-    "notRobot": "I consent to the immediate delivery of the product via email and acknowledge that the right of withdrawal does not apply once the delivery has started.",
+    "notRobot": "I consent to and approve the immediate delivery of the product via email once the purchase has been completed, and I acknowledge that the right of withdrawal does not apply once the delivery has started.",
     "next": "Next",
     "submitting": "submitting...",
     "educationLevelOption": "Subject",
@@ -732,5 +732,6 @@
   "pc": "Pay with card",
   "pl": "Pay with paypal",
   "getStart": "Get Started",
-  "accept": "I hereby declare that the information i enter here is correct."
+  "accept": "I hereby declare that the information i enter here is correct.",
+  "getStarted": "Get Started"
 }

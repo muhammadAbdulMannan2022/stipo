@@ -212,12 +212,13 @@ const Success: React.FC = () => {
               <div className="flex gap-4 w-full items-center">
                 <div className="ml-3 text-gray-700 text-base text-justify ">
                   {t("personalForm.notRobot")}
-                  <Link
-                    to="/privacy"
+                  <a
+                    href="http://localhost:5151/privacy"
+                    target="_blank"
                     className="underline text-blue-600 text-base ms-1"
                   >
                     {t("personalForm.readMore")}
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

@@ -232,7 +232,7 @@
     "yes": "Ja",
     "no": "Nej",
     "municipality": "Kommun",
-    "notRobot": "Jag samtycker till att leveransen av produkten påbörjas omedelbart via e-post och är medveten om att ångerrätten upphör när leveransen har startat.",
+    "notRobot": "Jag samtycker till och godkänner den direkta leveransen av produkten via e-post när köpet har genomförts, och jag är medveten om att ångerrätten upphör när leveransen har påbörjats",
     "next": "Nästa",
     "submitting": "inlämnande...",
     "educationLevelOption": "Ämne",
@@ -739,6 +739,7 @@
   "pk": "Betala med klarna",
   "pc": "Betala med kort",
   "pl": "Betala med paypal",
-  "getStart": "kom igång",
-  "accept": "Jag försäkrar härmed att informationen jag anger här är korrekt."
+  "getStart": "Kom igång",
+  "accept": "Jag försäkrar härmed att informationen jag anger här är korrekt.",
+  "getStarted": "Kom igång"
 }

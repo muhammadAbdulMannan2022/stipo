@@ -10,26 +10,7 @@ export default function HomePage() {
     <div className="flex flex-col min-h-[92vh] ">
       <main className="flex-grow relative overflow-hidden flex items-center justify-center py-10 sm:py-12 px-4 sm:px-6 lg:px-8">
         {/* Decorative elements */}
-        <div className="absolute top-8 left-1/4 w-16 h-4 bg-blue-200 rounded-full opacity-30 transform rotate-12 hidden md:block"></div>
-        <div className="absolute top-1/4 right-1/4 w-24 h-24 bg-blue-100 rounded-full opacity-20 hidden md:block"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-8 h-8 bg-purple-200 rounded-full opacity-20 hidden md:block"></div>
-        <div className="absolute top-1/2 left-0 w-32 h-32 bg-blue-50 rounded-full opacity-10 hidden md:block"></div>
-        <div className="absolute bottom-0 right-0 w-48 h-48 bg-purple-50 rounded-full opacity-10 hidden md:block"></div>
-        <div className="absolute top-16 right-16 text-blue-100 text-opacity-50 text-4xl font-bold hidden md:block">
-          <span className="block leading-none">. . . .</span>
-          <span className="block leading-none">. . . .</span>
-          <span className="block leading-none">. . . .</span>
-          <span className="block leading-none">. . . .</span>
-        </div>
-        <div className="absolute bottom-16 left-16 text-purple-100 text-opacity-50 text-4xl font-bold hidden md:block">
-          <span className="block leading-none">. . . .</span>
-          <span className="block leading-none">. . . .</span>
-          <span className="block leading-none">. . . .</span>
-          <span className="block leading-none">. . . .</span>
-        </div>
-        <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-blue-200 text-opacity-50 text-6xl hidden md:block">
-          <span className="block leading-none">~ ~ ~ ~</span>
-        </div>
+
         <div className="max-w-7xl mx-auto flex justify-between flex-col-reverse md:flex-row gap-12 items-center z-10">
           {/* Left Content Section */}
           <div className="text-center flex-1 md:text-left px-4">

@@ -25,11 +25,11 @@ const TestimonialsSection: React.FC = () => {
             />
           </h2>
           <div className="flex flex-row sm:space-x-8 space-y-4 sm:space-y-0 text-center md:text-right items-start justify-between">
-            <div className="text-start md:text-center">
+            {/* <div className="text-start md:text-center">
               <p className="text-3xl font-bold text-primary-text">10m+</p>
               <p className="text-gray-600">{t("testimonial.happyPeople")}</p>
-            </div>
-            <div className="text-end md:text-center">
+            </div> */}
+            <div className="text-end ">
               <p className="text-3xl font-bold text-2ndcolor-text">
                 {averageRating.toFixed(2)}
               </p>

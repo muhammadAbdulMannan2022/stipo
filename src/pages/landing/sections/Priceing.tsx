@@ -43,7 +43,7 @@ const PricingPage: React.FC = () => {
                 onClick={() => navigate("/start")}
                 className="mt-6 w-full hover:cursor-pointer rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold py-3 px-4 hover:from-blue-600 hover:to-indigo-700 transition-colors"
               >
-                {t("common.getStarted", { defaultValue: "Get Started" })}
+                {t("getStarted")}
               </button>
 
               {/* Cool hover glow */}

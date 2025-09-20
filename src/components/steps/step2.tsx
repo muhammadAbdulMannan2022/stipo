@@ -92,9 +92,6 @@ const PersonalForm: React.FC = () => {
   const validateForm = useCallback(() => {
     const newErrors: FormErrors = {};
     console.log(formData.notRobot);
-    if (formData.notRobot != "true") {
-      newErrors.notRobot = "";
-    }
     if (!formData.whoAreYou) {
       newErrors.whoAreYou = t("personalForm.errors.whoAreYou");
     }
@@ -635,33 +632,6 @@ const PersonalForm: React.FC = () => {
         </div>
 
         {renderSelect("municipality", "municipality", municipalityOptions)}
-
-        <div className="pt-4 flex items-center">
-          <label
-            htmlFor="notRobot"
-            className="flex items-center cursor-pointer"
-          >
-            <input
-              type="checkbox"
-              id="notRobot"
-              name="notRobot"
-              checked={formData.notRobot === "true"}
-              onChange={handleChange}
-              className="h-5 w-5 text-indigo-600 border-gray-300 focus:ring-indigo-500"
-            />
-          </label>
-          <div className="flex gap-4 w-full items-center">
-            <div className="ml-3 text-gray-700 text-base">
-              {t("accept")}
-              {/* <Link
-                to="/privacy"
-                className="underline text-blue-600 text-base ms-1"
-              >
-                {t("personalForm.readMore")}
-              </Link> */}
-            </div>
-          </div>
-        </div>
 
         <div className="pt-4">
           <ReCAPTCHA
