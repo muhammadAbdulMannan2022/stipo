@@ -3,7 +3,7 @@
 import { useContext, useEffect, useState } from "react";
 import { CheckCircle, RotateCcw } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { Link, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import {
   useChackAndGetMutation,
   useCreatePaymentMutation,
