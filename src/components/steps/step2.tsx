@@ -56,6 +56,7 @@ const PersonalForm: React.FC = () => {
   const navigate = useNavigate();
   const { setCurrentRoute }: any = useContext(RouteContext);
   const [submitNewForm, { isLoading }] = useSubmitNewFormMutation();
+  const lang = localStorage.getItem("i18nextLng") || "en";
 
   const [formData, setFormData] = useState<FormDataInterface>({
     whoAreYou: "",
@@ -88,6 +89,22 @@ const PersonalForm: React.FC = () => {
   const universityOptions = education.universityPrograms;
   const masterOptions = education.masterPrograms;
   const postSecondaryOptions = education.postSecondaryPrograms;
+
+  const getPurposeExamples = () => {
+    if (formData.whoAreYou === t("personalForm.organization")) {
+      return lang === "sv"
+        ? "arrangera cup, match eller träningsresa.."
+        : "Organizing a tournament, match, or training trip..";
+    } else if (formData.educationLevel === t("personalForm.phd")) {
+      return lang === "sv"
+        ? "Forskningsområde, doktorsavhandlingens ämnesområde.."
+        : "Area of research, doctoral thesis subject..";
+    } else {
+      return lang === "sv"
+        ? "C-uppsats, studieinriktning…"
+        : "Bachelor’s thesis, field of study…";
+    }
+  };
 
   const validateForm = useCallback(() => {
     const newErrors: FormErrors = {};
@@ -457,13 +474,13 @@ const PersonalForm: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-end">
               {renderSelect("educationLevel", "educationLevel", {
+                compulsory: t("personalForm.compulsory"),
                 upperSecondary: t("personalForm.upperSecondary"),
+                postSecondary: t("personalForm.postSecondary"),
                 universityUndergraduate: t(
                   "personalForm.universityUndergraduate"
                 ),
                 universityMasters: t("personalForm.universityMasters"),
-                postSecondary: t("personalForm.postSecondary"),
-                compulsory: t("personalForm.compulsory"),
                 phd: t("personalForm.phd"),
               })}
               {renderSelect("eliteAthlete", "eliteAthlete", {
@@ -562,12 +579,8 @@ const PersonalForm: React.FC = () => {
             )}
           </>
         )}
-        {formData.whoAreYou === t("personalForm.organization") &&
-          renderSelect("eliteAthlete", "eliteAthlete", {
-            yes: t("personalForm.yes"),
-            no: t("personalForm.no"),
-          })}
-        {formData.eliteAthlete === t("personalForm.yes") &&
+        {(formData.whoAreYou === t("personalForm.organization") ||
+          formData.eliteAthlete === t("personalForm.yes")) &&
           renderSelect("sport", "sports.title", {
             football: t("personalForm.sports.football"),
             athletics: t("personalForm.sports.athletics"),
@@ -624,6 +637,9 @@ const PersonalForm: React.FC = () => {
               errors.purposeoffunding ? "border-red-500" : "border-gray-300"
             } rounded-md`}
           />
+          <p className="text-gray-500 italic text-sm mt-1">
+            Examples: {getPurposeExamples()}
+          </p>
           {errors.purposeoffunding && (
             <p className="mt-1 text-sm text-red-500">
               {errors.purposeoffunding}
