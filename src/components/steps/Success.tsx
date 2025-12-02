@@ -23,7 +23,7 @@ const Success: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   // Mutation hooks
-  const [generateData, { isLoading: isGetDataLoading, data, error }] =
+  const [generateData, { isLoading: isGetDataLoading }] =
     useGenerateDataMutation();
   const [pay, { isLoading: isPaymentProcessing }] = useCreatePaymentMutation();
 
