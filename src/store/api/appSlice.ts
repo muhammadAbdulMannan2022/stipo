@@ -17,6 +17,7 @@ type IndividualForm = {
   education_level_other: string;
   purpose_of_funding: string;
   language: string;
+  include_municipality_filter: boolean;
 };
 
 // for organizations
@@ -27,6 +28,7 @@ type OrganizationForm = {
   organizationName: string;
   language: string;
   organizationId: string;
+  include_municipality_filter: boolean;
 };
 
 // union type

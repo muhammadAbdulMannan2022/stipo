@@ -28,6 +28,7 @@ interface FormDataInterface {
   educationLevelOption?: string;
   educationLevelOther?: string;
   purposeoffunding?: string;
+  includeMunicipalityFilter: boolean;
 }
 
 interface FormErrors {
@@ -49,6 +50,7 @@ interface FormErrors {
   educationLevelOption?: string;
   educationLevelOther?: string;
   purposeoffunding?: string;
+  includeMunicipalityFilter?: boolean;
 }
 
 const PersonalForm: React.FC = () => {
@@ -75,6 +77,7 @@ const PersonalForm: React.FC = () => {
     educationLevelOption: "",
     educationLevelOther: "",
     purposeoffunding: "",
+    includeMunicipalityFilter: false,
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
@@ -198,15 +201,11 @@ const PersonalForm: React.FC = () => {
       const target = e.target;
       const { name, value, type } = target;
 
-      const isCheckbox =
-        target instanceof HTMLInputElement && type === "checkbox";
-      const checkedValue = isCheckbox
-        ? String((target as HTMLInputElement).checked)
-        : value;
+      const isCheckbox = type === "checkbox";
 
       setFormData((prev) => ({
         ...prev,
-        [name]: checkedValue,
+        [name]: isCheckbox ? (target as HTMLInputElement).checked : value,
       }));
 
       setErrors((prev) => ({ ...prev, [name]: undefined }));
@@ -240,6 +239,8 @@ const PersonalForm: React.FC = () => {
           education_level_other: formData.educationLevelOther || "",
           purpose_of_funding: formData.purposeoffunding || "",
           language: lang,
+          include_municipality_filter:
+            formData.includeMunicipalityFilter || false,
         };
       } else {
         submitData = {
@@ -254,6 +255,8 @@ const PersonalForm: React.FC = () => {
           sport_name: formData.sportName || "",
           purpose_of_funding: formData.purposeoffunding || "",
           language: lang,
+          include_municipality_filter:
+            formData.includeMunicipalityFilter || false,
         };
       }
 
@@ -290,6 +293,7 @@ const PersonalForm: React.FC = () => {
           <select
             id={name}
             name={name}
+            // @ts-ignore
             value={formData[name]}
             onChange={handleChange}
             className={`w-full p-3 border ${
@@ -648,6 +652,18 @@ const PersonalForm: React.FC = () => {
         </div>
 
         {renderSelect("municipality", "municipality", municipalityOptions)}
+        <label className="flex items-center gap-2 cursor-pointer select-none">
+          <input
+            type="checkbox"
+            name="includeMunicipalityFilter"
+            checked={formData.includeMunicipalityFilter}
+            onChange={handleChange}
+            className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+          />
+          <span className="text-sm font-medium">
+            {t("personalForm.includeMunicipalityFilter")}
+          </span>
+        </label>
 
         <div className="pt-4">
           <ReCAPTCHA

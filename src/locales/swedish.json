@@ -204,6 +204,7 @@
     "submitButton": "Skicka omdöme"
   },
   "personalForm": {
+    "includeMunicipalityFilter": "Inkludera kommunfilter",
     "organizationId": "Organisations-ID",
     "title": "Personligt formulär",
     "description": "För att hitta och välja de mest lämpliga stipendierna för dig behöver vi veta mer om dig.",

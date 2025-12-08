@@ -204,6 +204,7 @@
     "submitButton": "Submit Review"
   },
   "personalForm": {
+    "includeMunicipalityFilter": "Include municipality filter",
     "organizationId": "Organisation ID",
     "title": "Personal Form",
     "description": "In order to find and select the most suitable scholarships for you we need to know more about you.",
