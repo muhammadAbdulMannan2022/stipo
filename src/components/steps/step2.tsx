@@ -104,8 +104,8 @@ const PersonalForm: React.FC = () => {
         : "Area of research, doctoral thesis subject..";
     } else {
       return lang === "sv"
-        ? "C-uppsats, studieinriktning…"
-        : "Bachelor’s thesis, field of study…";
+        ? "intresserad av att studera ingenjörsrelaterade ämnen för min kandidatexamen ..."
+        : "intersted to study in engineering related subjects for my undergraduation ...";
     }
   };
 
@@ -210,7 +210,7 @@ const PersonalForm: React.FC = () => {
 
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     },
-    []
+    [],
   );
 
   const handleSubmit = useCallback(
@@ -273,14 +273,14 @@ const PersonalForm: React.FC = () => {
         }));
       }
     },
-    [formData, navigate, submitNewForm, captchaToken, t, validateForm]
+    [formData, navigate, submitNewForm, captchaToken, t, validateForm],
   );
 
   const renderSelect = useCallback(
     (
       name: keyof FormDataInterface,
       labelKey: string,
-      options: { [key: string]: string }
+      options: { [key: string]: string },
     ) => (
       <div className="max-w-3xl">
         <label
@@ -318,7 +318,7 @@ const PersonalForm: React.FC = () => {
         )}
       </div>
     ),
-    [formData, handleChange, t, errors]
+    [formData, handleChange, t, errors],
   );
 
   const municipalityOptions = t("list", { returnObjects: true }) as {
@@ -482,7 +482,7 @@ const PersonalForm: React.FC = () => {
                 upperSecondary: t("personalForm.upperSecondary"),
                 postSecondary: t("personalForm.postSecondary"),
                 universityUndergraduate: t(
-                  "personalForm.universityUndergraduate"
+                  "personalForm.universityUndergraduate",
                 ),
                 universityMasters: t("personalForm.universityMasters"),
                 phd: t("personalForm.phd"),
@@ -499,7 +499,7 @@ const PersonalForm: React.FC = () => {
                   renderSelect(
                     "educationLevelOption",
                     "educationLevelOption",
-                    upperSecondaryOptions
+                    upperSecondaryOptions,
                   )}
 
                 {formData.educationLevel ===
@@ -507,7 +507,7 @@ const PersonalForm: React.FC = () => {
                   renderSelect(
                     "educationLevelOption",
                     "educationLevelOption",
-                    universityOptions
+                    universityOptions,
                   )}
 
                 {formData.educationLevel ===
@@ -515,14 +515,14 @@ const PersonalForm: React.FC = () => {
                   renderSelect(
                     "educationLevelOption",
                     "educationLevelOption",
-                    masterOptions
+                    masterOptions,
                   )}
 
                 {formData.educationLevel === t("personalForm.postSecondary") &&
                   renderSelect(
                     "educationLevelOption",
                     "educationLevelOption",
-                    postSecondaryOptions
+                    postSecondaryOptions,
                   )}
 
                 {formData.educationLevel === t("personalForm.phd") && (
