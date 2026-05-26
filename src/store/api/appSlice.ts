@@ -37,7 +37,7 @@ export type SubmitForm = IndividualForm | OrganizationForm;
 export const appApi = createApi({
   reducerPath: "appApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://personally-liberal-scorpion.ngrok-free.app",
+    baseUrl: "https://5871-103-186-20-8.ngrok-free.app",
     prepareHeaders: (headers: any, { endpoint }: any) => {
       const getEndpoints = ["getReview", "getFAQ"];
       if (getEndpoints.includes(endpoint)) {

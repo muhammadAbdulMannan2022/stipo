@@ -281,6 +281,7 @@ const PersonalForm: React.FC = () => {
       name: keyof FormDataInterface,
       labelKey: string,
       options: { [key: string]: string },
+      useKeyAsValue: boolean = false,
     ) => (
       <div className="max-w-3xl">
         <label
@@ -303,7 +304,7 @@ const PersonalForm: React.FC = () => {
           >
             <option value="">{t("personalForm.placeholder.select")}</option>
             {Object.entries(options).map(([key, value]) => (
-              <option key={key} value={value}>
+              <option key={key} value={useKeyAsValue ? key : value}>
                 {value}
               </option>
             ))}
@@ -651,7 +652,7 @@ const PersonalForm: React.FC = () => {
           )}
         </div>
 
-        {renderSelect("municipality", "municipality", municipalityOptions)}
+        {renderSelect("municipality", "municipality", municipalityOptions, true)}
         <label className="flex items-center gap-2 cursor-pointer select-none">
           <input
             type="checkbox"
