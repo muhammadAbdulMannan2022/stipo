@@ -29,7 +29,7 @@
     "step2_alt": "Illustration of quiz or online gradebook",
     "step3_label": "Step 3",
     "step3_title": "Are there any scholarships<0/> for me and how many?",
-    "step3_description": "We will inform you if there are any scholarships applicable to your specific needs (free of charge). Should we be able to identify any suitable matches for you, you will have the opportunity to purchase a list of up to 15 scholarships that best align with your profile. ",
+    "step3_description": "We will inform you if there are any scholarships applicable to your specific needs (free of charge). Should we be able to identify any suitable matches for you, you will have the opportunity to purchase a list of up to 10 scholarships that best align with your profile. ",
     "step3_alt": "Illustration of personalized scholarship planning",
     "step4_label": "Step 4",
     "step4_title": "Payment<0></0>",
@@ -83,6 +83,10 @@
       {
         "question": "Do you want to promote a scholarship?",
         "answer": "You’re welcome to showcase your foundation or scholarship on our platform. Listing your funding opportunity is completely free. Don’t hesitate to reach out."
+      },
+      {
+        "question": "What is the delivery time?",
+        "answer": "If you are applying as a private individual, we will get back to you within 2 hours with your tailored scholarship list. For organizations, we will get back to you within 48 hours."
       }
     ],
     "buttonTitle": "Still have a question? Feel free to contact us.",
@@ -181,7 +185,9 @@
     "confirmationTitle": "Payment confirmed!",
     "message": "Your eligible scholarships list will be sent to your email address within <1>{{time}}</1>. Thanks for using our service.",
     "button": "Back to home page",
-    "review": "Give a review"
+    "review": "Give a review",
+    "time_individual": "2 hours",
+    "time_organization": "48 hours"
   },
   "aboutUs": {
     "title": "About Us",
@@ -205,7 +211,12 @@
   },
   "personalForm": {
     "includeMunicipalityFilter": "Include municipality filter",
-    "organizationId": "Organisation ID",
+    "organizationId": "Organization registration number",
+    "organizationIdHelper": "For example 123456-7890",
+    "deliveryMessageIndividual": "We will get back to you within 2 hours with your tailored scholarship list.",
+    "deliveryMessageOrganization": "We will get back to you within 48 hours with your tailored scholarship list.",
+    "municipalityHelperInd": "Select the municipality where you intend to study.",
+    "municipalityHelperOrg": "Select the municipality where your organization operates.",
     "title": "Personal Form",
     "description": "In order to find and select the most suitable scholarships for you we need to know more about you.",
     "whoAreYou": "Who are you?",
@@ -223,12 +234,12 @@
     "age": "Age",
     "otherGender": "Other",
     "educationLevel": "What level are you currently studying at or intend to study at?",
-    "universityUndergraduate": "University, Undergraduate",
-    "universityMasters": "University, Master’s / Postgraduate",
+    "universityUndergraduate": "Bachelor’s degree",
+    "universityMasters": "Master’s/Magister degree",
     "postSecondary": "Post-secondary Education",
     "upperSecondary": "Upper Secondary School",
     "compulsory": "Compulsory School",
-    "phd": "PhD studies",
+    "phd": "PhD/Doctoral studies",
     "eliteAthlete": "Are you an elite athlete?",
     "yes": "Yes",
     "no": "No",
@@ -245,7 +256,7 @@
       "email": "Enter your email",
       "age": "Enter your age",
       "select": "Select an option",
-      "organizationId": "Enter Organisation ID"
+      "organizationId": "Enter organization registration number"
     },
     "errors": {
       "whoAreYou": "Please select who you are",
@@ -261,7 +272,11 @@
       "municipality": "Please select a municipality",
       "captcha": "Please complete the CAPTCHA verification",
       "submit": "An error occurred while submitting the form",
-      "sportName": "Sports name is required"
+      "sportName": "Sports name is required",
+      "organizationId": "Organization registration number is required",
+      "organizationIdInvalid": "Format must be XXXXXX-XXXX",
+      "purposeoffundingRequired": "Purpose of funding is required",
+      "purposeoffundingMinLength": "Purpose must contain at least 50 characters"
     },
     "sports": {
       "SportsName": "Sports name",
@@ -295,29 +310,24 @@
       },
       "universityPrograms": {
         "engineering": "Engineering and Technology",
-        "economics": "Economics, Business Administration & Management",
-        "medicine": "Medicine and Health Sciences",
-        "cs": "Computer Science / IT / Data Science",
-        "education": "Education and Pedagogy",
-        "psychology": "Psychology and Behavioral Sciences",
-        "law": "Law and Political Science",
-        "environment": "Environmental and Sustainability Sciences",
-        "design": "Design, Architecture, and Creative Arts",
-        "biology": "Biology, Chemistry, and Life Sciences",
-        "other": "Other"
+        "economics": "Economics",
+        "medicine": "Medicine",
+        "law": "Law"
       },
       "masterPrograms": {
-        "publicHealth": "Public Health / Epidemiology",
-        "engineering": "Engineering & Technology (including cybersecurity, supply chain, machine engineering)",
-        "business": "Business & Management (Finance, Accounting, International Business)",
-        "cs": "Computer Science / Digital Business / Data Science",
-        "education": "Education & Pedagogy (Didactics, Leadership)",
-        "environment": "Environmental & Sustainability Sciences / Urban Planning",
-        "lifeScience": "Life Sciences & Biotechnology",
-        "law": "Law (LL.M / Legal Studies)",
-        "design": "Design, Architecture & Creative Arts",
-        "socialSciences": "Social Sciences (Psychology, Social Work, Political Science, etc.)",
-        "other": "Other"
+        "engineering": "Engineering/Technology",
+        "business": "Economics",
+        "arts": "Arts/Culture",
+        "naturalSciences": "Natural Sciences",
+        "law": "Law",
+        "agriculture": "Agriculture"
+      },
+      "phdPrograms": {
+        "engineering": "Engineering/Technology",
+        "economics": "Economics",
+        "medicine": "Medicine",
+        "law": "Law",
+        "arts": "Arts/Culture"
       },
       "postSecondaryPrograms": {
         "pharmacyTech": "Pharmacy Technician",
@@ -334,6 +344,7 @@
     }
   },
   "list": {
+    "all": "All",
     "ale": "Ale",
     "alingsas": "Alingsas",
     "alvesta": "Alvesta",

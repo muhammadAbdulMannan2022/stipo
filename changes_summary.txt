@@ -1,0 +1,129 @@
+Website Adjustments Summary - Point-by-Point Changes Made
+
+1. Update Landing Page Scholarship Count
+-----------------------------------------
+* Where:
+  - Swedish locales file: src/locales/swedish.json (line 32)
+  - English locales file: src/locales/en.json (line 32)
+* What was done:
+  - Updated the step3_description text from "15" to "10" scholarships.
+
+2. Restore FAQ Section
+----------------------
+* Where:
+  - FAQ component: src/pages/landing/sections/FAQ.tsx (lines 26-34)
+  - Translation files: src/locales/swedish.json (line 86) & src/locales/en.json (line 86)
+* What was done:
+  - Adjusted the component to fetch from local translations first using t("faq.items", { returnObjects: true }) to prevent the FAQ section from rendering empty if the backend server/ngrok tunnel is offline.
+  - Appended the new FAQ item for delivery time in Swedish and English.
+
+3. Simplify the "Get Started" Flow
+----------------------------------
+* Where:
+  - Router setup: src/router/Router.tsx (line 7 & line 47)
+* What was done:
+  - Changed the default index path ("") under "/start" to load BasicInformationForm directly instead of EmailInputCard.
+  - Commented out the unused EmailInputCard import to ensure clean TypeScript compilation.
+
+4. Update Organization Registration Field Naming
+------------------------------------------------
+* Where:
+  - Locales: src/locales/swedish.json & src/locales/en.json under "personalForm"
+* What was done:
+  - Updated "organizationId" translation key from "Organisations-ID" to "Organisationsnummer" in Swedish, and from "Organisation ID" to "Organization registration number" in English.
+  - Updated placeholder translations accordingly.
+
+5. Add Organization Registration Number Validation
+--------------------------------------------------
+* Where:
+  - Form validations: src/components/steps/step2.tsx (lines 174-177)
+  - Field helper rendering: src/components/steps/step2.tsx (line 404)
+  - Error messages: src/locales/swedish.json & src/locales/en.json under "personalForm.errors"
+* What was done:
+  - Added regex checking (/^\d{6}-\d{4}$/) for the Organisationsnummer field on form submit.
+  - Added helper text "Exempelvis 123456-7890" / "For example 123456-7890" below the input field.
+
+6. Remove Sport Selection Field
+-------------------------------
+* Where:
+  - Form component: src/components/steps/step2.tsx (lines 170-174 & lines 587-625 in original file)
+* What was done:
+  - Completely removed the JSX markup rendering the sport options select box and custom sport name input.
+  - Deleted validation checking for sportName.
+
+7. Restrict Subject Categories for Private Individuals
+------------------------------------------------------
+* Where:
+  - Locales: src/locales/swedish.json & src/locales/en.json under "personalForm.education.universityPrograms"
+* What was done:
+  - Kept only Economics, Law, Engineering/Technology, and Medicine, and deleted all other key-value pairs.
+
+8. Restrict Education Levels
+----------------------------
+* Where:
+  - Form component: src/components/steps/step2.tsx (lines 467-474)
+  - Locales: src/locales/swedish.json & src/locales/en.json under "personalForm"
+* What was done:
+  - Cleaned the options list rendered for "educationLevel" to only output "universityUndergraduate" (Bachelor's), "universityMasters" (Master's), and "phd" (PhD).
+  - Renamed the display text in translations to read:
+    - Swedish: Kandidatexamen, Magister-/Masterexamen, Doktorandstudier.
+    - English: Bachelor's degree, Master's/Magister degree, PhD/Doctoral studies.
+
+9. Remove Elite Athlete Option
+------------------------------
+* Where:
+  - Form component: src/components/steps/step2.tsx (line 480-496)
+* What was done:
+  - Removed the JSX select field for eliteAthlete and its validation checking.
+
+10. Add Minimum Character Requirement for Purpose Field
+-------------------------------------------------------
+* Where:
+  - Form component: src/components/steps/step2.tsx (lines 154-159 & lines 188-193)
+  - Locales: src/locales/swedish.json & src/locales/en.json under "personalForm.errors"
+* What was done:
+  - Added form validation ensuring purpose of funding is not empty and has a minimum length of 50 characters.
+
+11. Hide Municipality Filter
+----------------------------
+* Where:
+  - Form component: src/components/steps/step2.tsx (lines 656-667 in original file)
+* What was done:
+  - Removed the check-box elements from the JSX view so it is completely hidden and inaccessible to the user, while preserving state initialization.
+
+12. Add "All" Municipality Option
+---------------------------------
+* Where:
+  - Locales: src/locales/swedish.json & src/locales/en.json under "list"
+* What was done:
+  - Added "all": "Alla" (Swedish) and "all": "All" (English) at the very beginning of the municipality object.
+
+13. Add Municipality Tooltips
+-----------------------------
+* Where:
+  - Form component: src/components/steps/step2.tsx (lines 280-310 & line 655)
+  - Locales: src/locales/swedish.json & src/locales/en.json under "personalForm"
+* What was done:
+  - Extended renderSelect to support an optional helperText parameter.
+  - Passed dynamic tooltip text depending on selected profile role.
+
+14. Restrict Subject Categories by Study Level
+----------------------------------------------
+* Where:
+  - Form component: src/components/steps/step2.tsx (lines 85-94 & lines 529-556)
+  - Locales: src/locales/swedish.json & src/locales/en.json under "personalForm.education"
+* What was done:
+  - Restructured masterPrograms to only keep Engineering/Technology, Economics, Arts/Culture, Natural Sciences, Law, and Agriculture.
+  - Added phdPrograms containing Engineering/Technology, Economics, Medicine, Law, Arts/Culture, and converted the PhD subject input to a select dropdown.
+
+15. Notice Box Delivery Time Content & Payment Success update
+--------------------------------------------------------------
+* Where:
+  - Form component: src/components/steps/step2.tsx (lines 260-265 & lines 664-672)
+  - Payment Success component: src/components/steps/PaymentFinalStep.tsx (lines 9-13)
+  - Locales: src/locales/swedish.json & src/locales/en.json under "personalForm" and "payment"
+* What was done:
+  - Added role persistence to localStorage during form submit.
+  - Rendered a dynamic warning notice box above the "Next" button in the form showing the delivery message.
+  - Handled dynamic role reading in PaymentConfirmedCard to output "2 timmar" / "48 timmar" depending on the user's role.
+  - Fixed the Swedish "hours timmar" duplicate text bug by removing the static trailing text in Swedish locales and including units inside translation variables.

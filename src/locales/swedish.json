@@ -29,7 +29,7 @@
     "step2_alt": "Illustration av quiz eller digitalt betygssystem",
     "step3_label": "Steg 3",
     "step3_title": "Finns det några stipendier <0/> för mig och hur många?",
-    "step3_description": "Vi kommer att informera dig om det finns några stipendier som är relevanta för dina specifika behov (kostnadsfritt). Om vi kan identifiera lämpliga matchningar för dig, kommer du att ha möjlighet att köpa en lista med upp till 15 stipendier som bäst överensstämmer med din profil. ",
+    "step3_description": "Vi kommer att informera dig om det finns några stipendier som är relevanta för dina specifika behov (kostnadsfritt). Om vi kan identifiera lämpliga matchningar för dig, kommer du att ha möjlighet att köpa en lista med upp till 10 stipendier som bäst överensstämmer med din profil. ",
     "step3_alt": "Illustration av personlig stipendieplanering",
     "step4_label": "Steg 4",
     "step4_title": "Betalning<0></0>",
@@ -83,6 +83,10 @@
       {
         "question": "Vill du marknadsföra ett stipendium?",
         "answer": "Du är välkommen att visa upp din stiftelse eller ditt stipendium på vår plattform. Det är helt gratis att lista ditt stipendium. Tveka inte att kontakta oss."
+      },
+      {
+        "question": "Vad är leveranstiden?",
+        "answer": "Om du söker som privatperson återkommer vi inom 2 timmar med din skräddarsydda stipendielista. För organisationer återkommer vi inom 48 timmar."
       }
     ],
     "buttonTitle": "Har du fortfarande en fråga? Kontakta oss gärna.",
@@ -179,9 +183,11 @@
   "payment": {
     "title": "Stipendielista",
     "confirmationTitle": "Betalningen är bekräftad!",
-    "message": "Din personliga stipendielista skickas till din e-post inom <1>{{time}}</1> timmar. Tack för att du använder StipendiePortalen!",
+    "message": "Din personliga stipendielista skickas till din e-post inom <1>{{time}}</1>. Tack för att du använder StipendiePortalen!",
     "button": "Tillbaka till startsidan",
-    "review": "Ge en recension"
+    "review": "Ge en recension",
+    "time_individual": "2 timmar",
+    "time_organization": "48 timmar"
   },
   "aboutUs": {
     "title": "Om oss",
@@ -205,7 +211,12 @@
   },
   "personalForm": {
     "includeMunicipalityFilter": "Inkludera kommunfilter",
-    "organizationId": "Organisations-ID",
+    "organizationId": "Organisationsnummer",
+    "organizationIdHelper": "Exempelvis 123456-7890",
+    "deliveryMessageIndividual": "Vi återkommer till dig inom 2h med din skräddarsydda stipendielista.",
+    "deliveryMessageOrganization": "Vi återkommer till dig inom 48h med din skräddarsydda stipendielista.",
+    "municipalityHelperInd": "Välj den kommun där du har för avsikt att studera.",
+    "municipalityHelperOrg": "Välj den kommun där din organisation är verksam.",
     "title": "Personligt formulär",
     "description": "För att hitta och välja de mest lämpliga stipendierna för dig behöver vi veta mer om dig.",
     "whoAreYou": "Vem är du?",
@@ -223,8 +234,8 @@
     "age": "Ålder",
     "otherGender": "Annat",
     "educationLevel": "Vilken utbildningsnivå studerar du på eller ämnar att studera?",
-    "universityUndergraduate": "Universitet, Kandidatnivå",
-    "universityMasters": "Universitet, Magister / Master",
+    "universityUndergraduate": "Kandidatexamen",
+    "universityMasters": "Magister-/Masterexamen",
     "postSecondary": "Eftergymnasial utbildning",
     "upperSecondary": "Gymnasium",
     "compulsory": "Grundskola",
@@ -245,7 +256,7 @@
       "email": "Skriv din e-postadress",
       "age": "Skriv din ålder",
       "select": "Välj ett alternativ",
-      "organizationId": "Ange organisations-ID"
+      "organizationId": "Ange organisationsnummer"
     },
     "errors": {
       "whoAreYou": "Vänligen välj vem du är",
@@ -261,7 +272,11 @@
       "municipality": "Vänligen välj en kommun",
       "captcha": "Vänligen slutför CAPTCHA-verifieringen",
       "submit": "Ett fel uppstod vid inlämning av formuläret",
-      "sportName": "Sportnamn krävs"
+      "sportName": "Sportnamn krävs",
+      "organizationId": "Organisationsnummer krävs",
+      "organizationIdInvalid": "Formatet måste vara XXXXXX-XXXX",
+      "purposeoffundingRequired": "Ändamål med finansiering krävs",
+      "purposeoffundingMinLength": "Ändamålet måste innehålla minst 50 tecken"
     },
     "sports": {
       "SportsName": "Sportnamn",
@@ -305,27 +320,22 @@
         "engineering": "Teknik och ingenjörsvetenskap",
         "economics": "Ekonomi, företagsekonomi & management",
         "medicine": "Medicin och vårdutbildningar",
-        "cs": "Datalogi / IT / Data Science",
-        "education": "Utbildning och pedagogik",
-        "psychology": "Psykologi och beteendevetenskap",
-        "law": "Juridik och statsvetenskap",
-        "environment": "Miljö- och hållbarhetsvetenskap",
-        "design": "Design, arkitektur och kreativa ämnen",
-        "biology": "Biologi, kemi och övriga livsvetenskaper",
-        "other": "Annat"
+        "law": "Juridik och statsvetenskap"
       },
       "masterPrograms": {
-        "publicHealth": "Folkhälsovetenskap och epidemiologi",
         "engineering": "Teknik och ingenjörsvetenskap",
         "business": "Ekonomi, företagsekonomi och management",
-        "cs": "Datalogi, IT och data science",
-        "education": "Utbildning och pedagogik",
-        "environment": "Miljö- och hållbarhetsvetenskap",
-        "lifeScience": "Life Science och bioteknik",
+        "arts": "Konst/Kultur",
+        "naturalSciences": "Naturvetenskap",
         "law": "Juridik",
-        "design": "Design, arkitektur och kreativa ämnen",
-        "socialSciences": "Samhällsvetenskap och beteendevetenskap",
-        "other": "Annat"
+        "agriculture": "Lantbruk"
+      },
+      "phdPrograms": {
+        "engineering": "Teknik och ingenjörsvetenskap",
+        "economics": "Ekonomi",
+        "medicine": "Medicin",
+        "law": "Juridik",
+        "arts": "Konst/Kultur"
       },
       "postSecondaryPrograms": {
         "pharmacyTech": "Apotekstekniker",
@@ -342,6 +352,7 @@
     }
   },
   "list": {
+    "all": "Alla",
     "ale": "Ale",
     "alingsas": "Alingsås",
     "alvesta": "Alvesta",

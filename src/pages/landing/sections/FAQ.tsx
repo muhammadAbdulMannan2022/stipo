@@ -24,11 +24,14 @@ const FAQSection: React.FC = () => {
   }, []);
 
   // choose faqs based on language
-  const faqs = faqData
-    ? i18n.language === "sv"
-      ? faqData.faqs_sv
-      : faqData.faqs
-    : [];
+  const localFaqs = t("faq.items", { returnObjects: true });
+  const faqs = Array.isArray(localFaqs) && localFaqs.length > 0
+    ? localFaqs
+    : (faqData
+      ? i18n.language === "sv"
+        ? faqData.faqs_sv
+        : faqData.faqs
+      : []);
 
   return (
     <section className="">

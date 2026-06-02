@@ -8,7 +8,8 @@ import { RouteContext } from "../../App"
 
 const PaymentConfirmedCard: React.FC = () => {
     const { t } = useTranslation()
-    const timeHighlight = "2 hours"
+    const role = localStorage.getItem("role") || "individual"
+    const timeHighlight = role === "organization" ? t("payment.time_organization") : t("payment.time_individual")
     const navigate = useNavigate()
     const { setCurrentRoute }: any = useContext(RouteContext)
 
