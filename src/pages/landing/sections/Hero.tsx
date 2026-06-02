@@ -25,7 +25,7 @@ export default function HomePage() {
               {t("home.description")}
             </p>
             <Link
-              to="/start"
+              to="/start/2"
               className="bg-primary-text hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:cursor-pointer"
             >
               {t("home.cta")}

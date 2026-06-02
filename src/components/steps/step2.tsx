@@ -332,7 +332,20 @@ const PersonalForm: React.FC = () => {
         <h2 className="text-2xl font-bold text-gray-700 mb-2">
           {t("personalForm.title")}
         </h2>
-        <p className="text-gray-700">{t("personalForm.description")}</p>
+        <p className="text-gray-700 mb-3">{t("personalForm.description")}</p>
+        <div className="text-sm">
+          <span className="text-gray-600">{t("personalForm.resumeText") || "Already started?"} </span>
+          <button
+            type="button"
+            onClick={() => {
+              setCurrentRoute("/start");
+              navigate("/start");
+            }}
+            className="text-indigo-600 hover:text-indigo-800 font-semibold underline hover:cursor-pointer focus:outline-none"
+          >
+            {t("personalForm.resumeLink") || "Resume progress"}
+          </button>
+        </div>
       </div>
 
       <form onSubmit={handleSubmit} className="p-6 space-y-6">

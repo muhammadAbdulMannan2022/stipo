@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
                         </p>
                         <button
                             type="button"
-                            onClick={() => navigate("/start")}
+                            onClick={() => navigate("/start/2")}
                             className="mt-6 bg-indigo-600 hover:bg-indigo-700 text-white hover:cursor-pointer font-semibold py-2 px-4 rounded transition-colors duration-200"
                         >
                             {t("footer.findScholarships")}

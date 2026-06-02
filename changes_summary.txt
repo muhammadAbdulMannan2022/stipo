@@ -20,10 +20,14 @@ Website Adjustments Summary - Point-by-Point Changes Made
 3. Simplify the "Get Started" Flow
 ----------------------------------
 * Where:
-  - Router setup: src/router/Router.tsx (line 7 & line 47)
+  - Landing page sections: src/pages/landing/sections/Priceing.tsx (line 43), src/pages/landing/sections/Hero.tsx (line 28), src/pages/landing/sections/CallToAction.tsx (line 18)
+  - Navigation elements: src/components/Navbar.tsx (lines 71 & 151), src/components/Footer.tsx (line 37)
+  - Form component header: src/components/steps/step2.tsx (lines 331-344)
+  - Translation files: src/locales/swedish.json & src/locales/en.json under "personalForm"
 * What was done:
-  - Changed the default index path ("") under "/start" to load BasicInformationForm directly instead of EmailInputCard.
-  - Commented out the unused EmailInputCard import to ensure clean TypeScript compilation.
+  - Updated all landing page buttons to navigate directly to "/start/2" (the main form), bypassing the first email input step for new users.
+  - Retained "/start" (EmailInputCard) for returning users who want to retrieve their progress.
+  - Added a clean "Already started? Click here to resume your progress" link in the header of the main form (Step 2) that redirects back to "/start" for session recovery, avoiding duplicate email requests.
 
 4. Update Organization Registration Field Naming
 ------------------------------------------------

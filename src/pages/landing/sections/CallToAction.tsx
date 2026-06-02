@@ -15,7 +15,7 @@ const CallToActionSection: React.FC = () => {
           {t("cta.description")}
         </p>
         <Link
-          to="/start"
+          to="/start/2"
           className="bg-primary-text hover:bg-primary-text text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:cursor-pointer transition-transform transform hover:scale-105 "
         >
           {t("cta.button")}

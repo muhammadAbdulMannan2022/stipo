@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
         <div className="hidden md:flex space-x-8 items-center">
           <button
             onClick={() => {
-              navigate("/start");
+              navigate("/start/2");
             }}
             className="bg-primary-text px-3 rounded-md text-white py-1.5 transition-colors duration-200 text-lg font-medium hover:cursor-pointer"
           >
@@ -148,7 +148,7 @@ const Navbar: React.FC = () => {
                 </Link>
                 <button
                   onClick={() => {
-                    navigate("/start");
+                    navigate("/start/2");
                   }}
                   className="bg-primary-text px-3 rounded-md text-white py-1.5 transition-colors duration-200 text-lg font-medium hover:cursor-pointer"
                 >
