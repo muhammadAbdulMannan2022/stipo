@@ -774,11 +774,11 @@
     "plans": {
       "student": {
         "price": "299 SEK – Student",
-        "desc": "(kandidat-och masternivå). En personlig PDF-rapport med upp till 10 matchade svenska stipendier, levererad till din mejl inom 2 timmar.."
+        "desc": "(kandidat- och masternivå). En personlig PDF-rapport med upp till 10 matchade svenska stipendier, levererad till din mejl inom 2 timmar.."
       },
       "phd": {
         "price": "599 SEK – Doktorandstudier",
-        "desc": "Stöd för dig som forskar, ta nästa steg mot insikter, innovation och framgång."
+        "desc": "En personlig PDF-rapport med upp till 10 forskningsstipendier matchade till ditt avhandlingsarbete, levererad inom 2 timmar."
       },
       "nonprofit": {
         "price": "1599 SEK – Ideell idrottsorganisation",

@@ -766,11 +766,11 @@
     "plans": {
       "student": {
         "price": "299 SEK – Student",
-        "desc": "(Bachelor and Master level). A personal PDF report with up to 10 matched Swedish scholarships, delivered to your inbox within 2 hours."
+        "desc": "(Bachelor and Master level). A personal PDF report with up to 10 matched Swedish scholarships, delivered to your inbox within 2 hours"
       },
       "phd": {
-        "price": "599 SEK – PhD Studies.",
-        "desc": " Support for your research journey, take the next step toward insights, innovation, and success."
+        "price": "599 SEK – PhD Studies",
+        "desc": " A personal PDF report with up to 10 research scholarships matched to your dissertation work, deliverd within 2 hours."
       },
       "nonprofit": {
         "price": "1599 SEK – Non-profit Sports Organization",
