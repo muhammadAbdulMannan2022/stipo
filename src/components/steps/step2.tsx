@@ -148,9 +148,13 @@ const PersonalForm: React.FC = () => {
       }
 
       if (!formData.purposeoffunding?.trim()) {
-        newErrors.purposeoffunding = t("personalForm.errors.purposeoffundingRequired");
+        newErrors.purposeoffunding = t(
+          "personalForm.errors.purposeoffundingRequired",
+        );
       } else if (formData.purposeoffunding.trim().length < 50) {
-        newErrors.purposeoffunding = t("personalForm.errors.purposeoffundingMinLength");
+        newErrors.purposeoffunding = t(
+          "personalForm.errors.purposeoffundingMinLength",
+        );
       }
 
       if (!captchaToken) {
@@ -163,7 +167,9 @@ const PersonalForm: React.FC = () => {
       if (!formData.organizationId?.trim()) {
         newErrors.organizationId = t("personalForm.errors.organizationId");
       } else if (!/^\d{6}-\d{4}$/.test(formData.organizationId.trim())) {
-        newErrors.organizationId = t("personalForm.errors.organizationIdInvalid");
+        newErrors.organizationId = t(
+          "personalForm.errors.organizationIdInvalid",
+        );
       }
       if (!formData.email.trim()) {
         newErrors.email = t("personalForm.errors.email");
@@ -174,9 +180,13 @@ const PersonalForm: React.FC = () => {
         newErrors.municipality = t("personalForm.errors.municipality");
       }
       if (!formData.purposeoffunding?.trim()) {
-        newErrors.purposeoffunding = t("personalForm.errors.purposeoffundingRequired");
+        newErrors.purposeoffunding = t(
+          "personalForm.errors.purposeoffundingRequired",
+        );
       } else if (formData.purposeoffunding.trim().length < 50) {
-        newErrors.purposeoffunding = t("personalForm.errors.purposeoffundingMinLength");
+        newErrors.purposeoffunding = t(
+          "personalForm.errors.purposeoffundingMinLength",
+        );
       }
       if (!captchaToken) {
         newErrors.captcha = t("personalForm.errors.captcha");
@@ -326,6 +336,12 @@ const PersonalForm: React.FC = () => {
     [key: string]: string;
   };
 
+  const sortedMunicipalityOptions = Object.fromEntries(
+    Object.entries(municipalityOptions).sort(([, a], [, b]) =>
+      a.localeCompare(b, lang === "sv" ? "sv" : "en", { sensitivity: "base" }),
+    ),
+  ) as { [key: string]: string };
+
   return (
     <div className="bg-white rounded-lg shadow-lg max-w-3xl mx-auto overflow-hidden">
       <div className="bg-gray-50 p-6 border-b border-gray-200">
@@ -334,7 +350,9 @@ const PersonalForm: React.FC = () => {
         </h2>
         <p className="text-gray-700 mb-3">{t("personalForm.description")}</p>
         <div className="text-sm">
-          <span className="text-gray-600">{t("personalForm.resumeText") || "Already started?"} </span>
+          <span className="text-gray-600">
+            {t("personalForm.resumeText") || "Already started?"}{" "}
+          </span>
           <button
             type="button"
             onClick={() => {
@@ -414,7 +432,7 @@ const PersonalForm: React.FC = () => {
               >
                 {t("personalForm.organizationId")}
               </label>
-               <input
+              <input
                 id="organizationId"
                 name="organizationId"
                 value={formData.organizationId}
@@ -602,11 +620,11 @@ const PersonalForm: React.FC = () => {
         {renderSelect(
           "municipality",
           "municipality",
-          municipalityOptions,
+          sortedMunicipalityOptions,
           true,
           formData.whoAreYou === t("personalForm.organization")
             ? t("personalForm.municipalityHelperOrg")
-            : t("personalForm.municipalityHelperInd")
+            : t("personalForm.municipalityHelperInd"),
         )}
 
         <div className="pt-4">

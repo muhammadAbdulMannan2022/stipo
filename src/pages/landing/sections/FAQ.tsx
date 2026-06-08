@@ -25,13 +25,15 @@ const FAQSection: React.FC = () => {
 
   // choose faqs based on language
   const localFaqs = t("faq.items", { returnObjects: true });
-  const faqs = Array.isArray(localFaqs) && localFaqs.length > 0
-    ? localFaqs
-    : (faqData
-      ? i18n.language === "sv"
-        ? faqData.faqs_sv
-        : faqData.faqs
-      : []);
+  const serverFaqs = faqData
+    ? i18n.language === "sv"
+      ? faqData.faqs_sv
+      : faqData.faqs
+    : null;
+
+  const faqs = (Array.isArray(serverFaqs) && serverFaqs.length > 0)
+    ? serverFaqs
+    : (Array.isArray(localFaqs) && localFaqs.length > 0 ? localFaqs : []);
 
   return (
     <section className="">
@@ -68,7 +70,6 @@ const FAQSection: React.FC = () => {
 
           {/* Right FAQ Items Section */}
           <div className="space-y-4">
-            {console.log(faqs)}
             {faqs.map((faq: any, index: number) => (
               <FAQItem
                 key={index}

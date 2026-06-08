@@ -3,7 +3,7 @@
 import { useContext, useEffect, useState } from "react";
 import { CheckCircle, RotateCcw } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import {
   useCreatePaymentMutation,
   useGenerateDataMutation,
@@ -87,7 +87,7 @@ const Success: React.FC = () => {
         navigate("/start/paymentSuccess");
       } else {
         setErrorMessage(
-          error?.data?.error || error?.error || t("success.paymentError")
+          error?.data?.error || error?.error || t("success.paymentError"),
         );
       }
     }
@@ -170,13 +170,13 @@ const Success: React.FC = () => {
                   className="ml-3 text-gray-700 text-base text-left"
                 >
                   {t("personalForm.notRobot")}{" "}
-                  <a
-                    href="http://localhost:5151/privacy"
+                  <Link
+                    to="/privacy"
                     target="_blank"
                     className="underline text-blue-600"
                   >
                     {t("personalForm.readMore")}
-                  </a>
+                  </Link>
                 </label>
               </div>
 
