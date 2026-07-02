@@ -158,7 +158,7 @@
   },
   "verification": {
     "title": "Ange verifieringskod",
-    "description": "Ett verifieringsmejl har skickats till din adress. Kontrollera din inkorg och ange den fyrsiffriga koden för att verifiera din e-postadress.",
+    "description": "Ett verifieringsmejl har skickats till din adress. Kontrollera din inkorg och ange den sexsiffriga koden för att verifiera din e-postadress.",
     "messageTitle": "Vi har skickat en aktiveringskod",
     "messageDescription": "Ett e-postmeddelande har skickats till din adress med en kod för att verifiera dig.",
     "enterCodeLabel": "Ange verifieringskod",
@@ -774,7 +774,7 @@
     "plans": {
       "student": {
         "price": "299 SEK – Student",
-        "desc": "(kandidat- och masternivå). En personlig PDF-rapport med upp till 10 matchade svenska stipendier, levererad till din mejl inom 2 timmar.."
+        "desc": "(kandidat- och masternivå). En personlig PDF-rapport med upp till 10 matchade svenska stipendier, levererad till din mejl inom 2 timmar."
       },
       "phd": {
         "price": "599 SEK – Doktorandstudier",

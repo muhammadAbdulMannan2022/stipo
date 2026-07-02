@@ -18,7 +18,7 @@ const VerificationCodeInput = () => {
     const [resendOtp] = useGoWithEmailMutation()
     const email = localStorage.getItem("email") || ""
 
-    const codeLength: number = 4
+    const codeLength: number = 6
     const [code, setCode] = useState<string[]>(new Array(codeLength).fill(""))
     const [errorMessage, setErrorMessage] = useState<string | null>(null)
     const inputRefs = useRef<InputRef[]>(new Array(codeLength).fill(null))
@@ -122,7 +122,7 @@ const VerificationCodeInput = () => {
                 <p className="text-2ndcolor-text text-lg font-medium mb-4">
                     {t("verification.enterCodeLabel")}
                 </p>
-                <div className="flex justify-center space-x-4 mb-8">
+                <div className="flex justify-center space-x-2 mb-8">
                     {code.map((digit, index) => (
                         <input
                             key={index}
@@ -135,7 +135,7 @@ const VerificationCodeInput = () => {
                             ref={(el: HTMLInputElement | null) => {
                                 inputRefs.current[index] = el
                             }}
-                            className="w-14 h-14 text-center text-2xl font-bold text-2ndcolor-text border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-gray-100"
+                            className="w-12 h-12 text-center text-xl font-bold text-2ndcolor-text border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-gray-100"
                             placeholder="*"
                             aria-label={`Digit ${index + 1} of verification code`}
                         />

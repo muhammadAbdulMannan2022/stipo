@@ -72,10 +72,8 @@ const Success: React.FC = () => {
         email,
         pay_type,
         coupon: coupon?.trim() || undefined,
-        success_url:
-          "https://funny-brigadeiros-2a37bf.netlify.app/start/paymentSuccess",
-        cancel_url:
-          "https://funny-brigadeiros-2a37bf.netlify.app/start/success",
+        success_url: "https://stipendieportalen.se/start/paymentSuccess",
+        cancel_url: "https://stipendieportalen.se/start/success",
       }).unwrap();
 
       if (response.payment_link) {

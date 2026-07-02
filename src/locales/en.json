@@ -12,7 +12,7 @@
   "home": {
     "tagline": "Learn",
     "heading": "Get a financial boost for your <0>studies or activities</0>",
-    "description": "For you as both a student and a non-profitorganization. Finding funding can be a jungle, we make it simple. Selected Swedish scholarships in the database, updated continuously. Response within 2 hours. AI matching tailored to your preferences.",
+    "description": "For you as both a student and a non-profit organization. Finding funding can be a jungle, we make it simple. Selected scholarships in the database, updated continuously. Response within 2 hours. AI matching tailored to your preferences.",
     "cta": "Find Scholarships Now",
     "img_alt": "Graduation cap on books with a diploma"
   },
@@ -158,7 +158,7 @@
   },
   "verification": {
     "title": "Enter Verification code",
-    "description": "A verification email has been sent to your address. Please check your inbox and enter the 4-digit code to verify your email.",
+    "description": "A verification email has been sent to your address. Please check your inbox and enter the 6-digit code to verify your email.",
     "messageTitle": "We have sent you an activation code",
     "messageDescription": "An email has been sent to your address containing a code to verify you.",
     "enterCodeLabel": "Enter verification code",
@@ -766,7 +766,7 @@
     "plans": {
       "student": {
         "price": "299 SEK – Student",
-        "desc": "(Bachelor and Master level). A personal PDF report with up to 10 matched Swedish scholarships, delivered to your inbox within 2 hours"
+        "desc": "(Bachelor and Master level). A personal PDF report with up to 10 matched Swedish scholarships, delivered to your inbox within 2 hours."
       },
       "phd": {
         "price": "599 SEK – PhD Studies",
