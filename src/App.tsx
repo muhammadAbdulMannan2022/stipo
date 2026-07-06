@@ -3,6 +3,7 @@ import { createContext, useEffect, useState, type ReactNode } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { CircleQuestionMark } from "lucide-react";
+import { AnalyticsTracker } from "./components/AnalyticsTracker";
 
 type RouteContextType = {
   currentRoute: string;
@@ -10,7 +11,7 @@ type RouteContextType = {
 };
 
 export const RouteContext = createContext<RouteContextType | undefined>(
-  undefined
+  undefined,
 );
 
 export const RouteProvider = ({ children }: { children: ReactNode }) => {
@@ -69,24 +70,27 @@ export default function App() {
   };
 
   return (
-    <RouteProvider>
-      {/* <div className="bg-[url('/Pattern.jpg')] bg-contain"> */}
-      <div className="bg-[url('/unnamed.jpg')] bg-cover">
-        <div className="bg-white/60">
-          <Navbar />
-          <Outlet />
-          <Footer />
+    <>
+      <AnalyticsTracker />
+      <RouteProvider>
+        {/* <div className="bg-[url('/Pattern.jpg')] bg-contain"> */}
+        <div className="bg-[url('/unnamed.jpg')] bg-cover">
+          <div className="bg-white/60">
+            <Navbar />
+            <Outlet />
+            <Footer />
 
-          {/* button fixed to bottom right */}
-          <button
-            className="fixed hover:cursor-pointer bottom-4 right-4 bg-primary-text text-white p-3 rounded-full shadow-lg hover:bg-primary-text transition-all"
-            onClick={scrollToFaq}
-            aria-label="Help"
-          >
-            <CircleQuestionMark className="w-5 h-5" />
-          </button>
+            {/* button fixed to bottom right */}
+            <button
+              className="fixed hover:cursor-pointer bottom-4 right-4 bg-primary-text text-white p-3 rounded-full shadow-lg hover:bg-primary-text transition-all"
+              onClick={scrollToFaq}
+              aria-label="Help"
+            >
+              <CircleQuestionMark className="w-5 h-5" />
+            </button>
+          </div>
         </div>
-      </div>
-    </RouteProvider>
+      </RouteProvider>
+    </>
   );
 }

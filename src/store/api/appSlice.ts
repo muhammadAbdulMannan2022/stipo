@@ -119,6 +119,16 @@ export const appApi = createApi({
     getFAQ: builder.query({
       query: () => `/app/faqs`,
     }),
+    submitContactForm: builder.mutation<
+      any,
+      { name: string; email: string; message_body: string }
+    >({
+      query: (data) => ({
+        method: "POST",
+        url: "/app/contact/",
+        body: data,
+      }),
+    }),
   }),
 });
 
@@ -133,4 +143,5 @@ export const {
   usePostReviewMutation,
   useGetFAQQuery,
   useChackAndGetMutation,
+  useSubmitContactFormMutation,
 } = appApi;

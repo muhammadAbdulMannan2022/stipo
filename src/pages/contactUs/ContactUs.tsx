@@ -3,30 +3,110 @@ import { useTranslation } from "react-i18next";
 import CallToActionSection from "../landing/sections/CallToAction";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useCallback, useState } from "react";
+import { useSubmitContactFormMutation } from "../../store/api/appSlice";
 
 export default function ContactUsPage() {
   const { t } = useTranslation();
+  const [submitContactForm, { isLoading }] = useSubmitContactFormMutation();
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-  const [errors, setErrors] = useState<{ captcha?: string }>({});
+  const [captchaKey, setCaptchaKey] = useState(0);
+  const [formValues, setFormValues] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState<{
+    captcha?: string;
+    name?: string;
+    email?: string;
+    message?: string;
+  }>({});
+  const [submitMessage, setSubmitMessage] = useState<{
+    type: "success" | "error" | null;
+    text: string;
+  }>({ type: null, text: "" });
+
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { name, value } = e.target;
+      setFormValues((prev) => ({ ...prev, [name]: value }));
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
+      setSubmitMessage({ type: null, text: "" });
+    },
+    [],
+  );
 
   const handleSubmit = useCallback(
-    (e: React.FormEvent<HTMLFormElement>) => {
+    async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
+      const newErrors: typeof errors = {};
+
+      if (!formValues.name.trim()) {
+        newErrors.name =
+          t("contact.form.errors.name") || "Please enter your name.";
+      }
+
+      if (!formValues.email.trim()) {
+        newErrors.email =
+          t("contact.form.errors.email") || "Please enter your email.";
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formValues.email.trim())) {
+        newErrors.email =
+          t("contact.form.errors.emailInvalid") ||
+          "Please enter a valid email address.";
+      }
+
+      if (!formValues.message.trim()) {
+        newErrors.message =
+          t("contact.form.errors.message") || "Please enter your message.";
+      }
+
       if (!captchaToken) {
-        setErrors({
-          captcha:
-            t("contact.form.errors.captcha") || "Please complete the CAPTCHA.",
-        });
+        newErrors.captcha =
+          t("contact.form.errors.captcha") || "Please complete the CAPTCHA.";
+      }
+
+      if (Object.keys(newErrors).length > 0) {
+        setErrors(newErrors);
         return;
       }
 
-      // Proceed with form submission logic (e.g., API call)
-      console.log("Form submitted with CAPTCHA token:", captchaToken);
       setErrors({});
-      // Add your form submission logic here (e.g., send data to an API)
+      setSubmitMessage({ type: null, text: "" });
+
+      try {
+        await submitContactForm({
+          name: formValues.name.trim(),
+          email: formValues.email.trim(),
+          message_body: formValues.message.trim(),
+        }).unwrap();
+
+        setSubmitMessage({
+          type: "success",
+          text:
+            t("contact.form.success") ||
+            "Your message has been sent successfully.",
+        });
+        setFormValues({ name: "", email: "", message: "" });
+        setCaptchaToken(null);
+        setCaptchaKey((prev) => prev + 1);
+      } catch {
+        setSubmitMessage({
+          type: "error",
+          text:
+            t("contact.form.error") ||
+            "We couldn't send your message. Please try again.",
+        });
+      }
     },
-    [captchaToken, t]
+    [
+      captchaToken,
+      formValues.email,
+      formValues.message,
+      formValues.name,
+      submitContactForm,
+      t,
+    ],
   );
 
   return (
@@ -45,69 +125,108 @@ export default function ContactUsPage() {
               className="grid grid-cols-1 md:grid-cols-2 gap-6"
               onSubmit={handleSubmit}
             >
-              {["firstName", "email"].map((field) => (
-                <div key={field}>
-                  <label
-                    htmlFor={field}
-                    className="block text-2ndcolor-text text-sm font-medium mb-2"
-                  >
-                    {t(`contact.form.${field}`)}
-                  </label>
-                  <input
-                    type={
-                      field === "email"
-                        ? "email"
-                        : field === "phoneNumber"
-                        ? "tel"
-                        : "text"
-                    }
-                    id={field}
-                    name={field}
-                    placeholder={t("contact.form.placeholder")}
-                    className="w-full p-3 rounded-md bg-white/90 border border-black/30 text-black placeholder-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  />
-                </div>
-              ))}
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block text-2ndcolor-text text-sm font-medium mb-2"
+                >
+                  {t("contact.form.firstName")}
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formValues.name}
+                  onChange={handleChange}
+                  placeholder={t("contact.form.placeholder")}
+                  className="w-full p-3 rounded-md bg-white/90 border border-black/30 text-black placeholder-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                />
+                {errors.name && (
+                  <p className="mt-2 text-sm text-red-400">{errors.name}</p>
+                )}
+              </div>
+
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-2ndcolor-text text-sm font-medium mb-2"
+                >
+                  {t("contact.form.email")}
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formValues.email}
+                  onChange={handleChange}
+                  placeholder={t("contact.form.placeholder")}
+                  className="w-full p-3 rounded-md bg-white/90 border border-black/30 text-black placeholder-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                />
+                {errors.email && (
+                  <p className="mt-2 text-sm text-red-400">{errors.email}</p>
+                )}
+              </div>
 
               <div className="md:col-span-2">
                 <label
-                  htmlFor="howCanWeHelp"
+                  htmlFor="message"
                   className="block text-2ndcolor-text text-sm font-medium mb-2"
                 >
                   {t("contact.form.howCanWeHelp")}
                 </label>
                 <textarea
-                  id="howCanWeHelp"
-                  name="howCanWeHelp"
+                  id="message"
+                  name="message"
                   rows={5}
+                  value={formValues.message}
+                  onChange={handleChange}
                   placeholder={t("contact.form.placeholder")}
                   className="w-full resize-none p-3 rounded-md bg-white/90 border border-black/30 text-black placeholder-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 ></textarea>
+                {errors.message && (
+                  <p className="mt-2 text-sm text-red-400">{errors.message}</p>
+                )}
               </div>
 
               {/* Google reCAPTCHA */}
               <div className="md:col-span-2">
                 <ReCAPTCHA
+                  key={captchaKey}
                   sitekey={import.meta.env.VITE_CAPTCHA_SITE_KEY}
                   onChange={(token) => {
                     setCaptchaToken(token);
                     setErrors((prev) => ({ ...prev, captcha: undefined }));
                   }}
+                  onExpired={() => {
+                    setCaptchaToken(null);
+                  }}
                 />
                 {errors.captcha && (
                   <p className="mt-2 text-sm text-red-400">{errors.captcha}</p>
+                )}
+                {submitMessage.text && (
+                  <p
+                    className={`mt-2 text-sm ${
+                      submitMessage.type === "success"
+                        ? "text-green-600"
+                        : "text-red-400"
+                    }`}
+                  >
+                    {submitMessage.text}
+                  </p>
                 )}
               </div>
 
               <div className="md:col-span-2 text-center">
                 <button
                   type="submit"
+                  disabled={isLoading}
                   className="w-full md:w-auto px-8 py-3 rounded-lg font-semibold text-white
                   bg-gradient-to-t from-[#7C6FF7] to-[#4D37E9]
                   hover:from-[#7C6FF7] hover:to-[#4D37E9]
-                  transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900 hover:cursor-pointer"
+                  transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900 hover:cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  {t("contact.form.submit")}
+                  {isLoading ? "Sending..." : t("contact.form.submit")}
                 </button>
               </div>
             </form>
