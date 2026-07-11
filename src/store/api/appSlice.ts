@@ -38,7 +38,7 @@ export const appApi = createApi({
   reducerPath: "appApi",
   baseQuery: fetchBaseQuery({
     // baseUrl: "https://app.stipendieportalen.se",
-    baseUrl: "https://f73d-103-159-73-203.ngrok-free.app",
+    baseUrl: "https://abd8-103-159-73-203.ngrok-free.app",
     prepareHeaders: (headers: any, { endpoint }: any) => {
       const getEndpoints = ["getReview", "getFAQ"];
       if (getEndpoints.includes(endpoint)) {

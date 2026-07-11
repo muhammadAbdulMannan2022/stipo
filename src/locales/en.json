@@ -141,7 +141,16 @@
       "location": "Location",
       "howCanWeHelp": "How can we help you?",
       "submit": "Submit",
-      "placeholder": "Enter here"
+      "placeholder": "Enter here",
+      "success": "Thank you for reaching out, we'll get back to you shortly!",
+      "error": "We couldn't send your message. Please try again.",
+      "errors": {
+        "name": "Please enter your name.",
+        "email": "Please enter your email.",
+        "emailInvalid": "Please enter a valid email address.",
+        "message": "Please enter your message.",
+        "captcha": "Please complete the CAPTCHA."
+      }
     }
   },
   "emailCard": {
@@ -252,6 +261,7 @@
     "educationLevelOption": "Subject",
     "subjectName": "Subject name",
     "readMore": "Read more here",
+    "purposeExamplesLabel": "Example",
     "placeholder": {
       "name": "Enter your name",
       "organizationName": "Enter organization name",

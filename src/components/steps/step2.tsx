@@ -608,7 +608,7 @@ const PersonalForm: React.FC = () => {
             } rounded-md`}
           />
           <p className="text-gray-500 italic text-sm mt-1">
-            Examples: {getPurposeExamples()}
+            {t("personalForm.purposeExamplesLabel")}: {getPurposeExamples()}
           </p>
           {errors.purposeoffunding && (
             <p className="mt-1 text-sm text-red-500">

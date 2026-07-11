@@ -141,7 +141,16 @@
       "location": "Plats",
       "howCanWeHelp": "Hur kan vi hjälpa dig?",
       "submit": "Skicka",
-      "placeholder": "Ange här"
+      "placeholder": "Ange här",
+      "success": "Tack för att du hör av dig till oss, vi återkommer inom kort!",
+      "error": "Vi kunde inte skicka ditt meddelande. Försök igen.",
+      "errors": {
+        "name": "Vänligen ange ditt namn.",
+        "email": "Vänligen ange din e-postadress.",
+        "emailInvalid": "Vänligen ange en giltig e-postadress.",
+        "message": "Vänligen ange ditt meddelande.",
+        "captcha": "Vänligen slutför CAPTCHA-verifieringen."
+      }
     }
   },
   "emailCard": {
@@ -252,6 +261,7 @@
     "educationLevelOption": "Ämne",
     "subjectName": "Ämnesnamn",
     "readMore": "Läs mer här",
+    "purposeExamplesLabel": "Exempel",
     "placeholder": {
       "name": "Skriv ditt namn",
       "organizationName": "Skriv organisationens namn",
