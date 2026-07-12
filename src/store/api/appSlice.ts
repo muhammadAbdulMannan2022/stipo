@@ -37,8 +37,8 @@ export type SubmitForm = IndividualForm | OrganizationForm;
 export const appApi = createApi({
   reducerPath: "appApi",
   baseQuery: fetchBaseQuery({
-    // baseUrl: "https://app.stipendieportalen.se",
-    baseUrl: "https://abd8-103-159-73-203.ngrok-free.app",
+    baseUrl: "https://app.stipendieportalen.se",
+    // baseUrl: "https://abd8-103-159-73-203.ngrok-free.app",
     prepareHeaders: (headers: any, { endpoint }: any) => {
       const getEndpoints = ["getReview", "getFAQ"];
       if (getEndpoints.includes(endpoint)) {
