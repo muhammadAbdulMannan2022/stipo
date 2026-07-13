@@ -6,6 +6,7 @@ import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
 import {
   useSubmitNewFormMutation,
+  useVerifyCaptchaMutation,
   type SubmitForm,
 } from "../../store/api/appSlice";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -58,6 +59,7 @@ const PersonalForm: React.FC = () => {
   const navigate = useNavigate();
   const { setCurrentRoute }: any = useContext(RouteContext);
   const [submitNewForm, { isLoading }] = useSubmitNewFormMutation();
+  const [verifyCaptcha, { isLoading: isVerifyingCaptcha }] = useVerifyCaptchaMutation();
   const lang = localStorage.getItem("i18nextLng") || "en";
 
   const [formData, setFormData] = useState<FormDataInterface>({
@@ -223,6 +225,17 @@ const PersonalForm: React.FC = () => {
         return;
       }
 
+      try {
+        await verifyCaptcha({ token: captchaToken }).unwrap();
+      } catch (error) {
+        console.error("Captcha verification failed:", error);
+        setErrors((prev) => ({
+          ...prev,
+          captcha: t("personalForm.errors.captchaInvalid") || "Captcha verification failed. Please try again.",
+        }));
+        return;
+      }
+
       let submitData: SubmitForm;
       if (formData.whoAreYou !== t("personalForm.organization")) {
         submitData = {
@@ -279,7 +292,7 @@ const PersonalForm: React.FC = () => {
         }));
       }
     },
-    [formData, navigate, submitNewForm, captchaToken, t, validateForm],
+    [formData, navigate, submitNewForm, verifyCaptcha, captchaToken, t, validateForm],
   );
 
   const renderSelect = useCallback(
@@ -652,14 +665,14 @@ const PersonalForm: React.FC = () => {
         <div className="text-center pt-4">
           <button
             type="submit"
-            disabled={isLoading}
+            disabled={isLoading || isVerifyingCaptcha}
             className={`w-full py-3 px-6 rounded-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 ${
-              isLoading
+              isLoading || isVerifyingCaptcha
                 ? "opacity-50 cursor-not-allowed"
                 : "hover:cursor-pointer"
             }`}
           >
-            {isLoading ? t("personalForm.submitting") : t("personalForm.next")}
+            {isLoading || isVerifyingCaptcha ? t("personalForm.submitting") : t("personalForm.next")}
           </button>
         </div>
       </form>

@@ -149,7 +149,8 @@
         "email": "Vänligen ange din e-postadress.",
         "emailInvalid": "Vänligen ange en giltig e-postadress.",
         "message": "Vänligen ange ditt meddelande.",
-        "captcha": "Vänligen slutför CAPTCHA-verifieringen."
+        "captcha": "Vänligen slutför CAPTCHA-verifieringen.",
+        "captchaInvalid": "Captcha-verifieringen misslyckades. Försök igen."
       }
     }
   },
@@ -283,6 +284,7 @@
       "eliteAthlete": "Vänligen välj elitidrottsstatus",
       "municipality": "Vänligen välj en kommun",
       "captcha": "Vänligen slutför CAPTCHA-verifieringen",
+      "captchaInvalid": "Captcha-verifieringen misslyckades. Försök igen.",
       "submit": "Ett fel uppstod vid inlämning av formuläret",
       "sportName": "Sportnamn krävs",
       "organizationId": "Organisationsnummer krävs",

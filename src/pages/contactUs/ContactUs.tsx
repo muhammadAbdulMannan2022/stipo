@@ -3,11 +3,12 @@ import { useTranslation } from "react-i18next";
 import CallToActionSection from "../landing/sections/CallToAction";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useCallback, useState } from "react";
-import { useSubmitContactFormMutation } from "../../store/api/appSlice";
+import { useSubmitContactFormMutation, useVerifyCaptchaMutation } from "../../store/api/appSlice";
 
 export default function ContactUsPage() {
   const { t } = useTranslation();
   const [submitContactForm, { isLoading }] = useSubmitContactFormMutation();
+  const [verifyCaptcha, { isLoading: isVerifyingCaptcha }] = useVerifyCaptchaMutation();
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [captchaKey, setCaptchaKey] = useState(0);
   const [formValues, setFormValues] = useState({
@@ -75,6 +76,17 @@ export default function ContactUsPage() {
       setSubmitMessage({ type: null, text: "" });
 
       try {
+        await verifyCaptcha({ token: captchaToken }).unwrap();
+      } catch (error) {
+        console.error("Captcha verification failed:", error);
+        setErrors((prev) => ({
+          ...prev,
+          captcha: t("contact.form.errors.captchaInvalid") || "Captcha verification failed. Please try again.",
+        }));
+        return;
+      }
+
+      try {
         await submitContactForm({
           name: formValues.name.trim(),
           email: formValues.email.trim(),
@@ -105,6 +117,7 @@ export default function ContactUsPage() {
       formValues.message,
       formValues.name,
       submitContactForm,
+      verifyCaptcha,
       t,
     ],
   );
@@ -220,13 +233,13 @@ export default function ContactUsPage() {
               <div className="md:col-span-2 text-center">
                 <button
                   type="submit"
-                  disabled={isLoading}
+                  disabled={isLoading || isVerifyingCaptcha}
                   className="w-full md:w-auto px-8 py-3 rounded-lg font-semibold text-white
                   bg-gradient-to-t from-[#7C6FF7] to-[#4D37E9]
                   hover:from-[#7C6FF7] hover:to-[#4D37E9]
                   transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900 hover:cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  {isLoading ? "Sending..." : t("contact.form.submit")}
+                  {isLoading || isVerifyingCaptcha ? "Sending..." : t("contact.form.submit")}
                 </button>
               </div>
             </form>

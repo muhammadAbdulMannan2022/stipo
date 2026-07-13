@@ -129,6 +129,13 @@ export const appApi = createApi({
         body: data,
       }),
     }),
+    verifyCaptcha: builder.mutation({
+      query: (data) => ({
+        method: "POST",
+        url: "/api/verify-captcha/",
+        body: data,
+      }),
+    }),
   }),
 });
 
@@ -144,4 +151,5 @@ export const {
   useGetFAQQuery,
   useChackAndGetMutation,
   useSubmitContactFormMutation,
+  useVerifyCaptchaMutation,
 } = appApi;

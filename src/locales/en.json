@@ -149,7 +149,8 @@
         "email": "Please enter your email.",
         "emailInvalid": "Please enter a valid email address.",
         "message": "Please enter your message.",
-        "captcha": "Please complete the CAPTCHA."
+        "captcha": "Please complete the CAPTCHA.",
+        "captchaInvalid": "Captcha verification failed. Please try again."
       }
     }
   },
@@ -283,6 +284,7 @@
       "eliteAthlete": "Please select elite athlete status",
       "municipality": "Please select a municipality",
       "captcha": "Please complete the CAPTCHA verification",
+      "captchaInvalid": "Captcha verification failed. Please try again.",
       "submit": "An error occurred while submitting the form",
       "sportName": "Sports name is required",
       "organizationId": "Organization registration number is required",
