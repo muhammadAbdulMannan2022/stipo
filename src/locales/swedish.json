@@ -176,6 +176,8 @@
     "resendLink": "klicka här.",
     "next": "Nästa",
     "incompleteCode": "Vänligen ange hela verifieringskoden.",
+    "invalidCode": "Vi kunde inte verifiera den koden. Försök igen eller begär en ny kod.",
+    "resendFailed": "Vi kunde inte skicka en ny kod. Försök igen.",
     "loading": "belastning..."
   },
   "success": {
@@ -186,6 +188,7 @@
     "paymentError": "Fel",
     "processing": "Bearbetning",
     "noScholarship": "Inga stipendier hittades",
+    "resumeError": "Vi kunde inte återuppta din ansökan just nu. Försök igen.",
     "goBack": "Gå tillbaka",
     "enterCoupon": "Ange kupong",
     "haveCoupon": "Har du en kupong?"
@@ -235,9 +238,10 @@
     "individual": "Privatperson",
     "organization": "Organisation",
     "other": "Annat",
-    "name": "Namn",
+    "name": "Fullständigt namn",
     "organizationName": "Organisationens namn",
     "email": "E-post",
+    "emailHelper": "Vi skickar din skräddarsydda stipendielista till denna e-postadress.",
     "gender": "Kön",
     "male": "Man",
     "female": "Kvinna",
@@ -290,7 +294,8 @@
       "organizationId": "Organisationsnummer krävs",
       "organizationIdInvalid": "Formatet måste vara XXXXXX-XXXX",
       "purposeoffundingRequired": "Ändamål med finansiering krävs",
-      "purposeoffundingMinLength": "Ändamålet måste innehålla minst 50 tecken"
+      "purposeoffundingMinLength": "Ändamålet måste innehålla minst 50 tecken",
+      "missingFields": "Vänligen fyll i alla obligatoriska fält."
     },
     "sports": {
       "SportsName": "Sportnamn",

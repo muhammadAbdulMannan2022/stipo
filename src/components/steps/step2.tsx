@@ -59,7 +59,8 @@ const PersonalForm: React.FC = () => {
   const navigate = useNavigate();
   const { setCurrentRoute }: any = useContext(RouteContext);
   const [submitNewForm, { isLoading }] = useSubmitNewFormMutation();
-  const [verifyCaptcha, { isLoading: isVerifyingCaptcha }] = useVerifyCaptchaMutation();
+  const [verifyCaptcha, { isLoading: isVerifyingCaptcha }] =
+    useVerifyCaptchaMutation();
   const lang = localStorage.getItem("i18nextLng") || "en";
 
   const [formData, setFormData] = useState<FormDataInterface>({
@@ -83,7 +84,9 @@ const PersonalForm: React.FC = () => {
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
+  const [hasAttemptedSubmit, setHasAttemptedSubmit] = useState(false);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const captchaLang = lang === "sv" ? "sv" : "en";
   const education = t("personalForm.education", { returnObjects: true }) as {
     upperSecondary: { [key: string]: string };
     universityPrograms: { [key: string]: string };
@@ -220,6 +223,7 @@ const PersonalForm: React.FC = () => {
     async (e: React.FormEvent<HTMLFormElement>) => {
       const lang = localStorage.getItem("i18nextLng") || "";
       e.preventDefault();
+      setHasAttemptedSubmit(true);
 
       if (!validateForm()) {
         return;
@@ -231,7 +235,9 @@ const PersonalForm: React.FC = () => {
         console.error("Captcha verification failed:", error);
         setErrors((prev) => ({
           ...prev,
-          captcha: t("personalForm.errors.captchaInvalid") || "Captcha verification failed. Please try again.",
+          captcha:
+            t("personalForm.errors.captchaInvalid") ||
+            "Captcha verification failed. Please try again.",
         }));
         return;
       }
@@ -292,7 +298,15 @@ const PersonalForm: React.FC = () => {
         }));
       }
     },
-    [formData, navigate, submitNewForm, verifyCaptcha, captchaToken, t, validateForm],
+    [
+      formData,
+      navigate,
+      submitNewForm,
+      verifyCaptcha,
+      captchaToken,
+      t,
+      validateForm,
+    ],
   );
 
   const renderSelect = useCallback(
@@ -485,6 +499,9 @@ const PersonalForm: React.FC = () => {
               errors.email ? "border-red-500" : "border-gray-300"
             } rounded-md`}
           />
+          <p className="mt-1 text-sm text-gray-500">
+            {t("personalForm.emailHelper")}
+          </p>
           {errors.email && (
             <p className="mt-1 text-sm text-red-500">{errors.email}</p>
           )}
@@ -642,10 +659,15 @@ const PersonalForm: React.FC = () => {
 
         <div className="pt-4">
           <ReCAPTCHA
+            key={captchaLang}
+            hl={captchaLang}
             sitekey={import.meta.env.VITE_CAPTCHA_SITE_KEY}
             onChange={(token) => {
               setCaptchaToken(token);
               setErrors((prev) => ({ ...prev, captcha: undefined }));
+            }}
+            onExpired={() => {
+              setCaptchaToken(null);
             }}
           />
           {errors.captcha && (
@@ -662,6 +684,14 @@ const PersonalForm: React.FC = () => {
           </div>
         )}
 
+        {/* Validation Error Message */}
+        {hasAttemptedSubmit &&
+          Object.keys(errors).some((key) => key !== "submit") && (
+            <div className="p-4 mb-4 border border-red-300 rounded-lg bg-red-50 text-red-700 text-center font-medium shadow-sm">
+              {t("personalForm.errors.missingFields")}
+            </div>
+          )}
+
         <div className="text-center pt-4">
           <button
             type="submit"
@@ -672,7 +702,9 @@ const PersonalForm: React.FC = () => {
                 : "hover:cursor-pointer"
             }`}
           >
-            {isLoading || isVerifyingCaptcha ? t("personalForm.submitting") : t("personalForm.next")}
+            {isLoading || isVerifyingCaptcha
+              ? t("personalForm.submitting")
+              : t("personalForm.next")}
           </button>
         </div>
       </form>

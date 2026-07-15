@@ -121,7 +121,12 @@ export const appApi = createApi({
     }),
     submitContactForm: builder.mutation<
       any,
-      { name: string; email: string; message_body: string }
+      {
+        name: string;
+        email: string;
+        message_body: string;
+        token?: string | null;
+      }
     >({
       query: (data) => ({
         method: "POST",
@@ -132,7 +137,7 @@ export const appApi = createApi({
     verifyCaptcha: builder.mutation({
       query: (data) => ({
         method: "POST",
-        url: "/api/verify-captcha/",
+        url: "/app/api/verify-captcha/",
         body: data,
       }),
     }),

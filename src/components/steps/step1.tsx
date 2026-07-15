@@ -20,18 +20,48 @@ const EmailInputCard: React.FC = () => {
   //     navigate("/start/2");
   //   };
 
+  const getFriendlyErrorMessage = (err: any, fallback: string) => {
+    const payload = err?.data ?? err;
+
+    if (typeof payload === "string") {
+      return payload;
+    }
+
+    if (payload?.detail) {
+      return payload.detail;
+    }
+
+    if (payload?.message) {
+      return payload.message;
+    }
+
+    if (payload?.error) {
+      return payload.error;
+    }
+
+    if (payload?.status) {
+      return fallback;
+    }
+
+    return fallback;
+  };
+
   const handleNext = async () => {
-    if (!email) return setError(t("emailCard.error"));
+    const normalizedEmail = email.trim();
+
+    if (!normalizedEmail) {
+      return setError(t("emailCard.error"));
+    }
 
     try {
       setError(null);
-      await sendOtp({ email }).unwrap();
+      await sendOtp({ email: normalizedEmail }).unwrap();
       setEmail("");
       setCurrentRoute("/start/otp");
       navigate("/start/otp");
-      localStorage.setItem("email", email);
+      localStorage.setItem("email", normalizedEmail);
     } catch (err: any) {
-      setError(err?.error || err?.data?.message || t("emailCard.failed"));
+      setError(getFriendlyErrorMessage(err, t("emailCard.failed")));
     }
   };
 
@@ -61,6 +91,9 @@ const EmailInputCard: React.FC = () => {
             placeholder={t("emailCard.placeholder")}
             className="w-full md:min-w-[300px] p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-900"
           />
+          <p className="text-sm text-gray-500 mt-2">
+            {t("emailCard.helperText")}
+          </p>
           {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         </div>
 

@@ -36,7 +36,10 @@ const Success: React.FC = () => {
   // Fetch data once on mount
   useEffect(() => {
     if (!applicationToken) {
-      setErrorMessage("No application token found");
+      setErrorMessage(
+        t("success.resumeError") ||
+          "We couldn’t resume your application. Please start again.",
+      );
       return;
     }
 
@@ -50,12 +53,20 @@ const Success: React.FC = () => {
         if (count !== undefined && count !== null) {
           setScholarshipCount(Number(count));
         } else {
-          setErrorMessage("No scholarship count returned");
+          setErrorMessage(
+            t("success.resumeError") ||
+              "We couldn’t load your results right now. Please try again.",
+          );
         }
       })
       .catch((err: any) => {
         console.error("Generate data error:", err);
-        setErrorMessage(err?.data?.error || "Failed to load results");
+        setErrorMessage(
+          err?.data?.error ||
+            err?.data?.detail ||
+            t("success.resumeError") ||
+            "We couldn’t load your results right now. Please try again.",
+        );
       });
   }, [applicationToken, generateData]);
 

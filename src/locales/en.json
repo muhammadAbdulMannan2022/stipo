@@ -176,6 +176,8 @@
     "resendLink": "click here.",
     "next": "Next",
     "incompleteCode": "Please enter the complete verification code.",
+    "invalidCode": "We couldn’t verify that code. Please try again or request a new one.",
+    "resendFailed": "We couldn’t resend the code. Please try again.",
     "loading": "loading..."
   },
   "success": {
@@ -186,6 +188,7 @@
     "paymentError": "Error",
     "processing": "Processing",
     "noScholarship": "No scholarships found",
+    "resumeError": "We couldn’t resume your application right now. Please try again.",
     "goBack": "Go Back",
     "enterCoupon": "Enter coupon",
     "haveCoupon": "Have a coupon?"
@@ -235,9 +238,10 @@
     "individual": "Individual",
     "organization": "Organisation",
     "other": "Other",
-    "name": "Name",
+    "name": "Full Name",
     "organizationName": "Name of the organization",
     "email": "Email",
+    "emailHelper": "We will send your tailored scholarship list to this email address.",
     "gender": "Gender",
     "male": "Male",
     "female": "Female",
@@ -290,7 +294,8 @@
       "organizationId": "Organization registration number is required",
       "organizationIdInvalid": "Format must be XXXXXX-XXXX",
       "purposeoffundingRequired": "Purpose of funding is required",
-      "purposeoffundingMinLength": "Purpose must contain at least 50 characters"
+      "purposeoffundingMinLength": "Purpose must contain at least 50 characters",
+      "missingFields": "Please fill in all mandatory fields."
     },
     "sports": {
       "SportsName": "Sports name",
