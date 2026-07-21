@@ -8,7 +8,7 @@ import { RouteContext } from "../../App";
 
 const EmailInputCard: React.FC = () => {
   const { setCurrentRoute }: any = useContext(RouteContext);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [email, setEmail] = useState("");
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
@@ -55,7 +55,10 @@ const EmailInputCard: React.FC = () => {
 
     try {
       setError(null);
-      await sendOtp({ email: normalizedEmail }).unwrap();
+      await sendOtp({
+        email: normalizedEmail,
+        language: i18n.language,
+      }).unwrap();
       setEmail("");
       setCurrentRoute("/start/otp");
       navigate("/start/otp");
@@ -91,9 +94,9 @@ const EmailInputCard: React.FC = () => {
             placeholder={t("emailCard.placeholder")}
             className="w-full md:min-w-[300px] p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-900"
           />
-          <p className="text-sm text-gray-500 mt-2">
+          {/* <p className="text-sm text-gray-500 mt-2">
             {t("emailCard.helperText")}
-          </p>
+          </p> */}
           {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         </div>
 

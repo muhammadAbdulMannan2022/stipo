@@ -4,10 +4,12 @@ import CallToActionSection from "../landing/sections/CallToAction";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useCallback, useState } from "react";
 import { useSubmitContactFormMutation } from "../../store/api/appSlice";
+import { useCookieConsent } from "../../hooks/useCookieConsent";
 
 export default function ContactUsPage() {
   const { t, i18n } = useTranslation();
   const [submitContactForm, { isLoading }] = useSubmitContactFormMutation();
+  const { hasConsented } = useCookieConsent();
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [captchaKey, setCaptchaKey] = useState(0);
   const [formValues, setFormValues] = useState({
@@ -190,20 +192,33 @@ export default function ContactUsPage() {
                 )}
               </div>
 
-              {/* Google reCAPTCHA */}
+              {/* Google reCAPTCHA – only rendered after cookie consent */}
               <div className="md:col-span-2">
-                <ReCAPTCHA
-                  key={`${captchaLanguage}-${captchaKey}`}
-                  hl={captchaLanguage}
-                  sitekey={import.meta.env.VITE_CAPTCHA_SITE_KEY}
-                  onChange={(token) => {
-                    setCaptchaToken(token);
-                    setErrors((prev) => ({ ...prev, captcha: undefined }));
-                  }}
-                  onExpired={() => {
-                    setCaptchaToken(null);
-                  }}
-                />
+                {hasConsented ? (
+                  <ReCAPTCHA
+                    key={`${captchaLanguage}-${captchaKey}`}
+                    hl={captchaLanguage}
+                    sitekey={import.meta.env.VITE_CAPTCHA_SITE_KEY}
+                    onChange={(token) => {
+                      setCaptchaToken(token);
+                      setErrors((prev) => ({ ...prev, captcha: undefined }));
+                    }}
+                    onExpired={() => {
+                      setCaptchaToken(null);
+                    }}
+                  />
+                ) : (
+                  <div
+                    className="flex items-center gap-3 p-4 rounded-lg border border-dashed border-indigo-300 bg-indigo-50/60"
+                    style={{ minHeight: 78 }}
+                  >
+                    <span style={{ fontSize: 22 }}>🍪</span>
+                    <p className="text-sm text-indigo-700 leading-snug">
+                      {t("cookie.captchaBlocked") ||
+                        "To submit this form, please accept cookies in the banner at the bottom of the page. This allows Google reCAPTCHA to protect the form from spam."}
+                    </p>
+                  </div>
+                )}
                 {errors.captcha && (
                   <p className="mt-2 text-sm text-red-400">{errors.captcha}</p>
                 )}

@@ -15,7 +15,7 @@ type InputRef = HTMLInputElement | null;
 
 const VerificationCodeInput = () => {
   const { setCurrentRoute }: any = useContext(RouteContext);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const [verifyOtp, { isLoading }] = useVeryfyOtpMutation();
   const [resendOtp] = useGoWithEmailMutation();
@@ -112,7 +112,7 @@ const VerificationCodeInput = () => {
     console.log(email);
     if (email) {
       try {
-        const res = await resendOtp({ email });
+        const res = await resendOtp({ email, language: i18n.language });
         toast.success(res.data.message || "no data");
       } catch (error: any) {
         toast.error(
@@ -125,7 +125,7 @@ const VerificationCodeInput = () => {
     }
     // Handle resend logic
     console.log("Resend clicked");
-  }, []);
+  }, [email, resendOtp, i18n.language, t]);
 
   return (
     <div className="bg-white rounded-lg shadow-lg max-w-md mx-auto overflow-hidden">

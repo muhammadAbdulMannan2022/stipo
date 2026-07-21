@@ -97,10 +97,11 @@ export const appApi = createApi({
         body: data,
       }),
     }),
-    goWithEmail: builder.mutation<any, { email: string }>({
-      query: (email) => ({
+    goWithEmail: builder.mutation<any, { email: string; language: string }>({
+      query: (data) => ({
         method: "POST",
-        url: `/app/${email.email}/send_code/`,
+        url: `/app/${data.email}/send_code/`,
+        body: { language: data.language },
       }),
     }),
     getReview: builder.query({

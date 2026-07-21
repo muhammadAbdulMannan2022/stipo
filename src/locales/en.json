@@ -803,5 +803,14 @@
   "pl": "Pay with paypal",
   "getStart": "Get Started",
   "accept": "I hereby declare that the information i enter here is correct.",
-  "getStarted": "Get Started"
+  "getStarted": "Get Started",
+  "cookie": {
+    "bannerAriaLabel": "Cookie consent",
+    "bannerText": "We use cookies (including Google reCAPTCHA) to protect our contact form from spam. reCAPTCHA collects hardware and software information and sends it to Google. By clicking \"Accept\", you consent to this processing. See our ",
+    "bannerTextSuffix": " for details.",
+    "privacyLink": "Privacy Policy",
+    "accept": "Accept All Cookies",
+    "decline": "Decline",
+    "captchaBlocked": "To submit this form, please accept cookies in the banner at the bottom of the page. This allows Google reCAPTCHA to protect the form from spam."
+  }
 }
