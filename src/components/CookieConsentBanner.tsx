@@ -47,10 +47,10 @@ export default function CookieConsentBanner() {
         left: 0,
         right: 0,
         zIndex: 9999,
-        transform:
-          visible && !leaving ? "translateY(0)" : "translateY(110%)",
+        transform: visible && !leaving ? "translateY(0)" : "translateY(110%)",
         opacity: visible && !leaving ? 1 : 0,
-        transition: "transform 0.4s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease",
+        transition:
+          "transform 0.4s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease",
         pointerEvents: showBanner ? "auto" : "none",
       }}
     >
@@ -99,9 +99,9 @@ export default function CookieConsentBanner() {
             }}
           >
             {t("cookie.bannerText") ||
-              "We use cookies (including Google reCAPTCHA) to protect our contact form from spam. reCAPTCHA collects hardware and software information and sends it to Google. By clicking \"Accept\", you consent to this processing. See our "}
+              'We use cookies, including Google Analytics to analyze website traffic and Google reCAPTCHA to protect our contact form from spam. These services collect usage, hardware, and software information. By clicking "Accept", you consent to the use of analytics and security cookies. See our '}
             <a
-              href="/policy"
+              href="/privacy"
               style={{
                 color: "#5B47ED",
                 fontWeight: 600,

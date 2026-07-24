@@ -814,7 +814,7 @@
   "getStarted": "Kom igång",
   "cookie": {
     "bannerAriaLabel": "Samtycke till cookies",
-    "bannerText": "Vi använder cookies (inklusive Google reCAPTCHA) för att skydda vårt kontaktformulär mot skräppost. reCAPTCHA samlar in hårdvaru- och mjukvaruinformation och skickar den till Google. Genom att klicka \"Acceptera\" samtycker du till denna behandling. Se vår ",
+    "bannerText": "Vi använder cookies, inklusive Google Analytics för att analysera webbplatstrafik och Google reCAPTCHA för att skydda vårt kontaktformulär mot skräppost. Dessa tjänster samlar in användnings-, hårdvaru- och mjukvaruinformation. Genom att klicka \"Acceptera\" samtycker du till användningen av analys- och säkerhetscookies. Se vår ",
     "bannerTextSuffix": " för mer information.",
     "privacyLink": "Integritetspolicy",
     "accept": "Acceptera alla cookies",

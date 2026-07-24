@@ -133,7 +133,7 @@
     "title": "Contact Us",
     "subtitle": "Have a question? Reach out to us!",
     "form": {
-      "firstName": "Name",
+      "firstName": "First name",
       "lastName": "Last name",
       "email": "Email",
       "phoneNumber": "Phone number",
@@ -806,7 +806,7 @@
   "getStarted": "Get Started",
   "cookie": {
     "bannerAriaLabel": "Cookie consent",
-    "bannerText": "We use cookies (including Google reCAPTCHA) to protect our contact form from spam. reCAPTCHA collects hardware and software information and sends it to Google. By clicking \"Accept\", you consent to this processing. See our ",
+    "bannerText": "We use cookies, including Google Analytics to analyze website traffic and Google reCAPTCHA to protect our contact form from spam. These services collect usage, hardware, and software information. By clicking \"Accept\", you consent to the use of analytics and security cookies. See our ",
     "bannerTextSuffix": " for details.",
     "privacyLink": "Privacy Policy",
     "accept": "Accept All Cookies",
