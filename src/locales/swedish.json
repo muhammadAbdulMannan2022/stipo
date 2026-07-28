@@ -115,7 +115,8 @@
       "integrityPolicy": "Integritetspolicy",
       "privacyPolicy": "Integritetspolicy & Köpvillkor",
       "userConditionTitle": "Användarvillkor",
-      "userCondition": "Användarvillkor"
+      "userCondition": "Användarvillkor",
+      "cookieSettings": "Cookie-inställningar"
     },
     "about": {
       "title": "Vilka är vi",

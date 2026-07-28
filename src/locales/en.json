@@ -115,7 +115,8 @@
       "integrityPolicy": "Integrity policy ",
       "privacyPolicy": "Privacy Policy & Terms of Purchase",
       "userConditionTitle": "User condition",
-      "userCondition": "User condition"
+      "userCondition": "User condition",
+      "cookieSettings": "Cookie settings"
     },
     "about": {
       "title": "Who are we",

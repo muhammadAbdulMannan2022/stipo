@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import { CircleQuestionMark } from "lucide-react";
 import { AnalyticsTracker } from "./components/AnalyticsTracker";
 import CookieConsentBanner from "./components/CookieConsentBanner";
+import { CookieConsentProvider } from "./hooks/useCookieConsent";
 
 type RouteContextType = {
   currentRoute: string;
@@ -71,7 +72,7 @@ export default function App() {
   };
 
   return (
-    <>
+    <CookieConsentProvider>
       <AnalyticsTracker />
       <RouteProvider>
         {/* <div className="bg-[url('/Pattern.jpg')] bg-contain"> */}
@@ -95,6 +96,6 @@ export default function App() {
 
       {/* Cookie consent banner – global, outside router context */}
       <CookieConsentBanner />
-    </>
+    </CookieConsentProvider>
   );
 }

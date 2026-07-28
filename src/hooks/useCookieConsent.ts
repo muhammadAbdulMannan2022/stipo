@@ -1,10 +1,23 @@
-import { useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect, type ReactNode } from "react";
 
 export type ConsentStatus = "accepted" | "declined" | null;
 
 const CONSENT_KEY = "stipo_cookie_consent";
 
-export function useCookieConsent() {
+interface CookieConsentContextType {
+  consentStatus: ConsentStatus;
+  showBanner: boolean;
+  hasConsented: boolean;
+  accept: () => void;
+  decline: () => void;
+  reset: () => void;
+}
+
+const CookieConsentContext = createContext<CookieConsentContextType | undefined>(
+  undefined
+);
+
+export function CookieConsentProvider({ children }: { children: ReactNode }) {
   const [consentStatus, setConsentStatus] = useState<ConsentStatus>(() => {
     try {
       const stored = localStorage.getItem(CONSENT_KEY);
@@ -15,12 +28,13 @@ export function useCookieConsent() {
     return null;
   });
 
-  const [showBanner, setShowBanner] = useState<boolean>(false);
+  const [showBanner, setShowBanner] = useState<boolean>(consentStatus === null);
 
   useEffect(() => {
-    // Only show banner if no decision has been made yet
     if (consentStatus === null) {
       setShowBanner(true);
+    } else {
+      setShowBanner(false);
     }
   }, [consentStatus]);
 
@@ -56,5 +70,17 @@ export function useCookieConsent() {
 
   const hasConsented = consentStatus === "accepted";
 
-  return { consentStatus, showBanner, hasConsented, accept, decline, reset };
+  return React.createElement(
+    CookieConsentContext.Provider,
+    { value: { consentStatus, showBanner, hasConsented, accept, decline, reset } },
+    children
+  );
+}
+
+export function useCookieConsent() {
+  const context = useContext(CookieConsentContext);
+  if (!context) {
+    throw new Error("useCookieConsent must be used within a CookieConsentProvider");
+  }
+  return context;
 }

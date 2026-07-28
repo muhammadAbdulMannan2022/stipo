@@ -11,6 +11,7 @@ import {
 } from "../../store/api/appSlice";
 import ReCAPTCHA from "react-google-recaptcha";
 import { RouteContext } from "../../App";
+import { useCookieConsent } from "../../hooks/useCookieConsent";
 
 interface FormDataInterface {
   whoAreYou: string;
@@ -86,6 +87,7 @@ const PersonalForm: React.FC = () => {
   const [errors, setErrors] = useState<FormErrors>({});
   const [hasAttemptedSubmit, setHasAttemptedSubmit] = useState(false);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const { hasConsented } = useCookieConsent();
   const captchaLang = lang === "sv" ? "sv" : "en";
   const education = t("personalForm.education", { returnObjects: true }) as {
     upperSecondary: { [key: string]: string };
@@ -658,18 +660,31 @@ const PersonalForm: React.FC = () => {
         )}
 
         <div className="pt-4">
-          <ReCAPTCHA
-            key={captchaLang}
-            hl={captchaLang}
-            sitekey={import.meta.env.VITE_CAPTCHA_SITE_KEY}
-            onChange={(token) => {
-              setCaptchaToken(token);
-              setErrors((prev) => ({ ...prev, captcha: undefined }));
-            }}
-            onExpired={() => {
-              setCaptchaToken(null);
-            }}
-          />
+          {hasConsented ? (
+            <ReCAPTCHA
+              key={captchaLang}
+              hl={captchaLang}
+              sitekey={import.meta.env.VITE_CAPTCHA_SITE_KEY}
+              onChange={(token) => {
+                setCaptchaToken(token);
+                setErrors((prev) => ({ ...prev, captcha: undefined }));
+              }}
+              onExpired={() => {
+                setCaptchaToken(null);
+              }}
+            />
+          ) : (
+            <div
+              className="flex items-center gap-3 p-4 rounded-lg border border-dashed border-indigo-300 bg-indigo-50/60"
+              style={{ minHeight: 78 }}
+            >
+              <span style={{ fontSize: 22 }}>🍪</span>
+              <p className="text-sm text-indigo-700 leading-snug">
+                {t("cookie.captchaBlocked") ||
+                  "To submit this form, please accept cookies in the banner at the bottom of the page. This allows Google reCAPTCHA to protect the form from spam."}
+              </p>
+            </div>
+          )}
           {errors.captcha && (
             <p className="mt-1 text-sm text-red-500">{errors.captcha}</p>
           )}

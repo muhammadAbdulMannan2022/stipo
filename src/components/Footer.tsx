@@ -5,10 +5,12 @@ import { Facebook, Instagram } from "lucide-react";
 import { Link, useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
 import { FaTiktok } from "react-icons/fa";
+import { useCookieConsent } from "../hooks/useCookieConsent";
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const { reset } = useCookieConsent();
 
   return (
     <footer className="bg-black text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
@@ -65,6 +67,15 @@ const Footer: React.FC = () => {
                 >
                   {t("footer.terms.privacyPolicy")}
                 </Link>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={reset}
+                  className="hover:text-white transition-colors duration-200 text-left cursor-pointer"
+                >
+                  {t("footer.terms.cookieSettings") || "Cookie settings"}
+                </button>
               </li>
             </ul>
             {/* <h4 className="text-lg font-semibold text-white mt-6 mb-4">{t("footer.terms.userConditionTitle")}</h4> */}
