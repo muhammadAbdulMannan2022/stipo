@@ -33,7 +33,7 @@
     "step3_alt": "Illustration of personalized scholarship planning",
     "step4_label": "Step 4",
     "step4_title": "Payment<0></0>",
-    "step4_description": "You're just one step away from accessing your personalized scholarship list, generated with the help of AI and tailored to your unique background, goals and preferences.By completing your payment, you'll unlock your custom selection of scholarships, carefully matched to give you the best possible opportunities.",
+    "step4_description": "You're just one step away from accessing your personalized scholarship list, generated with the help of AI and tailored to your unique background, goals and preferences. By completing your payment, you'll unlock your custom selection of scholarships, carefully matched to give you the best possible opportunities.",
     "step4_alt": "Illustration of downloading a scholarship PDF",
     "step5_label": "Step 5",
     "step5_title": "Your tailored scholarship list <0/> is on its way!",
@@ -177,7 +177,7 @@
     "resendLink": "click here.",
     "next": "Next",
     "incompleteCode": "Please enter the complete verification code.",
-    "invalidCode": "We couldn’t verify that code. Please try again or request a new one.",
+    "invalidCode": "That code doesn't look right. Please check the digits and try again, or request a new code.",
     "resendFailed": "We couldn’t resend the code. Please try again.",
     "loading": "loading..."
   },

@@ -177,7 +177,7 @@
     "resendLink": "klicka här.",
     "next": "Nästa",
     "incompleteCode": "Vänligen ange hela verifieringskoden.",
-    "invalidCode": "Vi kunde inte verifiera den koden. Försök igen eller begär en ny kod.",
+    "invalidCode": "Koden verkar inte stämma. Kontrollera att du skrivit rätt siffror, eller begär en ny kod.",
     "resendFailed": "Vi kunde inte skicka en ny kod. Försök igen.",
     "loading": "belastning..."
   },

@@ -99,11 +99,9 @@ const VerificationCodeInput = () => {
         navigate("/start/success");
       }
     } catch (error: any) {
-      const fallbackMessage =
-        t("verification.invalidCode") ||
-        "We couldn’t verify that code. Please try again or request a new one.";
       setErrorMessage(
-        error?.data?.detail || error?.data?.error || fallbackMessage,
+        t("verification.invalidCode") ||
+          "That code doesn't look right. Please check the digits and try again, or request a new code.",
       );
     }
   }, [code, codeLength, navigate, t, verifyOtp]);
