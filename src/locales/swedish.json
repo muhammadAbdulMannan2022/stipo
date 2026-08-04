@@ -178,6 +178,8 @@
     "next": "Nästa",
     "incompleteCode": "Vänligen ange hela verifieringskoden.",
     "invalidCode": "Koden verkar inte stämma. Kontrollera att du skrivit rätt siffror, eller begär en ny kod.",
+    "invalidOtpAttempts": "Ogiltig OTP-kod. {{attempts}} försök kvar.",
+    "noScholarshipApplicant": "Ingen ScholarshipApplicant matchar den angivna frågan.",
     "resendFailed": "Vi kunde inte skicka en ny kod. Försök igen.",
     "loading": "belastning..."
   },

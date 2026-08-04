@@ -178,6 +178,8 @@
     "next": "Next",
     "incompleteCode": "Please enter the complete verification code.",
     "invalidCode": "That code doesn't look right. Please check the digits and try again, or request a new code.",
+    "invalidOtpAttempts": "Invalid OTP code. {{attempts}} attempts remaining.",
+    "noScholarshipApplicant": "No ScholarshipApplicant matches the given query.",
     "resendFailed": "We couldn’t resend the code. Please try again.",
     "loading": "loading..."
   },

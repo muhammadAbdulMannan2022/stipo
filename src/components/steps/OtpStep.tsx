@@ -79,6 +79,43 @@ const VerificationCodeInput = () => {
     [code, codeLength],
   );
 
+  const getOtpErrorMessage = useCallback(
+    (error: any) => {
+      const backendMessage =
+        error?.data?.detail ||
+        error?.data?.message ||
+        error?.data?.error ||
+        error?.error ||
+        "";
+      const normalizedMessage =
+        typeof backendMessage === "string" ? backendMessage.trim() : "";
+
+      const attemptsMatch = normalizedMessage.match(
+        /invalid\s+otp\s+code\.?\s*(\d+)\s+attempts?\s+remaining/i,
+      );
+
+      if (attemptsMatch) {
+        return t("verification.invalidOtpAttempts", {
+          attempts: attemptsMatch[1],
+        });
+      }
+
+      if (
+        /no\s+scholarshipapplicant\s+matches\s+the\s+given\s+query/i.test(
+          normalizedMessage,
+        )
+      ) {
+        return t("verification.noScholarshipApplicant");
+      }
+
+      return (
+        t("verification.invalidCode") ||
+        "That code doesn't look right. Please check the digits and try again, or request a new code."
+      );
+    },
+    [t],
+  );
+
   const handleNextClick = useCallback(async () => {
     const fullCode = code.join("");
     if (fullCode.length !== codeLength) {
@@ -99,12 +136,17 @@ const VerificationCodeInput = () => {
         navigate("/start/success");
       }
     } catch (error: any) {
-      setErrorMessage(
-        t("verification.invalidCode") ||
-          "That code doesn't look right. Please check the digits and try again, or request a new code.",
-      );
+      setErrorMessage(getOtpErrorMessage(error));
     }
-  }, [code, codeLength, navigate, t, verifyOtp]);
+  }, [
+    code,
+    codeLength,
+    email,
+    getOtpErrorMessage,
+    navigate,
+    setCurrentRoute,
+    verifyOtp,
+  ]);
 
   const handleResendCode = useCallback(async () => {
     console.log(email);
