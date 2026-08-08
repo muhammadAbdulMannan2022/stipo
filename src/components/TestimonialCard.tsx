@@ -5,6 +5,8 @@ import defaultUserImage from "../assets/account.png";
 import maleUserImage from "../assets/male.png";
 import femaleUserImage from "../assets/female.png";
 
+import blueMarkImage from "../assets/check.png";
+
 import type { Review } from "../store/api/appSlice";
 
 interface TestimonialCardProps {
@@ -40,15 +42,16 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ review }) => {
               review.reviewer_gender?.toLowerCase() === "male"
                 ? maleUserImage
                 : review.reviewer_gender?.toLowerCase() === "female"
-                ? femaleUserImage
-                : defaultUserImage
+                  ? femaleUserImage
+                  : defaultUserImage
             }
             alt={review.reviewer_name}
             className="w-10 h-10 rounded-full object-cover"
           />
           <div>
-            <p className="text-lg font-semibold text-primary-text">
-              {review.reviewer_name}
+            <p className="text-lg font-semibold text-primary-text flex gap-x-2 items-center justify-center">
+              <span>{review.reviewer_name}</span>
+              <img src={blueMarkImage} alt="Verified" className="size-4" />
             </p>
           </div>
         </div>
