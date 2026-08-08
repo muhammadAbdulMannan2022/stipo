@@ -12,16 +12,35 @@ const GiveReviewForm: React.FC = () => {
     const { t } = useTranslation()
     const [rating, setRating] = useState(0)
     const [reviewText, setReviewText] = useState("")
+    const [reviewerName, setReviewerName] = useState("")
+    const [reviewerGender, setReviewerGender] = useState("male")
     const navigate = useNavigate()
     const email = localStorage.getItem("email")
     const [giveReview, { isLoading }] = usePostReviewMutation()
     const [error, setError] = useState<string>("")
 
+    const getProfileIcon = (gender: string): string => {
+        switch (gender) {
+            case "male":
+                return "male.png"
+            case "female":
+                return "female.png"
+            case "Non-binary":
+                return "Non-binary.png"
+            case "prefer to say":
+                return "prefer_to_say.png"
+            case "others":
+                return "others.png"
+            default:
+                return "others.png"
+        }
+    }
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
 
-        if (!rating || !reviewText) {
-            setError(t("review.validationError")) // <- add i18n message like "Please add a rating and review"
+        if (!reviewerName.trim() || !rating || !reviewText.trim()) {
+            setError(t("review.validationError"))
             return
         }
 
@@ -31,10 +50,15 @@ const GiveReviewForm: React.FC = () => {
                 description: reviewText,
                 email: email || "",
                 stars: rating,
+                reviewer_name: reviewerName,
+                reviewer_gender: reviewerGender,
+                profile_icon: getProfileIcon(reviewerGender),
             }).unwrap()
 
             setRating(0)
             setReviewText("")
+            setReviewerName("")
+            setReviewerGender("male")
             setCurrentRoute("/start")
             navigate("/")
         } catch (err: any) {
@@ -47,8 +71,6 @@ const GiveReviewForm: React.FC = () => {
         }
     }
 
-
-
     return (
         <div className="bg-white rounded-lg shadow-lg max-w-md w-full mx-auto overflow-hidden">
             {/* Header */}
@@ -59,6 +81,40 @@ const GiveReviewForm: React.FC = () => {
 
             {/* Form */}
             <form onSubmit={handleSubmit} className="p-6">
+                {/* Reviewer Name */}
+                <div className="mb-4">
+                    <label htmlFor="reviewer-name" className="block text-gray-800 text-lg font-medium mb-2">
+                        {t("review.nameLabel")}
+                    </label>
+                    <input
+                        id="reviewer-name"
+                        type="text"
+                        value={reviewerName}
+                        onChange={(e) => setReviewerName(e.target.value)}
+                        placeholder={t("review.namePlaceholder")}
+                        className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-900"
+                    />
+                </div>
+
+                {/* Reviewer Gender */}
+                <div className="mb-4">
+                    <label htmlFor="reviewer-gender" className="block text-gray-800 text-lg font-medium mb-2">
+                        {t("review.genderLabel")}
+                    </label>
+                    <select
+                        id="reviewer-gender"
+                        value={reviewerGender}
+                        onChange={(e) => setReviewerGender(e.target.value)}
+                        className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-900 bg-white"
+                    >
+                        <option value="male">{t("review.genderOptions.male")}</option>
+                        <option value="female">{t("review.genderOptions.female")}</option>
+                        <option value="Non-binary">{t("review.genderOptions.nonBinary")}</option>
+                        <option value="prefer to say">{t("review.genderOptions.preferToSay")}</option>
+                        <option value="others">{t("review.genderOptions.others")}</option>
+                    </select>
+                </div>
+
                 {/* Rating */}
                 <div className="mb-6 text-center">
                     <label className="block text-gray-800 text-lg font-medium mb-3">{t("review.ratingLabel")}</label>

@@ -31,14 +31,30 @@ type OrganizationForm = {
   include_municipality_filter: boolean;
 };
 
+// review response types
+export interface Review {
+  reviewer_name: string;
+  reviewer_gender: string;
+  profile_icon: string;
+  stars: number;
+  description: string;
+}
+
+export interface ReviewResponse {
+  average_rating: {
+    stars__avg: number;
+  };
+  reviews: Review[];
+}
+
 // union type
 export type SubmitForm = IndividualForm | OrganizationForm;
 
 export const appApi = createApi({
   reducerPath: "appApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://app.stipendieportalen.se",
-    // baseUrl: "https://abd8-103-159-73-203.ngrok-free.app",
+    // baseUrl: "https://app.stipendieportalen.se",
+    baseUrl: import.meta.env.VITE_API_BASE_URL,
     prepareHeaders: (headers: any, { endpoint }: any) => {
       const getEndpoints = ["getReview", "getFAQ"];
       if (getEndpoints.includes(endpoint)) {
@@ -104,12 +120,19 @@ export const appApi = createApi({
         body: { language: data.language },
       }),
     }),
-    getReview: builder.query({
+    getReview: builder.query<ReviewResponse, void>({
       query: () => "/app/review/",
     }),
     postReview: builder.mutation<
       any,
-      { email: string; description: string; stars: number }
+      {
+        email: string;
+        description: string;
+        stars: number;
+        reviewer_name: string;
+        reviewer_gender: string;
+        profile_icon: string;
+      }
     >({
       query: (data) => ({
         method: "POST",

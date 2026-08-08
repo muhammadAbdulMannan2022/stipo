@@ -178,8 +178,8 @@
     "next": "Next",
     "incompleteCode": "Please enter the complete verification code.",
     "invalidCode": "That code doesn't look right. Please check the digits and try again, or request a new code.",
-    "invalidOtpAttempts": "Invalid OTP code. {{attempts}} attempts remaining.",
-    "noScholarshipApplicant": "No ScholarshipApplicant matches the given query.",
+    "invalidOtpAttempts": "That code doesn't look right, and there have been several unsuccessful attempts. Please request a new code and try again.",
+    "noScholarshipApplicant": "That code doesn't look right. Please check the digits and try again, or request a new code.",
     "resendFailed": "We couldn’t resend the code. Please try again.",
     "loading": "loading..."
   },
@@ -762,6 +762,25 @@
       "3.11 Contact",
       "Questions regarding these terms are answered by: StiPo W&S AB Göran Elgfelts Gata 1A, 183 39 Täby, Sweden Email: kontakt@stipendieportalen.se Phone: +46 72-177 33 34"
     ]
+  },
+  "review": {
+    "title": "Submit a Review",
+    "description": "We value your feedback. Please let us know about your experience.",
+    "ratingLabel": "Your Rating",
+    "reviewLabel": "Your Review",
+    "reviewPlaceholder": "Write your review here...",
+    "submitButton": "Submit Review",
+    "validationError": "Please fill in all fields (name, rating, and review description).",
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter your name",
+    "genderLabel": "Gender",
+    "genderOptions": {
+      "male": "Male",
+      "female": "Female",
+      "nonBinary": "Non-binary",
+      "preferToSay": "Prefer to say",
+      "others": "Others"
+    }
   },
   "pricing": {
     "title": "Pricing Information",

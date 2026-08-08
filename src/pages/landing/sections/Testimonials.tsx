@@ -6,13 +6,15 @@ import { useGetReviewQuery } from "../../../store/api/appSlice";
 
 const TestimonialsSection: React.FC = () => {
   const { t } = useTranslation();
-  const { data, isLoading } = useGetReviewQuery(null);
+  const { data, isLoading } = useGetReviewQuery();
 
   if (isLoading) return <div>loading....</div>;
   if (!data) return null;
 
   const averageRating = data.average_rating?.stars__avg ?? 0;
   const reviews = data.reviews ?? [];
+
+  console.log("reviews", reviews);
 
   return (
     <section className="py-16 md:pt-20 px-4 sm:px-6 lg:px-8 ">
@@ -52,12 +54,8 @@ const TestimonialsSection: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reviews.map((review: any, index: number) => (
-            <TestimonialCard
-              key={index}
-              testimonial={review.description}
-              review={review.stars}
-            />
+          {reviews.map((review, index: number) => (
+            <TestimonialCard key={index} review={review} />
           ))}
         </div>
       </div>

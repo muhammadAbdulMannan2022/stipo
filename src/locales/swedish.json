@@ -178,8 +178,8 @@
     "next": "Nästa",
     "incompleteCode": "Vänligen ange hela verifieringskoden.",
     "invalidCode": "Koden verkar inte stämma. Kontrollera att du skrivit rätt siffror, eller begär en ny kod.",
-    "invalidOtpAttempts": "Ogiltig OTP-kod. {{attempts}} försök kvar.",
-    "noScholarshipApplicant": "Ingen ScholarshipApplicant matchar den angivna frågan.",
+    "invalidOtpAttempts": "Koden verkar inte stämma och flera försök har misslyckats. Begär en ny kod och försök igen.",
+    "noScholarshipApplicant": "Koden verkar inte stämma. Kontrollera att du skrivit rätt siffror, eller begär en ny kod.",
     "resendFailed": "Vi kunde inte skicka en ny kod. Försök igen.",
     "loading": "belastning..."
   },
@@ -770,6 +770,25 @@
       "3.11 Kontakt",
       "Frågor om dessa villkor besvaras av: StiPo W&S AB Göran Elgfelts Gata 1A, 183 39 Täby E-post: kontakt@stipendieportalen.se Telefon: 072-177 33 34"
     ]
+  },
+  "review": {
+    "title": "Skicka en recension",
+    "description": "Vi värdesätter din feedback. Berätta gärna om din upplevelse.",
+    "ratingLabel": "Ditt betyg",
+    "reviewLabel": "Din recension",
+    "reviewPlaceholder": "Skriv din recension här...",
+    "submitButton": "Skicka recension",
+    "validationError": "Vänligen fyll i alla fält (namn, betyg och recensionstext).",
+    "nameLabel": "Namn",
+    "namePlaceholder": "Ange ditt namn",
+    "genderLabel": "Kön",
+    "genderOptions": {
+      "male": "Man",
+      "female": "Kvinna",
+      "nonBinary": "Icke-binär",
+      "preferToSay": "Vill inte uppge",
+      "others": "Annat"
+    }
   },
   "pricing": {
     "title": "Prisuppgifter",
