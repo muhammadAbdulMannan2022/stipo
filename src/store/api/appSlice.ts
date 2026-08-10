@@ -141,7 +141,7 @@ export const appApi = createApi({
       }),
     }),
     getFAQ: builder.query({
-      query: () => `/app/faqs`,
+      query: () => `/app/faqs/`,
     }),
     submitContactForm: builder.mutation<
       any,

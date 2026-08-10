@@ -93,7 +93,7 @@ const Navbar: React.FC = () => {
               >
                 {t(`navbar.${link.key}`)}
               </button>
-            )
+            ),
           )}
 
           <ToggleSwitch />

@@ -1,11 +1,10 @@
 import type React from "react";
 import { Quote, Star } from "lucide-react";
 
-import defaultUserImage from "../assets/account.png";
-import maleUserImage from "../assets/male.png";
-import femaleUserImage from "../assets/female.png";
-
-import blueMarkImage from "../assets/check.png";
+const defaultUserImage = "/account.png";
+const maleUserImage = "/male.png";
+const femaleUserImage = "/female.png";
+const blueMarkImage = "/check.png";
 
 import type { Review } from "../store/api/appSlice";
 
